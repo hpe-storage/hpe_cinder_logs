@@ -1,87 +1,4 @@
 [DEFAULT]
-logging_exception_prefix = ERROR %(name)s [01;35m%(instance)s[00m
-logging_default_format_string = %(color)s%(levelname)s %(name)s [[00;36m-%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m
-logging_context_format_string = %(color)s%(levelname)s %(name)s [[01;36m%(global_request_id)s %(request_id)s [00;36m%(project_name)s %(user_name)s%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m
-logging_debug_format_suffix = [00;33m{{(pid=%(process)d) %(funcName)s %(pathname)s:%(lineno)d}}[00m
-state_path = /opt/stack/data/neutron
-metadata_workers = 2
-nova_metadata_host = 192.168.79.48
-debug = True
-
-#
-# From neutron.ovn.metadata.agent
-#
-
-# Location for Metadata Proxy UNIX domain socket. (string value)
-#metadata_proxy_socket = $state_path/metadata_proxy
-
-# User (uid or name) running metadata proxy after its initialization (if empty:
-# agent effective user). (string value)
-#metadata_proxy_user =
-
-# Group (gid or name) running metadata proxy after its initialization (if
-# empty: agent effective group). (string value)
-#metadata_proxy_group =
-
-# Certificate Authority public key (CA cert) file for ssl (string value)
-#auth_ca_cert = <None>
-
-# IP address or DNS name of Nova metadata server. (host address value)
-#nova_metadata_host = 127.0.0.1
-
-# TCP Port used by Nova metadata server. (port value)
-# Minimum value: 0
-# Maximum value: 65535
-#nova_metadata_port = 8775
-
-# When proxying metadata requests, Neutron signs the Instance-ID header with a
-# shared secret to prevent spoofing. You may select any string for a secret,
-# but it must match here and in the configuration used by the Nova Metadata
-# Server. NOTE: Nova uses the same config key, but in [neutron] section.
-# (string value)
-#metadata_proxy_shared_secret =
-
-# Protocol to access nova metadata, http or https (string value)
-# Possible values:
-# http - <No description provided>
-# https - <No description provided>
-#nova_metadata_protocol = http
-
-# Allow to perform insecure SSL (https) requests to nova metadata (boolean
-# value)
-#nova_metadata_insecure = false
-
-# Client certificate for nova metadata api server. (string value)
-#nova_client_cert =
-
-# Private key of client certificate. (string value)
-#nova_client_priv_key =
-
-# Metadata Proxy UNIX domain socket mode, 4 values allowed: 'deduce': deduce
-# mode from metadata_proxy_user/group values, 'user': set metadata proxy socket
-# mode to 0o644, to use when metadata_proxy_user is agent effective user or
-# root, 'group': set metadata proxy socket mode to 0o664, to use when
-# metadata_proxy_group is agent effective group or root, 'all': set metadata
-# proxy socket mode to 0o666, to use otherwise. (string value)
-# Possible values:
-# deduce - <No description provided>
-# user - <No description provided>
-# group - <No description provided>
-# all - <No description provided>
-#metadata_proxy_socket_mode = deduce
-
-# Number of separate worker processes for metadata server (defaults to 2 when
-# used with ML2/OVN and half of the number of CPUs with other backend drivers)
-# (integer value)
-#
-# This option has a sample default set, which means that
-# its actual default value may vary from the one documented
-# below.
-#metadata_workers = <num_of_cpus> / 2
-
-# Number of backlog requests to configure the metadata server socket with
-# (integer value)
-#metadata_backlog = 4096
 
 #
 # From oslo.log
@@ -233,24 +150,198 @@ debug = True
 #fatal_deprecations = false
 
 
-[ovs]
-ovsdb_connection = tcp:127.0.0.1:6640
+[ml2]
+tenant_network_types = geneve
+extension_drivers = port_security,qos
+type_drivers = local,flat,vlan,geneve
+overlay_ip_version = 4
+mechanism_drivers = ovn,logger
 
 #
-# From neutron.ovn.metadata.agent
+# From neutron.ml2
 #
 
-# The connection string for the native OVSDB backend.
-# Use tcp:IP:PORT for TCP connection.
-# Use unix:FILE for unix domain socket connection. (string value)
-#ovsdb_connection = unix:/usr/local/var/run/openvswitch/db.sock
+# List of network type driver entrypoints to be loaded from the
+# neutron.ml2.type_drivers namespace. (list value)
+#type_drivers = local,flat,vlan,gre,vxlan,geneve
 
-# Timeout in seconds for the OVSDB connection transaction (integer value)
-#ovsdb_connection_timeout = 180
+# Ordered list of network_types to allocate as tenant networks. The default
+# value 'local' is useful for single-box testing but provides no connectivity
+# between hosts. (list value)
+#tenant_network_types = local
 
-[agent]
-root_helper_daemon = sudo /usr/local/bin/neutron-rootwrap-daemon /etc/neutron/rootwrap.conf
-root_helper = sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf
+# An ordered list of networking mechanism driver entrypoints to be loaded from
+# the neutron.ml2.mechanism_drivers namespace. (list value)
+#mechanism_drivers =
+
+# An ordered list of extension driver entrypoints to be loaded from the
+# neutron.ml2.extension_drivers namespace. For example: extension_drivers =
+# port_security,qos (list value)
+#extension_drivers =
+
+# Maximum size of an IP packet (MTU) that can traverse the underlying physical
+# network infrastructure without fragmentation when using an overlay/tunnel
+# protocol. This option allows specifying a physical network MTU value that
+# differs from the default global_physnet_mtu value. (integer value)
+#path_mtu = 0
+
+# A list of mappings of physical networks to MTU values. The format of the
+# mapping is <physnet>:<mtu val>. This mapping allows specifying a physical
+# network MTU value that differs from the default global_physnet_mtu value.
+# (list value)
+#physical_network_mtus =
+
+# Default network type for external networks when no provider attributes are
+# specified. By default it is None, which means that if provider attributes are
+# not specified while creating external networks then they will have the same
+# type as tenant networks. Allowed values for external_network_type config
+# option depend on the network type values configured in type_drivers config
+# option. (string value)
+#external_network_type = <None>
+
+# IP version of all overlay (tunnel) network endpoints. Use a value of 4 for
+# IPv4 or 6 for IPv6. (integer value)
+#overlay_ip_version = 4
+
+
+[ml2_type_flat]
+flat_networks = public,
+
+#
+# From neutron.ml2
+#
+
+# List of physical_network names with which flat networks can be created. Use
+# default '*' to allow flat networks with arbitrary physical_network names. Use
+# an empty list to disable flat networks. (list value)
+#flat_networks = *
+
+
+[ml2_type_geneve]
+max_header_size = 38
+vni_ranges = 1:65536
+
+#
+# From neutron.ml2
+#
+
+# Comma-separated list of <vni_min>:<vni_max> tuples enumerating ranges of
+# Geneve VNI IDs that are available for tenant network allocation. Note OVN
+# does not use the actual values. (list value)
+#vni_ranges =
+
+# The maximum allowed Geneve encapsulation header size (in bytes). Geneve
+# header is extensible, this value is used to calculate the maximum MTU for
+# Geneve-based networks. The default is 30, which is the size of the Geneve
+# header without any additional option headers. Note the default is not enough
+# for OVN which requires at least 38. (integer value)
+#max_header_size = 30
+
+
+[ml2_type_gre]
+tunnel_id_ranges = 1:1000
+
+#
+# From neutron.ml2
+#
+
+# Comma-separated list of <tun_min>:<tun_max> tuples enumerating ranges of GRE
+# tunnel IDs that are available for tenant network allocation (list value)
+#tunnel_id_ranges =
+
+
+[ml2_type_vlan]
+network_vlan_ranges = public
+
+#
+# From neutron.ml2
+#
+
+# List of <physical_network>:<vlan_min>:<vlan_max> or <physical_network>
+# specifying physical_network names usable for VLAN provider and tenant
+# networks, as well as ranges of VLAN tags on each available for allocation to
+# tenant networks. If no range is defined, the whole valid VLAN ID set [1,
+# 4094] will be assigned. (list value)
+#network_vlan_ranges =
+
+
+[ml2_type_vxlan]
+vni_ranges = 1:1000
+
+#
+# From neutron.ml2
+#
+
+# Comma-separated list of <vni_min>:<vni_max> tuples enumerating ranges of
+# VXLAN VNI IDs that are available for tenant network allocation (list value)
+#vni_ranges =
+
+# Multicast group for VXLAN. When configured, will enable sending all broadcast
+# traffic to this multicast group. When left unconfigured, will disable
+# multicast VXLAN mode. (string value)
+#vxlan_group = <None>
+
+
+[ovs_driver]
+
+#
+# From neutron.ml2
+#
+
+# Comma-separated list of VNIC types for which support is administratively
+# prohibited by the mechanism driver. Please note that the supported vnic_types
+# depend on your network interface card, on the kernel version of your
+# operating system, and on other factors, like OVS version. In case of ovs
+# mechanism driver the valid vnic types are normal and direct. Note that direct
+# is supported only from kernel 4.8, and from ovs 2.8.0. Bind DIRECT (SR-IOV)
+# port allows to offload the OVS flows using tc to the SR-IOV NIC. This allows
+# to support hardware offload via tc and that allows us to manage the VF by
+# OpenFlow control plane using representor net-device. (list value)
+# Deprecated group/name - [ovs_driver]/vnic_type_blacklist
+#vnic_type_prohibit_list =
+
+
+[securitygroup]
+enable_security_group = True
+
+#
+# From neutron.ml2
+#
+
+# Driver for security groups firewall in the L2 agent (string value)
+#firewall_driver = <None>
+
+# Controls whether the neutron security group API is enabled in the server. It
+# should be false when using no security groups or using the nova security
+# group API. (boolean value)
+#enable_security_group = true
+
+# Use ipset to speed-up the iptables based security groups. Enabling ipset
+# support requires that ipset is installed on L2 agent node. (boolean value)
+#enable_ipset = true
+
+# Comma-separated list of ethertypes to be permitted, in hexadecimal (starting
+# with "0x"). For example, "0x4008" to permit InfiniBand. (list value)
+#permitted_ethertypes =
+
+
+[sriov_driver]
+
+#
+# From neutron.ml2
+#
+
+# Comma-separated list of VNIC types for which support is administratively
+# prohibited by the mechanism driver. Please note that the supported vnic_types
+# depend on your network interface card, on the kernel version of your
+# operating system, and on other factors. In case of sriov mechanism driver the
+# valid VNIC types are direct, macvtap and direct-physical. (list value)
+# Deprecated group/name - [sriov_driver]/vnic_type_blacklist
+#vnic_type_prohibit_list =
 
 [ovn]
+ovn_metadata_enabled = True
+ovn_l3_scheduler = leastloaded
+neutron_sync_mode = log
 ovn_sb_connection = tcp:192.168.79.48:6642
+ovn_nb_connection = tcp:192.168.79.48:6641
