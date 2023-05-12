@@ -319,12 +319,13 @@ enable_security_group = True
 #firewall_driver = <None>
 
 # Controls whether the neutron security group API is enabled in the server. It
-# should be false when using no security groups or using the nova security
+# should be false when using no security groups or using the Nova security
 # group API. (boolean value)
 #enable_security_group = true
 
-# Use ipset to speed-up the iptables based security groups. Enabling ipset
-# support requires that ipset is installed on L2 agent node. (boolean value)
+# Use IPsets to speed-up the iptables based security groups. Enabling IPset
+# support requires that ipset is installed on the L2 agent node. (boolean
+# value)
 #enable_ipset = true
 
 # Comma-separated list of ethertypes to be permitted, in hexadecimal (starting
@@ -341,8 +342,9 @@ enable_security_group = True
 # Comma-separated list of VNIC types for which support is administratively
 # prohibited by the mechanism driver. Please note that the supported vnic_types
 # depend on your network interface card, on the kernel version of your
-# operating system, and on other factors. In case of sriov mechanism driver the
-# valid VNIC types are direct, macvtap and direct-physical. (list value)
+# operating system, and on other factors. In the case of SRIOV mechanism
+# drivers the valid VNIC types are direct, macvtap and direct-physical. (list
+# value)
 # Deprecated group/name - [sriov_driver]/vnic_type_blacklist
 #vnic_type_prohibit_list =
 
@@ -350,5 +352,5 @@ enable_security_group = True
 ovn_metadata_enabled = True
 ovn_l3_scheduler = leastloaded
 neutron_sync_mode = log
-ovn_sb_connection = tcp:192.168.79.44:6642
-ovn_nb_connection = tcp:192.168.79.44:6641
+ovn_sb_connection = tcp:192.168.79.45:6642
+ovn_nb_connection = tcp:192.168.79.45:6641
