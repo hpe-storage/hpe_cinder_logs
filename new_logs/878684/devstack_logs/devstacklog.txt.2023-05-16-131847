@@ -1,0 +1,1427 @@
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:main:498                      (B[m exec
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:main:506                      (B[m echo_summary 'stack.sh log /tmp/devstack_logs/devstacklog.txt.2023-05-16-131847'
+2023-05-16 13:18:47.620 | ++[3242m./stack.sh:main:498                      (B[m /usr/bin/python3.8 /opt/stack/devstack/tools/outfilter.py -o /tmp/devstack_logs/devstacklog.txt.2023-05-16-131847.summary.2023-05-16-131847
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:echo_summary:451              (B[m [[ -t 3 ]]
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:echo_summary:451              (B[m [[ True != \T\r\u\e ]]
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:echo_summary:457              (B[m echo -e stack.sh log /tmp/devstack_logs/devstacklog.txt.2023-05-16-131847
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:main:508                      (B[m ln -sf /tmp/devstack_logs/devstacklog.txt.2023-05-16-131847 /tmp/devstack_logs/devstacklog.txt
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:main:509                      (B[m ln -sf /tmp/devstack_logs/devstacklog.txt.2023-05-16-131847.summary.2023-05-16-131847 /tmp/devstack_logs/devstacklog.txt.summary
+2023-05-16 13:18:47.620 | +[3242m./stack.sh:main:524                      (B[m check_path_perm_sanity /opt/stack
+2023-05-16 13:18:47.622 | +[3242mfunctions:check_path_perm_sanity:596     (B[m local real_path
+2023-05-16 13:18:47.628 | ++[3242mfunctions:check_path_perm_sanity:597     (B[m readlink -f /opt/stack
+2023-05-16 13:18:47.633 | +[3242mfunctions:check_path_perm_sanity:597     (B[m real_path=/opt/stack
+2023-05-16 13:18:47.643 | +[3242mfunctions:check_path_perm_sanity:598     (B[m local rebuilt_path=
+2023-05-16 13:18:47.650 | ++[3242mfunctions:check_path_perm_sanity:599     (B[m echo /opt/stack
+2023-05-16 13:18:47.652 | ++[3242mfunctions:check_path_perm_sanity:599     (B[m tr / ' '
+2023-05-16 13:18:47.661 | +[3242mfunctions:check_path_perm_sanity:599     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2023-05-16 13:18:47.667 | +[3242mfunctions:check_path_perm_sanity:600     (B[m rebuilt_path=/opt
+2023-05-16 13:18:47.675 | ++[3242mfunctions:check_path_perm_sanity:602     (B[m stat -c %a /opt
+2023-05-16 13:18:47.685 | +[3242mfunctions:check_path_perm_sanity:602     (B[m [[ 755 = 700 ]]
+2023-05-16 13:18:47.694 | +[3242mfunctions:check_path_perm_sanity:599     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2023-05-16 13:18:47.701 | +[3242mfunctions:check_path_perm_sanity:600     (B[m rebuilt_path=/opt/stack
+2023-05-16 13:18:47.709 | ++[3242mfunctions:check_path_perm_sanity:602     (B[m stat -c %a /opt/stack
+2023-05-16 13:18:47.717 | +[3242mfunctions:check_path_perm_sanity:602     (B[m [[ 755 = 700 ]]
+2023-05-16 13:18:47.726 | +[3242m./stack.sh:main:530                      (B[m trap exit_trap EXIT
+2023-05-16 13:18:47.733 | +[3242m./stack.sh:main:571                      (B[m trap err_trap ERR
+2023-05-16 13:18:47.740 | +[3242m./stack.sh:main:584                      (B[m set -o errexit
+2023-05-16 13:18:47.748 | +[3242m./stack.sh:main:587                      (B[m uname -a
+2023-05-16 13:18:47.749 | Linux ubuntu 5.4.0-148-generic #165-Ubuntu SMP Tue Apr 18 08:53:12 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+2023-05-16 13:18:47.757 | +[3242m./stack.sh:main:590                      (B[m SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2023-05-16 13:18:47.764 | +[3242m./stack.sh:main:591                      (B[m rm -f /opt/stack/data/ca-bundle.pem
+2023-05-16 13:18:47.772 | +[3242m./stack.sh:main:594                      (B[m source /opt/stack/devstack/lib/database
+2023-05-16 13:18:47.832 | +[3242m./stack.sh:main:595                      (B[m source /opt/stack/devstack/lib/rpc_backend
+2023-05-16 13:18:47.864 | +[3242m./stack.sh:main:601                      (B[m fetch_plugins
+2023-05-16 13:18:47.872 | +[3242mfunctions-common:fetch_plugins:1779      (B[m local plugins=
+2023-05-16 13:18:47.878 | +[3242mfunctions-common:fetch_plugins:1780      (B[m local plugin
+2023-05-16 13:18:47.885 | +[3242mfunctions-common:fetch_plugins:1783      (B[m [[ -z '' ]]
+2023-05-16 13:18:47.894 | +[3242mfunctions-common:fetch_plugins:1784      (B[m return
+2023-05-16 13:18:47.902 | +[3242m./stack.sh:main:605                      (B[m run_phase override_defaults
+2023-05-16 13:18:47.911 | +[3242mfunctions-common:run_phase:1861          (B[m local mode=override_defaults
+2023-05-16 13:18:47.918 | +[3242mfunctions-common:run_phase:1862          (B[m local phase=
+2023-05-16 13:18:47.926 | +[3242mfunctions-common:run_phase:1863          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2023-05-16 13:18:47.934 | +[3242mfunctions-common:run_phase:1864          (B[m local extra_plugin_file_name
+2023-05-16 13:18:47.942 | +[3242mfunctions-common:run_phase:1865          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2023-05-16 13:18:47.950 | +[3242mfunctions-common:run_phase:1870          (B[m local exceptions=80-tempest.sh
+2023-05-16 13:18:47.957 | +[3242mfunctions-common:run_phase:1871          (B[m local extra
+2023-05-16 13:18:47.966 | ++[3242mfunctions-common:run_phase:1872          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2023-05-16 13:18:47.974 | +[3242mfunctions-common:run_phase:1872          (B[m extra=80-tempest.sh
+2023-05-16 13:18:47.981 | +[3242mfunctions-common:run_phase:1873          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2023-05-16 13:18:47.988 | +[3242mfunctions-common:run_phase:1877          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2023-05-16 13:18:47.994 | +[3242mfunctions-common:run_phase:1877          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh override_defaults
+2023-05-16 13:18:48.001 | ++[3242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2023-05-16 13:18:48.034 | ++[3242mfunctions-common:is_service_enabled:2089 (B[m return 0
+2023-05-16 13:18:48.041 | ++[3242mextras.d/80-tempest.sh:source:4          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2023-05-16 13:18:48.046 | ++[3242mextras.d/80-tempest.sh:source:7          (B[m [[ override_defaults == \s\t\a\c\k ]]
+2023-05-16 13:18:48.054 | ++[3242mextras.d/80-tempest.sh:source:10         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2023-05-16 13:18:48.059 | ++[3242mextras.d/80-tempest.sh:source:13         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2023-05-16 13:18:48.065 | ++[3242mextras.d/80-tempest.sh:source:16         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2023-05-16 13:18:48.071 | ++[3242mextras.d/80-tempest.sh:source:19         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2023-05-16 13:18:48.078 | ++[3242mextras.d/80-tempest.sh:source:27         (B[m [[ override_defaults == \u\n\s\t\a\c\k ]]
+2023-05-16 13:18:48.084 | ++[3242mextras.d/80-tempest.sh:source:32         (B[m [[ override_defaults == \c\l\e\a\n ]]
+2023-05-16 13:18:48.091 | +[3242mfunctions-common:run_phase:1882          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2023-05-16 13:18:48.096 | +[3242mfunctions-common:run_phase:1885          (B[m [[ override_defaults == \o\v\e\r\r\i\d\e\_\d\e\f\a\u\l\t\s ]]
+2023-05-16 13:18:48.103 | +[3242mfunctions-common:run_phase:1886          (B[m plugin_override_defaults
+2023-05-16 13:18:48.108 | +[3242mfunctions-common:plugin_override_defaults:1820 (B[m local plugins=
+2023-05-16 13:18:48.113 | +[3242mfunctions-common:plugin_override_defaults:1821 (B[m local plugin
+2023-05-16 13:18:48.119 | +[3242mfunctions-common:plugin_override_defaults:1824 (B[m [[ -z '' ]]
+2023-05-16 13:18:48.125 | +[3242mfunctions-common:plugin_override_defaults:1825 (B[m return
+2023-05-16 13:18:48.134 | +[3242m./stack.sh:main:608                      (B[m source /opt/stack/devstack/lib/apache
+2023-05-16 13:18:48.168 | +[3242m./stack.sh:main:611                      (B[m source /opt/stack/devstack/lib/tls
+2023-05-16 13:18:48.174 | ++[3242mlib/tls:source:38                        (B[m is_service_enabled tls-proxy
+2023-05-16 13:18:48.235 | ++[3242mfunctions-common:is_service_enabled:2089 (B[m return 1
+2023-05-16 13:18:48.243 | +++[3242mlib/tls:source:43                        (B[m hostname -f
+2023-05-16 13:18:48.255 | ++[3242mlib/tls:source:43                        (B[m DEVSTACK_HOSTNAME=localhost
+2023-05-16 13:18:48.262 | ++[3242mlib/tls:source:44                        (B[m DEVSTACK_CERT_NAME=devstack-cert
+2023-05-16 13:18:48.271 | ++[3242mlib/tls:source:45                        (B[m DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+2023-05-16 13:18:48.278 | ++[3242mlib/tls:source:48                        (B[m ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+2023-05-16 13:18:48.286 | ++[3242mlib/tls:source:49                        (B[m INT_CA_DIR=/opt/stack/data/CA/int-ca
+2023-05-16 13:18:48.293 | ++[3242mlib/tls:source:51                        (B[m ORG_NAME=OpenStack
+2023-05-16 13:18:48.304 | ++[3242mlib/tls:source:52                        (B[m ORG_UNIT_NAME=DevStack
+2023-05-16 13:18:48.312 | ++[3242mlib/tls:source:55                        (B[m STUD_PROTO=--tls
+2023-05-16 13:18:48.322 | ++[3242mlib/tls:source:56                        (B[m STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+2023-05-16 13:18:48.331 | ++[3242mlib/tls:source:63                        (B[m OPENSSL=/usr/bin/openssl
+2023-05-16 13:18:48.346 | +[3242m./stack.sh:main:614                      (B[m source /opt/stack/devstack/lib/infra
+2023-05-16 13:18:48.384 | +[3242m./stack.sh:main:615                      (B[m source /opt/stack/devstack/lib/libraries
+2023-05-16 13:18:48.445 | +[3242m./stack.sh:main:616                      (B[m source /opt/stack/devstack/lib/lvm
+2023-05-16 13:18:48.491 | +[3242m./stack.sh:main:617                      (B[m source /opt/stack/devstack/lib/horizon
+2023-05-16 13:18:48.533 | +[3242m./stack.sh:main:618                      (B[m source /opt/stack/devstack/lib/keystone
+2023-05-16 13:18:48.729 | +[3242m./stack.sh:main:619                      (B[m source /opt/stack/devstack/lib/glance
+2023-05-16 13:18:48.857 | +[3242m./stack.sh:main:620                      (B[m source /opt/stack/devstack/lib/nova
+2023-05-16 13:18:49.042 | +[3242m./stack.sh:main:621                      (B[m source /opt/stack/devstack/lib/placement
+2023-05-16 13:18:49.117 | +[3242m./stack.sh:main:622                      (B[m source /opt/stack/devstack/lib/cinder
+2023-05-16 13:18:49.238 | +[3242m./stack.sh:main:623                      (B[m source /opt/stack/devstack/lib/swift
+2023-05-16 13:18:49.337 | +[3242m./stack.sh:main:624                      (B[m source /opt/stack/devstack/lib/neutron
+2023-05-16 13:18:49.346 | ++[3242mlib/neutron:source:61                    (B[m is_service_enabled tls-proxy
+2023-05-16 13:18:49.391 | ++[3242mfunctions-common:is_service_enabled:2089 (B[m return 1
+2023-05-16 13:18:49.400 | ++[3242mlib/neutron:source:67                    (B[m GITDIR["python-neutronclient"]=/opt/stack/python-neutronclient
+2023-05-16 13:18:49.408 | ++[3242mlib/neutron:source:70                    (B[m NEUTRON_DIR=/opt/stack/neutron
+2023-05-16 13:18:49.417 | ++[3242mlib/neutron:source:71                    (B[m NEUTRON_FWAAS_DIR=/opt/stack/neutron-fwaas
+2023-05-16 13:18:49.428 | ++[3242mlib/neutron:source:74                    (B[m [[ -d /opt/stack/neutron/bin/neutron-server ]]
+2023-05-16 13:18:49.440 | +++[3242mlib/neutron:source:77                    (B[m get_python_exec_prefix
+2023-05-16 13:18:49.489 | +++[3242minc/python:get_python_exec_prefix:64     (B[m local PYTHON_PATH=/usr/local/bin
+2023-05-16 13:18:49.499 | +++[3242minc/python:get_python_exec_prefix:65     (B[m is_suse
+2023-05-16 13:18:49.510 | +++[3242mfunctions-common:is_suse:544             (B[m is_opensuse
+2023-05-16 13:18:49.518 | +++[3242mfunctions-common:is_opensuse:551         (B[m [[ -z Ubuntu ]]
+2023-05-16 13:18:49.525 | +++[3242mfunctions-common:is_opensuse:555         (B[m [[ Ubuntu =~ (openSUSE) ]]
+2023-05-16 13:18:49.533 | +++[3242mfunctions-common:is_suse:544             (B[m is_suse_linux_enterprise
+2023-05-16 13:18:49.541 | +++[3242mfunctions-common:is_suse_linux_enterprise:563 (B[m [[ -z Ubuntu ]]
+2023-05-16 13:18:49.552 | +++[3242mfunctions-common:is_suse_linux_enterprise:567 (B[m [[ Ubuntu =~ (^SUSE) ]]
+2023-05-16 13:18:49.563 | +++[3242minc/python:get_python_exec_prefix:66     (B[m echo /usr/local/bin
+2023-05-16 13:18:49.575 | ++[3242mlib/neutron:source:77                    (B[m NEUTRON_BIN_DIR=/usr/local/bin
+2023-05-16 13:18:49.591 | ++[3242mlib/neutron:source:80                    (B[m NEUTRON_CONF_DIR=/etc/neutron
+2023-05-16 13:18:49.601 | ++[3242mlib/neutron:source:81                    (B[m NEUTRON_CONF=/etc/neutron/neutron.conf
+2023-05-16 13:18:49.609 | ++[3242mlib/neutron:source:82                    (B[m export NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2023-05-16 13:18:49.617 | ++[3242mlib/neutron:source:82                    (B[m NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2023-05-16 13:18:49.631 | +++[3242mlib/neutron:source:89                    (B[m trueorfalse False NEUTRON_DEPLOY_MOD_WSGI
+2023-05-16 13:18:49.674 | ++[3242mlib/neutron:source:89                    (B[m NEUTRON_DEPLOY_MOD_WSGI=False
+2023-05-16 13:18:49.682 | ++[3242mlib/neutron:source:91                    (B[m NEUTRON_UWSGI_CONF=/etc/neutron/neutron-api-uwsgi.ini
+2023-05-16 13:18:49.694 | +++[3242mlib/neutron:source:96                    (B[m trueorfalse False NEUTRON_ENFORCE_SCOPE
+2023-05-16 13:18:49.736 | ++[3242mlib/neutron:source:96                    (B[m NEUTRON_ENFORCE_SCOPE=False
+2023-05-16 13:18:49.743 | ++[3242mlib/neutron:source:100                   (B[m AGENT_DHCP_BINARY=/usr/local/bin/neutron-dhcp-agent
+2023-05-16 13:18:49.750 | ++[3242mlib/neutron:source:101                   (B[m AGENT_L3_BINARY=/usr/local/bin/neutron-l3-agent
+2023-05-16 13:18:49.760 | ++[3242mlib/neutron:source:102                   (B[m AGENT_META_BINARY=/usr/local/bin/neutron-metadata-agent
+2023-05-16 13:18:49.768 | ++[3242mlib/neutron:source:106                   (B[m Q_DHCP_CONF_FILE=/etc/neutron/dhcp_agent.ini
+2023-05-16 13:18:49.776 | ++[3242mlib/neutron:source:109                   (B[m NEUTRON_DHCP_CONF=/etc/neutron/dhcp_agent.ini
+2023-05-16 13:18:49.785 | ++[3242mlib/neutron:source:110                   (B[m Q_L3_CONF_FILE=/etc/neutron/l3_agent.ini
+2023-05-16 13:18:49.798 | ++[3242mlib/neutron:source:113                   (B[m NEUTRON_L3_CONF=/etc/neutron/l3_agent.ini
+2023-05-16 13:18:49.808 | ++[3242mlib/neutron:source:114                   (B[m Q_META_CONF_FILE=/etc/neutron/metadata_agent.ini
+2023-05-16 13:18:49.818 | ++[3242mlib/neutron:source:117                   (B[m Q_DB_NAME=neutron
+2023-05-16 13:18:49.827 | ++[3242mlib/neutron:source:119                   (B[m Q_PLUGIN=ml2
+2023-05-16 13:18:49.836 | ++[3242mlib/neutron:source:121                   (B[m Q_PORT=9696
+2023-05-16 13:18:49.849 | ++[3242mlib/neutron:source:123                   (B[m Q_PORT_INT=19696
+2023-05-16 13:18:49.858 | ++[3242mlib/neutron:source:125                   (B[m Q_HOST=192.168.79.29
+2023-05-16 13:18:49.869 | ++[3242mlib/neutron:source:127                   (B[m Q_PROTOCOL=http
+2023-05-16 13:18:49.880 | +++[3242mlib/neutron:source:129                   (B[m ipv6_unquote 0.0.0.0
+2023-05-16 13:18:49.890 | +++[3242mfunctions-common:ipv6_unquote:2231       (B[m tr -d '[]'
+2023-05-16 13:18:49.891 | +++[3242mfunctions-common:ipv6_unquote:2231       (B[m echo 0.0.0.0
+2023-05-16 13:18:49.901 | ++[3242mlib/neutron:source:129                   (B[m Q_LISTEN_ADDRESS=0.0.0.0
+2023-05-16 13:18:49.911 | ++[3242mlib/neutron:source:131                   (B[m Q_ADMIN_USERNAME=neutron
+2023-05-16 13:18:49.921 | ++[3242mlib/neutron:source:133                   (B[m Q_AUTH_STRATEGY=keystone
+2023-05-16 13:18:49.932 | ++[3242mlib/neutron:source:135                   (B[m Q_OVS_USE_VETH=False
+2023-05-16 13:18:49.944 | ++[3242mlib/neutron:source:136                   (B[m Q_USE_ROOTWRAP=True
+2023-05-16 13:18:49.953 | +++[3242mlib/neutron:source:137                   (B[m trueorfalse True Q_USE_ROOTWRAP_DAEMON
+2023-05-16 13:18:50.011 | ++[3242mlib/neutron:source:137                   (B[m Q_USE_ROOTWRAP_DAEMON=True
+2023-05-16 13:18:50.022 | +++[3242mlib/neutron:source:139                   (B[m ipv6_unquote 192.168.79.29
+2023-05-16 13:18:50.031 | +++[3242mfunctions-common:ipv6_unquote:2231       (B[m tr -d '[]'
+2023-05-16 13:18:50.032 | +++[3242mfunctions-common:ipv6_unquote:2231       (B[m echo 192.168.79.29
+2023-05-16 13:18:50.042 | ++[3242mlib/neutron:source:139                   (B[m Q_META_DATA_IP=192.168.79.29
+2023-05-16 13:18:50.051 | ++[3242mlib/neutron:source:141                   (B[m Q_ALLOW_OVERLAPPING_IP=True
+2023-05-16 13:18:50.062 | ++[3242mlib/neutron:source:142                   (B[m Q_NOTIFY_NOVA_PORT_STATUS_CHANGES=True
+2023-05-16 13:18:50.071 | ++[3242mlib/neutron:source:143                   (B[m Q_NOTIFY_NOVA_PORT_DATA_CHANGES=True
+2023-05-16 13:18:50.079 | ++[3242mlib/neutron:source:144                   (B[m VIF_PLUGGING_IS_FATAL=True
+2023-05-16 13:18:50.087 | ++[3242mlib/neutron:source:145                   (B[m VIF_PLUGGING_TIMEOUT=300
+2023-05-16 13:18:50.094 | ++[3242mlib/neutron:source:148                   (B[m SKIP_STOP_OVN=False
+2023-05-16 13:18:50.104 | ++[3242mlib/neutron:source:152                   (B[m _Q_PLUGIN_EXTRA_CONF_PATH=/etc/neutron
+2023-05-16 13:18:50.113 | ++[3242mlib/neutron:source:155                   (B[m NEUTRON_ENDPOINT_SERVICE_NAME=networking
+2023-05-16 13:18:50.120 | ++[3242mlib/neutron:source:156                   (B[m [[ False == \T\r\u\e ]]
+2023-05-16 13:18:50.128 | ++[3242mlib/neutron:source:169                   (B[m declare -a -g Q_PLUGIN_EXTRA_CONF_FILES
+2023-05-16 13:18:50.136 | ++[3242mlib/neutron:source:172                   (B[m declare -a -g _Q_PLUGIN_EXTRA_CONF_FILES_ABS
+2023-05-16 13:18:50.153 | ++[3242mlib/neutron:source:175                   (B[m Q_RR_CONF_FILE=/etc/neutron/rootwrap.conf
+2023-05-16 13:18:50.164 | ++[3242mlib/neutron:source:176                   (B[m [[ True == \F\a\l\s\e ]]
+2023-05-16 13:18:50.172 | +++[3242mlib/neutron:source:179                   (B[m get_rootwrap_location neutron
+2023-05-16 13:18:50.183 | +++[3242mfunctions:get_rootwrap_location:582      (B[m local module=neutron
+2023-05-16 13:18:50.192 | ++++[3242mfunctions:get_rootwrap_location:584      (B[m get_python_exec_prefix
+2023-05-16 13:18:50.242 | ++++[3242minc/python:get_python_exec_prefix:64     (B[m local PYTHON_PATH=/usr/local/bin
+2023-05-16 13:18:50.252 | ++++[3242minc/python:get_python_exec_prefix:65     (B[m is_suse
+2023-05-16 13:18:50.259 | ++++[3242mfunctions-common:is_suse:544             (B[m is_opensuse
+2023-05-16 13:18:50.269 | ++++[3242mfunctions-common:is_opensuse:551         (B[m [[ -z Ubuntu ]]
+2023-05-16 13:18:50.276 | ++++[3242mfunctions-common:is_opensuse:555         (B[m [[ Ubuntu =~ (openSUSE) ]]
+2023-05-16 13:18:50.283 | ++++[3242mfunctions-common:is_suse:544             (B[m is_suse_linux_enterprise
+2023-05-16 13:18:50.290 | ++++[3242mfunctions-common:is_suse_linux_enterprise:563 (B[m [[ -z Ubuntu ]]
+2023-05-16 13:18:50.297 | ++++[3242mfunctions-common:is_suse_linux_enterprise:567 (B[m [[ Ubuntu =~ (^SUSE) ]]
+2023-05-16 13:18:50.306 | ++++[3242minc/python:get_python_exec_prefix:66     (B[m echo /usr/local/bin
+2023-05-16 13:18:50.315 | +++[3242mfunctions:get_rootwrap_location:584      (B[m echo /usr/local/bin/neutron-rootwrap
+2023-05-16 13:18:50.326 | ++[3242mlib/neutron:source:179                   (B[m NEUTRON_ROOTWRAP=/usr/local/bin/neutron-rootwrap
+2023-05-16 13:18:50.336 | ++[3242mlib/neutron:source:180                   (B[m Q_RR_COMMAND='sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2023-05-16 13:18:50.345 | ++[3242mlib/neutron:source:181                   (B[m [[ True == \T\r\u\e ]]
+2023-05-16 13:18:50.354 | ++[3242mlib/neutron:source:182                   (B[m Q_RR_DAEMON_COMMAND='sudo /usr/local/bin/neutron-rootwrap-daemon /etc/neutron/rootwrap.conf'
+2023-05-16 13:18:50.364 | ++[3242mlib/neutron:source:194                   (B[m Q_DVR_MODE=legacy
+2023-05-16 13:18:50.373 | ++[3242mlib/neutron:source:195                   (B[m [[ legacy != \l\e\g\a\c\y ]]
+2023-05-16 13:18:50.382 | ++[3242mlib/neutron:source:211                   (B[m ENABLE_TENANT_TUNNELS=True
+2023-05-16 13:18:50.391 | ++[3242mlib/neutron:source:216                   (B[m TENANT_TUNNEL_RANGES=1:1000
+2023-05-16 13:18:50.400 | ++[3242mlib/neutron:source:221                   (B[m ENABLE_TENANT_VLANS=False
+2023-05-16 13:18:50.409 | ++[3242mlib/neutron:source:229                   (B[m TENANT_VLAN_RANGE=
+2023-05-16 13:18:50.417 | ++[3242mlib/neutron:source:238                   (B[m PHYSICAL_NETWORK=public
+2023-05-16 13:18:50.426 | ++[3242mlib/neutron:source:248                   (B[m OVS_PHYSICAL_BRIDGE=br-ex
+2023-05-16 13:18:50.435 | ++[3242mlib/neutron:source:256                   (B[m [[ '' == \l\i\n\u\x\b\r\i\d\g\e ]]
+2023-05-16 13:18:50.444 | ++[3242mlib/neutron:source:266                   (B[m OVS_ENABLE_TUNNELING=True
+2023-05-16 13:18:50.452 | ++[3242mlib/neutron:source:270                   (B[m ENABLE_ISOLATED_METADATA=False
+2023-05-16 13:18:50.462 | ++[3242mlib/neutron:source:275                   (B[m ENABLE_METADATA_NETWORK=False
+2023-05-16 13:18:50.472 | ++[3242mlib/neutron:source:280                   (B[m '[' -f /opt/stack/devstack/lib/neutron_plugins/ml2 ']'
+2023-05-16 13:18:50.483 | ++[3242mlib/neutron:source:281                   (B[m source /opt/stack/devstack/lib/neutron_plugins/ml2
+2023-05-16 13:18:50.663 | ++[3242mlib/neutron:source:288                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/metering
+2023-05-16 13:18:50.706 | ++[3242mlib/neutron:source:291                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/l3
+2023-05-16 13:18:50.716 | +++[3242mlib/neutron_plugins/services/l3:source:3 (B[m IP_VERSION=4
+2023-05-16 13:18:50.726 | +++[3242mlib/neutron_plugins/services/l3:source:5 (B[m [[ 4 != \4 ]]
+2023-05-16 13:18:50.736 | +++[3242mlib/neutron_plugins/services/l3:source:9 (B[m NEUTRON_CREATE_INITIAL_NETWORKS=True
+2023-05-16 13:18:50.747 | +++[3242mlib/neutron_plugins/services/l3:source:12 (B[m PROVIDER_SUBNET_NAME=provider_net
+2023-05-16 13:18:50.756 | +++[3242mlib/neutron_plugins/services/l3:source:13 (B[m IPV6_PROVIDER_SUBNET_NAME=provider_net_v6
+2023-05-16 13:18:50.766 | +++[3242mlib/neutron_plugins/services/l3:source:14 (B[m IPV6_PROVIDER_FIXED_RANGE=
+2023-05-16 13:18:50.776 | +++[3242mlib/neutron_plugins/services/l3:source:15 (B[m IPV6_PROVIDER_NETWORK_GATEWAY=
+2023-05-16 13:18:50.785 | +++[3242mlib/neutron_plugins/services/l3:source:17 (B[m PUBLIC_BRIDGE=br-ex
+2023-05-16 13:18:50.795 | +++[3242mlib/neutron_plugins/services/l3:source:18 (B[m PUBLIC_BRIDGE_MTU=1500
+2023-05-16 13:18:50.806 | +++[3242mlib/neutron_plugins/services/l3:source:23 (B[m Q_ASSIGN_GATEWAY_TO_PUBLIC_BRIDGE=True
+2023-05-16 13:18:50.815 | +++[3242mlib/neutron_plugins/services/l3:source:26 (B[m Q_ROUTER_NAME=router1
+2023-05-16 13:18:50.824 | +++[3242mlib/neutron_plugins/services/l3:source:31 (B[m Q_USE_PUBLIC_VETH=False
+2023-05-16 13:18:50.833 | +++[3242mlib/neutron_plugins/services/l3:source:32 (B[m Q_PUBLIC_VETH_EX=veth-pub-ex
+2023-05-16 13:18:50.842 | +++[3242mlib/neutron_plugins/services/l3:source:33 (B[m Q_PUBLIC_VETH_INT=veth-pub-int
+2023-05-16 13:18:50.852 | +++[3242mlib/neutron_plugins/services/l3:source:39 (B[m Q_L3_ROUTER_PER_TENANT=True
+2023-05-16 13:18:50.862 | +++[3242mlib/neutron_plugins/services/l3:source:66 (B[m Q_USE_PROVIDERNET_FOR_PUBLIC=True
+2023-05-16 13:18:50.872 | +++[3242mlib/neutron_plugins/services/l3:source:67 (B[m PUBLIC_PHYSICAL_NETWORK=public
+2023-05-16 13:18:50.883 | ++++[3242mlib/neutron_plugins/services/l3:source:70 (B[m cut -c 23-
+2023-05-16 13:18:50.885 | ++++[3242mlib/neutron_plugins/services/l3:source:70 (B[m sed s/-//g
+2023-05-16 13:18:50.885 | ++++[3242mlib/neutron_plugins/services/l3:source:70 (B[m uuidgen
+2023-05-16 13:18:50.886 | ++++[3242mlib/neutron_plugins/services/l3:source:70 (B[m sed -e 's/\(..\)\(....\)\(....\)/\1:\2:\3/'
+2023-05-16 13:18:50.894 | +++[3242mlib/neutron_plugins/services/l3:source:70 (B[m IPV6_GLOBAL_ID=99:91ec:adcb
+2023-05-16 13:18:50.901 | +++[3242mlib/neutron_plugins/services/l3:source:73 (B[m IPV6_RA_MODE=slaac
+2023-05-16 13:18:50.908 | +++[3242mlib/neutron_plugins/services/l3:source:74 (B[m IPV6_ADDRESS_MODE=slaac
+2023-05-16 13:18:50.916 | +++[3242mlib/neutron_plugins/services/l3:source:75 (B[m IPV6_PUBLIC_SUBNET_NAME=ipv6-public-subnet
+2023-05-16 13:18:50.926 | +++[3242mlib/neutron_plugins/services/l3:source:76 (B[m IPV6_PRIVATE_SUBNET_NAME=ipv6-private-subnet
+2023-05-16 13:18:50.936 | +++[3242mlib/neutron_plugins/services/l3:source:77 (B[m IPV6_ADDRS_SAFE_TO_USE=fd99:91ec:adcb::/56
+2023-05-16 13:18:50.948 | ++++[3242mlib/neutron_plugins/services/l3:source:80 (B[m echo fd99:91ec:adcb::/56
+2023-05-16 13:18:50.948 | ++++[3242mlib/neutron_plugins/services/l3:source:80 (B[m awk -F / '{ print $1"/"($2>63 ? $2 : 64) }'
+2023-05-16 13:18:50.960 | +++[3242mlib/neutron_plugins/services/l3:source:80 (B[m FIXED_RANGE_V6=fd99:91ec:adcb::/64
+2023-05-16 13:18:50.969 | +++[3242mlib/neutron_plugins/services/l3:source:81 (B[m IPV6_PRIVATE_NETWORK_GATEWAY=
+2023-05-16 13:18:50.979 | +++[3242mlib/neutron_plugins/services/l3:source:82 (B[m IPV6_PUBLIC_RANGE=2001:db8::/64
+2023-05-16 13:18:50.988 | +++[3242mlib/neutron_plugins/services/l3:source:83 (B[m IPV6_PUBLIC_NETWORK_GATEWAY=2001:db8::2
+2023-05-16 13:18:50.996 | +++[3242mlib/neutron_plugins/services/l3:source:84 (B[m IPV6_ROUTER_GW_IP=2001:db8::1
+2023-05-16 13:18:51.003 | +++[3242mlib/neutron_plugins/services/l3:source:87 (B[m NETWORK_GATEWAY=
+2023-05-16 13:18:51.010 | +++[3242mlib/neutron_plugins/services/l3:source:88 (B[m PUBLIC_NETWORK_GATEWAY=
+2023-05-16 13:18:51.017 | +++[3242mlib/neutron_plugins/services/l3:source:89 (B[m PRIVATE_SUBNET_NAME=private-subnet
+2023-05-16 13:18:51.024 | +++[3242mlib/neutron_plugins/services/l3:source:90 (B[m PUBLIC_SUBNET_NAME=public-subnet
+2023-05-16 13:18:51.033 | +++[3242mlib/neutron_plugins/services/l3:source:93 (B[m USE_SUBNETPOOL=False
+2023-05-16 13:18:51.042 | +++[3242mlib/neutron_plugins/services/l3:source:94 (B[m SUBNETPOOL_NAME_V4=shared-default-subnetpool-v4
+2023-05-16 13:18:51.052 | +++[3242mlib/neutron_plugins/services/l3:source:95 (B[m SUBNETPOOL_NAME_V6=shared-default-subnetpool-v6
+2023-05-16 13:18:51.063 | +++[3242mlib/neutron_plugins/services/l3:source:97 (B[m SUBNETPOOL_PREFIX_V4=192.168.79.0/21
+2023-05-16 13:18:51.070 | +++[3242mlib/neutron_plugins/services/l3:source:98 (B[m SUBNETPOOL_PREFIX_V6=fd99:91ec:adcb::/56
+2023-05-16 13:18:51.079 | +++[3242mlib/neutron_plugins/services/l3:source:100 (B[m SUBNETPOOL_SIZE_V4=26
+2023-05-16 13:18:51.087 | +++[3242mlib/neutron_plugins/services/l3:source:101 (B[m SUBNETPOOL_SIZE_V6=64
+2023-05-16 13:18:51.099 | ++++[3242mlib/neutron_plugins/services/l3:source:103 (B[m grep '^default'
+2023-05-16 13:18:51.100 | ++++[3242mlib/neutron_plugins/services/l3:source:103 (B[m ip -4 route
+2023-05-16 13:18:51.100 | ++++[3242mlib/neutron_plugins/services/l3:source:103 (B[m awk '{print $5}'
+2023-05-16 13:18:51.109 | +++[3242mlib/neutron_plugins/services/l3:source:103 (B[m default_v4_route_devs='ens4
+2023-05-16 13:18:51.109 | ens3'
+2023-05-16 13:18:51.119 | ++++[3242mlib/neutron_plugins/services/l3:source:105 (B[m ip -6 route list match default table all
+2023-05-16 13:18:51.119 | ++++[3242mlib/neutron_plugins/services/l3:source:105 (B[m grep via
+2023-05-16 13:18:51.119 | ++++[3242mlib/neutron_plugins/services/l3:source:105 (B[m awk '{print $5}'
+2023-05-16 13:18:51.131 | +++[3242mlib/neutron_plugins/services/l3:source:105 (B[m default_v6_route_devs=
+2023-05-16 13:18:51.138 | ++[3242mlib/neutron:source:294                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/placement
+2023-05-16 13:18:51.145 | ++[3242mlib/neutron:source:295                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/trunk
+2023-05-16 13:18:51.152 | ++[3242mlib/neutron:source:296                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/qos
+2023-05-16 13:18:51.160 | ++[3242mlib/neutron:source:299                   (B[m has_neutron_plugin_security_group
+2023-05-16 13:18:51.169 | ++[3242mlib/neutron_plugins/ml2:has_neutron_plugin_security_group:149 (B[m return 0
+2023-05-16 13:18:51.177 | ++[3242mlib/neutron:source:300                   (B[m Q_USE_SECGROUP=True
+2023-05-16 13:18:51.227 | +[3242m./stack.sh:main:625                      (B[m source /opt/stack/devstack/lib/ldap
+2023-05-16 13:18:51.272 | +[3242m./stack.sh:main:626                      (B[m source /opt/stack/devstack/lib/dstat
+2023-05-16 13:18:51.317 | +[3242m./stack.sh:main:627                      (B[m source /opt/stack/devstack/lib/tcpdump
+2023-05-16 13:18:51.357 | +[3242m./stack.sh:main:628                      (B[m source /opt/stack/devstack/lib/etcd3
+2023-05-16 13:18:51.480 | +[3242m./stack.sh:main:629                      (B[m source /opt/stack/devstack/lib/os-vif
+2023-05-16 13:18:51.491 | +++[3242mlib/os-vif:source:12                     (B[m is_ml2_ovs
+2023-05-16 13:18:51.500 | +++[3242mlib/os-vif:is_ml2_ovs:4                  (B[m [[ ovn == \o\p\e\n\v\s\w\i\t\c\h ]]
+2023-05-16 13:18:51.510 | +++[3242mlib/os-vif:is_ml2_ovs:7                  (B[m echo False
+2023-05-16 13:18:51.520 | ++[3242mlib/os-vif:source:12                     (B[m OS_VIF_OVS_ISOLATE_VIF=False
+2023-05-16 13:18:51.531 | +++[3242mlib/os-vif:source:13                     (B[m trueorfalse False OS_VIF_OVS_ISOLATE_VIF
+2023-05-16 13:18:51.585 | ++[3242mlib/os-vif:source:13                     (B[m OS_VIF_OVS_ISOLATE_VIF=False
+2023-05-16 13:18:51.594 | +[3242m./stack.sh:main:635                      (B[m run_phase source
+2023-05-16 13:18:51.604 | +[3242mfunctions-common:run_phase:1861          (B[m local mode=source
+2023-05-16 13:18:51.615 | +[3242mfunctions-common:run_phase:1862          (B[m local phase=
+2023-05-16 13:18:51.624 | +[3242mfunctions-common:run_phase:1863          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2023-05-16 13:18:51.632 | +[3242mfunctions-common:run_phase:1864          (B[m local extra_plugin_file_name
+2023-05-16 13:18:51.641 | +[3242mfunctions-common:run_phase:1865          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2023-05-16 13:18:51.651 | +[3242mfunctions-common:run_phase:1870          (B[m local exceptions=80-tempest.sh
+2023-05-16 13:18:51.661 | +[3242mfunctions-common:run_phase:1871          (B[m local extra
+2023-05-16 13:18:51.670 | ++[3242mfunctions-common:run_phase:1872          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2023-05-16 13:18:51.685 | +[3242mfunctions-common:run_phase:1872          (B[m extra=80-tempest.sh
+2023-05-16 13:18:51.695 | +[3242mfunctions-common:run_phase:1873          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2023-05-16 13:18:51.705 | +[3242mfunctions-common:run_phase:1877          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2023-05-16 13:18:51.716 | +[3242mfunctions-common:run_phase:1877          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh source
+2023-05-16 13:18:51.727 | ++[3242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2023-05-16 13:18:51.784 | ++[3242mfunctions-common:is_service_enabled:2089 (B[m return 0
+2023-05-16 13:18:51.796 | ++[3242mextras.d/80-tempest.sh:source:4          (B[m [[ source == \s\o\u\r\c\e ]]
+2023-05-16 13:18:51.808 | ++[3242mextras.d/80-tempest.sh:source:6          (B[m source /opt/stack/devstack/lib/tempest
+2023-05-16 13:18:51.904 | ++[3242mextras.d/80-tempest.sh:source:27         (B[m [[ source == \u\n\s\t\a\c\k ]]
+2023-05-16 13:18:51.916 | ++[3242mextras.d/80-tempest.sh:source:32         (B[m [[ source == \c\l\e\a\n ]]
+2023-05-16 13:18:51.930 | +[3242mfunctions-common:run_phase:1882          (B[m [[ source == \s\o\u\r\c\e ]]
+2023-05-16 13:18:51.942 | +[3242mfunctions-common:run_phase:1883          (B[m load_plugin_settings
+2023-05-16 13:18:51.954 | +[3242mfunctions-common:load_plugin_settings:1797 (B[m local plugins=
+2023-05-16 13:18:51.967 | +[3242mfunctions-common:load_plugin_settings:1798 (B[m local plugin
+2023-05-16 13:18:51.987 | +[3242mfunctions-common:load_plugin_settings:1801 (B[m [[ -z '' ]]
+2023-05-16 13:18:51.996 | +[3242mfunctions-common:load_plugin_settings:1802 (B[m return
+2023-05-16 13:18:52.006 | +[3242mfunctions-common:run_phase:1884          (B[m verify_disabled_services
+2023-05-16 13:18:52.018 | +[3242mfunctions-common:verify_disabled_services:2144 (B[m local service
+2023-05-16 13:18:52.029 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.041 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,key, ]]
+2023-05-16 13:18:52.053 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.065 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-api, ]]
+2023-05-16 13:18:52.075 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.085 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-cpu, ]]
+2023-05-16 13:18:52.098 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.109 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-cond, ]]
+2023-05-16 13:18:52.120 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.132 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-sch, ]]
+2023-05-16 13:18:52.142 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.151 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-novnc, ]]
+2023-05-16 13:18:52.160 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.171 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-api-meta, ]]
+2023-05-16 13:18:52.184 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.195 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,placement-api, ]]
+2023-05-16 13:18:52.206 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.215 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,placement-client, ]]
+2023-05-16 13:18:52.227 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.238 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,g-api, ]]
+2023-05-16 13:18:52.250 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.261 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-sch, ]]
+2023-05-16 13:18:52.272 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.282 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-api, ]]
+2023-05-16 13:18:52.292 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.303 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-vol, ]]
+2023-05-16 13:18:52.313 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.323 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovn-controller, ]]
+2023-05-16 13:18:52.333 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.342 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovn-northd, ]]
+2023-05-16 13:18:52.355 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.367 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovs-vswitchd, ]]
+2023-05-16 13:18:52.377 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.388 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovsdb-server, ]]
+2023-05-16 13:18:52.398 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.407 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,q-svc, ]]
+2023-05-16 13:18:52.417 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.429 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,q-ovn-metadata-agent, ]]
+2023-05-16 13:18:52.440 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.451 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,rabbit, ]]
+2023-05-16 13:18:52.462 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.472 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,tempest, ]]
+2023-05-16 13:18:52.485 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.496 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,mysql, ]]
+2023-05-16 13:18:52.507 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.517 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,etcd3, ]]
+2023-05-16 13:18:52.528 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.540 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,dstat, ]]
+2023-05-16 13:18:52.552 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.565 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,cinder, ]]
+2023-05-16 13:18:52.576 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.588 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-bak, ]]
+2023-05-16 13:18:52.599 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.609 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,s-proxy, ]]
+2023-05-16 13:18:52.620 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.632 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,s-object, ]]
+2023-05-16 13:18:52.643 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.654 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,s-container, ]]
+2023-05-16 13:18:52.665 | +[3242mfunctions-common:verify_disabled_services:2145 (B[m for service in ${ENABLED_SERVICES//,/ }
+2023-05-16 13:18:52.682 | +[3242mfunctions-common:verify_disabled_services:2146 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,s-account, ]]
+2023-05-16 13:18:52.695 | +[3242m./stack.sh:main:706                      (B[m initialize_database_backends
+2023-05-16 13:18:52.708 | +[3242mlib/database:initialize_database_backends:65 (B[m for backend in $DATABASE_BACKENDS
+2023-05-16 13:18:52.720 | +[3242mlib/database:initialize_database_backends:66 (B[m is_service_enabled mysql
+2023-05-16 13:18:52.783 | +[3242mfunctions-common:is_service_enabled:2089 (B[m return 0
+2023-05-16 13:18:52.795 | +[3242mlib/database:initialize_database_backends:66 (B[m DATABASE_TYPE=mysql
+2023-05-16 13:18:52.809 | +[3242mlib/database:initialize_database_backends:65 (B[m for backend in $DATABASE_BACKENDS
+2023-05-16 13:18:52.820 | +[3242mlib/database:initialize_database_backends:66 (B[m is_service_enabled postgresql
+2023-05-16 13:18:52.882 | +[3242mfunctions-common:is_service_enabled:2089 (B[m return 1
+2023-05-16 13:18:52.894 | +[3242mlib/database:initialize_database_backends:69 (B[m '[' -z mysql ']'
+2023-05-16 13:18:52.904 | +[3242mlib/database:initialize_database_backends:73 (B[m MYSQL_HOST=127.0.0.1
+2023-05-16 13:18:52.915 | +[3242mlib/database:initialize_database_backends:74 (B[m MYSQL_USER=root
+2023-05-16 13:18:52.927 | +[3242mlib/database:initialize_database_backends:80 (B[m [[ 4 == 6 ]]
+2023-05-16 13:18:52.940 | +[3242mlib/database:initialize_database_backends:83 (B[m DATABASE_HOST=127.0.0.1
+2023-05-16 13:18:52.952 | +[3242mlib/database:initialize_database_backends:86 (B[m DATABASE_USER=root
+2023-05-16 13:18:52.965 | +[3242mlib/database:initialize_database_backends:88 (B[m '[' -n '' ']'
+2023-05-16 13:18:52.978 | +[3242mlib/database:initialize_database_backends:92 (B[m return 0
+2023-05-16 13:18:52.989 | +[3242m./stack.sh:main:707                      (B[m echo 'Using mysql database backend'
+2023-05-16 13:18:52.989 | Using mysql database backend
+2023-05-16 13:18:53.001 | +[3242m./stack.sh:main:710                      (B[m read_password DATABASE_PASSWORD 'ENTER A PASSWORD TO USE FOR THE DATABASE.'
+2023-05-16 13:18:53.066 | +[3242m./stack.sh:main:712                      (B[m define_database_baseurl
+2023-05-16 13:18:53.080 | ++[3242mlib/database:define_database_baseurl:106 (B[m get_database_type_mysql
+2023-05-16 13:18:53.093 | ++[3242mlib/databases/mysql:get_database_type_mysql:38 (B[m [[ PyMySQL == \P\y\M\y\S\Q\L ]]
+2023-05-16 13:18:53.105 | ++[3242mlib/databases/mysql:get_database_type_mysql:39 (B[m echo mysql+pymysql
+2023-05-16 13:18:53.117 | +[3242mlib/database:define_database_baseurl:106 (B[m BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2023-05-16 13:18:53.129 | +[3242m./stack.sh:main:724                      (B[m is_service_enabled rabbit
+2023-05-16 13:18:53.190 | +[3242mfunctions-common:is_service_enabled:2089 (B[m return 0
+2023-05-16 13:18:53.200 | +[3242m./stack.sh:main:725                      (B[m read_password RABBIT_PASSWORD 'ENTER A PASSWORD TO USE FOR RABBIT.'
+2023-05-16 13:18:53.265 | +[3242m./stack.sh:main:732                      (B[m is_service_enabled keystone
+2023-05-16 13:18:53.330 | +[3242mfunctions-common:is_service_enabled:2089 (B[m return 0
+2023-05-16 13:18:53.343 | +[3242m./stack.sh:main:734                      (B[m read_password SERVICE_PASSWORD 'ENTER A SERVICE_PASSWORD TO USE FOR THE SERVICE AUTHENTICATION.'
+2023-05-16 13:18:53.407 | +[3242m./stack.sh:main:736                      (B[m read_password ADMIN_PASSWORD 'ENTER A PASSWORD TO USE FOR HORIZON AND KEYSTONE (20 CHARS OR LESS).'
+2023-05-16 13:18:53.473 | +[3242m./stack.sh:main:747                      (B[m is_service_enabled ldap
+2023-05-16 13:18:53.535 | +[3242mfunctions-common:is_service_enabled:2089 (B[m return 1
+2023-05-16 13:18:53.547 | +[3242m./stack.sh:main:756                      (B[m is_service_enabled s-proxy
+2023-05-16 13:18:53.613 | +[3242mfunctions-common:is_service_enabled:2089 (B[m return 0
+2023-05-16 13:18:53.626 | +[3242m./stack.sh:main:760                      (B[m read_password SWIFT_HASH 'ENTER A RANDOM SWIFT HASH.'
+2023-05-16 13:18:53.687 | +[3242m./stack.sh:main:762                      (B[m [[ -z hpinvent ]]
+2023-05-16 13:18:53.698 | +[3242m./stack.sh:main:768                      (B[m save_stackenv 768
+2023-05-16 13:18:53.710 | +[3242mfunctions-common:save_stackenv:60        (B[m local tag=768
+2023-05-16 13:18:53.725 | ++[3242mfunctions-common:save_stackenv:62        (B[m date +%F-%H%M%S
+2023-05-16 13:18:53.741 | +[3242mfunctions-common:save_stackenv:62        (B[m time_stamp=2023-05-16-131853
+2023-05-16 13:18:53.753 | +[3242mfunctions-common:save_stackenv:63        (B[m echo '# 2023-05-16-131853 768'
+2023-05-16 13:18:53.768 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.779 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2023-05-16 13:18:53.792 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.806 | +[3242mfunctions-common:save_stackenv:65        (B[m echo DATA_DIR=/opt/stack/data
+2023-05-16 13:18:53.819 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.831 | +[3242mfunctions-common:save_stackenv:65        (B[m echo DEST=/opt/stack
+2023-05-16 13:18:53.844 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.857 | +[3242mfunctions-common:save_stackenv:65        (B[m echo ENABLED_SERVICES=key,n-api,n-cpu,n-cond,n-sch,n-novnc,n-api-meta,placement-api,placement-client,g-api,c-sch,c-api,c-vol,ovn-controller,ovn-northd,ovs-vswitchd,ovsdb-server,q-svc,q-ovn-metadata-agent,rabbit,tempest,mysql,etcd3,dstat,cinder,c-bak,s-proxy,s-object,s-container,s-account
+2023-05-16 13:18:53.868 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.881 | +[3242mfunctions-common:save_stackenv:65        (B[m echo HOST_IP=192.168.79.29
+2023-05-16 13:18:53.893 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.905 | +[3242mfunctions-common:save_stackenv:65        (B[m echo KEYSTONE_SERVICE_URI=http://192.168.79.29/identity
+2023-05-16 13:18:53.917 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.932 | +[3242mfunctions-common:save_stackenv:65        (B[m echo LOGFILE=/tmp/devstack_logs/devstacklog.txt.2023-05-16-131847
+2023-05-16 13:18:53.944 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.956 | +[3242mfunctions-common:save_stackenv:65        (B[m echo OS_CACERT=
+2023-05-16 13:18:53.969 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:53.982 | +[3242mfunctions-common:save_stackenv:65        (B[m echo SERVICE_HOST=192.168.79.29
+2023-05-16 13:18:53.993 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:54.006 | +[3242mfunctions-common:save_stackenv:65        (B[m echo STACK_USER=ubuntu
+2023-05-16 13:18:54.020 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:54.033 | +[3242mfunctions-common:save_stackenv:65        (B[m echo TLS_IP=
+2023-05-16 13:18:54.045 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:54.059 | +[3242mfunctions-common:save_stackenv:65        (B[m echo HOST_IPV6=::1
+2023-05-16 13:18:54.070 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:54.082 | +[3242mfunctions-common:save_stackenv:65        (B[m echo SERVICE_IP_VERSION=4
+2023-05-16 13:18:54.095 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:54.108 | +[3242mfunctions-common:save_stackenv:65        (B[m echo TUNNEL_ENDPOINT_IP=192.168.79.29
+2023-05-16 13:18:54.120 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
+2023-05-16 13:18:54.132 | +[3242mfunctions-common:save_stackenv:65        (B[m echo TUNNEL_IP_VERSION=4
+2023-05-16 13:18:54.144 | +[3242m./stack.sh:main:781                      (B[m GIT_DEPTH=0
+2023-05-16 13:18:54.157 | +[3242m./stack.sh:main:781                      (B[m git_clone http://github.com/openstack/requirements.git /opt/stack/requirements stable/2023.1
+2023-05-16 13:18:54.169 | +[3242mfunctions-common:git_clone:612           (B[m local git_remote=http://github.com/openstack/requirements.git
+2023-05-16 13:18:54.182 | +[3242mfunctions-common:git_clone:613           (B[m local git_dest=/opt/stack/requirements
+2023-05-16 13:18:54.192 | +[3242mfunctions-common:git_clone:614           (B[m local git_ref=stable/2023.1
+2023-05-16 13:18:54.203 | +[3242mfunctions-common:git_clone:615           (B[m local orig_dir
+2023-05-16 13:18:54.216 | ++[3242mfunctions-common:git_clone:616           (B[m pwd
+2023-05-16 13:18:54.227 | +[3242mfunctions-common:git_clone:616           (B[m orig_dir=/opt/stack/devstack
+2023-05-16 13:18:54.238 | +[3242mfunctions-common:git_clone:617           (B[m local git_clone_flags=
+2023-05-16 13:18:54.252 | ++[3242mfunctions-common:git_clone:619           (B[m trueorfalse False RECLONE
+2023-05-16 13:18:54.311 | +[3242mfunctions-common:git_clone:619           (B[m RECLONE=False
+2023-05-16 13:18:54.324 | +[3242mfunctions-common:git_clone:620           (B[m [[ 0 -gt 0 ]]
+2023-05-16 13:18:54.337 | +[3242mfunctions-common:git_clone:624           (B[m [[ False = \T\r\u\e ]]
+2023-05-16 13:18:54.348 | +[3242mfunctions-common:git_clone:633           (B[m egrep -q '^refs'
+2023-05-16 13:18:54.350 | +[3242mfunctions-common:git_clone:633           (B[m echo stable/2023.1
+2023-05-16 13:18:54.361 | +[3242mfunctions-common:git_clone:647           (B[m [[ ! -d /opt/stack/requirements ]]
+2023-05-16 13:18:54.371 | +[3242mfunctions-common:git_clone:655           (B[m [[ False = \T\r\u\e ]]
+2023-05-16 13:18:54.381 | +[3242mfunctions-common:git_clone:690           (B[m sudo git config --system --add safe.directory /opt/stack/requirements
+2023-05-16 13:18:54.408 | +[3242mfunctions-common:git_clone:693           (B[m cd /opt/stack/requirements
+2023-05-16 13:18:54.420 | +[3242mfunctions-common:git_clone:694           (B[m git show --oneline
+2023-05-16 13:18:54.420 | +[3242mfunctions-common:git_clone:694           (B[m head -1
+2023-05-16 13:18:54.426 | 92e17ec0 update constraint for os-brick to new release 6.2.2
+2023-05-16 13:18:54.437 | +[3242mfunctions-common:git_clone:695           (B[m cd /opt/stack/devstack
+2023-05-16 13:18:54.451 | +[3242m./stack.sh:main:785                      (B[m echo_summary 'Installing package prerequisites'
+2023-05-16 13:18:54.463 | +[3242m./stack.sh:echo_summary:451              (B[m [[ -t 3 ]]
+2023-05-16 13:18:54.474 | +[3242m./stack.sh:echo_summary:451              (B[m [[ True != \T\r\u\e ]]
+2023-05-16 13:18:54.486 | +[3242m./stack.sh:echo_summary:457              (B[m echo -e Installing package prerequisites
+2023-05-16 13:18:54.498 | +[3242m./stack.sh:main:786                      (B[m source /opt/stack/devstack/tools/install_prereqs.sh
+2023-05-16 13:18:54.511 | ++[3242mtools/install_prereqs.sh:source:11       (B[m FORCE_PREREQ=0
+2023-05-16 13:18:54.524 | ++[3242mtools/install_prereqs.sh:source:13       (B[m getopts :f opt
+2023-05-16 13:18:54.536 | ++[3242mtools/install_prereqs.sh:source:23       (B[m [[ -z /opt/stack/devstack ]]
+2023-05-16 13:18:54.548 | ++[3242mtools/install_prereqs.sh:source:43       (B[m PREREQ_RERUN_MARKER=/opt/stack/devstack/.prereqs
+2023-05-16 13:18:54.563 | ++[3242mtools/install_prereqs.sh:source:44       (B[m PREREQ_RERUN_HOURS=2
+2023-05-16 13:18:54.575 | ++[3242mtools/install_prereqs.sh:source:45       (B[m PREREQ_RERUN_SECONDS=7200
+2023-05-16 13:18:54.587 | +++[3242mtools/install_prereqs.sh:source:47       (B[m date +%s
+2023-05-16 13:18:54.603 | ++[3242mtools/install_prereqs.sh:source:47       (B[m NOW=1684243134
+2023-05-16 13:18:54.615 | +++[3242mtools/install_prereqs.sh:source:48       (B[m head -1 /opt/stack/devstack/.prereqs
+2023-05-16 13:18:54.631 | ++[3242mtools/install_prereqs.sh:source:48       (B[m LAST_RUN=1684241659
+2023-05-16 13:18:54.644 | ++[3242mtools/install_prereqs.sh:source:49       (B[m DELTA=1475
+2023-05-16 13:18:54.655 | ++[3242mtools/install_prereqs.sh:source:50       (B[m [[ 1475 -lt 7200 ]]
+2023-05-16 13:18:54.668 | ++[3242mtools/install_prereqs.sh:source:50       (B[m [[ -z 0 ]]
+2023-05-16 13:18:54.680 | ++[3242mtools/install_prereqs.sh:source:57       (B[m export_proxy_variables
+2023-05-16 13:18:54.691 | ++[3242mfunctions-common:export_proxy_variables:2251 (B[m isset http_proxy
+2023-05-16 13:18:54.700 | ++[3242mfunctions-common:isset:240               (B[m [[ -v http_proxy ]]
+2023-05-16 13:18:54.711 | ++[3242mfunctions-common:export_proxy_variables:2252 (B[m export http_proxy=http://16.85.88.10:8080
+2023-05-16 13:18:54.721 | ++[3242mfunctions-common:export_proxy_variables:2252 (B[m http_proxy=http://16.85.88.10:8080
+2023-05-16 13:18:54.732 | ++[3242mfunctions-common:export_proxy_variables:2254 (B[m isset https_proxy
+2023-05-16 13:18:54.743 | ++[3242mfunctions-common:isset:240               (B[m [[ -v https_proxy ]]
+2023-05-16 13:18:54.755 | ++[3242mfunctions-common:export_proxy_variables:2255 (B[m export https_proxy=http://16.85.88.10:8080
+2023-05-16 13:18:54.768 | ++[3242mfunctions-common:export_proxy_variables:2255 (B[m https_proxy=http://16.85.88.10:8080
+2023-05-16 13:18:54.780 | ++[3242mfunctions-common:export_proxy_variables:2257 (B[m isset no_proxy
+2023-05-16 13:18:54.789 | ++[3242mfunctions-common:isset:240               (B[m [[ -v no_proxy ]]
+2023-05-16 13:18:54.803 | ++[3242mfunctions-common:export_proxy_variables:2258 (B[m export no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5
+2023-05-16 13:18:54.815 | ++[3242mfunctions-common:export_proxy_variables:2258 (B[m no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5
+2023-05-16 13:18:54.828 | +++[3242mtools/install_prereqs.sh:source:64       (B[m get_packages general,key,n-api,n-cpu,n-cond,n-sch,n-novnc,n-api-meta,placement-api,placement-client,g-api,c-sch,c-api,c-vol,ovn-controller,ovn-northd,ovs-vswitchd,ovsdb-server,q-svc,q-ovn-metadata-agent,rabbit,tempest,mysql,etcd3,dstat,cinder,c-bak,s-proxy,s-object,s-container,s-account
+2023-05-16 13:18:54.916 | ++[3242mtools/install_prereqs.sh:source:64       (B[m PACKAGES='apache2
+2023-05-16 13:18:54.916 | apache2-dev
+2023-05-16 13:18:54.917 | bc
+2023-05-16 13:18:54.917 | bsdmainutils
+2023-05-16 13:18:54.917 | curl
+2023-05-16 13:18:54.917 | g++
+2023-05-16 13:18:54.917 | gawk
+2023-05-16 13:18:54.918 | gcc
+2023-05-16 13:18:54.918 | gettext  
+2023-05-16 13:18:54.918 | git
+2023-05-16 13:18:54.918 | graphviz 
+2023-05-16 13:18:54.919 | iputils-ping
+2023-05-16 13:18:54.919 | libapache2-mod-proxy-uwsgi
+2023-05-16 13:18:54.919 | libffi-dev 
+2023-05-16 13:18:54.920 | libjpeg-dev 
+2023-05-16 13:18:54.920 | libpcre3-dev 
+2023-05-16 13:18:54.920 | libpq-dev  
+2023-05-16 13:18:54.920 | libssl-dev 
+2023-05-16 13:18:54.921 | libsystemd-dev 
+2023-05-16 13:18:54.921 | libxml2-dev  
+2023-05-16 13:18:54.921 | libxslt1-dev  
+2023-05-16 13:18:54.921 | libyaml-dev
+2023-05-16 13:18:54.922 | lsof 
+2023-05-16 13:18:54.922 | openssh-server
+2023-05-16 13:18:54.922 | openssl
+2023-05-16 13:18:54.922 | pkg-config
+2023-05-16 13:18:54.922 | psmisc
+2023-05-16 13:18:54.923 | python3-dev
+2023-05-16 13:18:54.923 | python3-pip
+2023-05-16 13:18:54.923 | python3-systemd
+2023-05-16 13:18:54.924 | python3-venv
+2023-05-16 13:18:54.924 | tar
+2023-05-16 13:18:54.924 | tcpdump
+2023-05-16 13:18:54.925 | unzip
+2023-05-16 13:18:54.925 | uuid-runtime
+2023-05-16 13:18:54.925 | wget
+2023-05-16 13:18:54.926 | wget
+2023-05-16 13:18:54.926 | zlib1g-dev
+2023-05-16 13:18:54.926 | libkrb5-dev
+2023-05-16 13:18:54.927 | libldap2-dev
+2023-05-16 13:18:54.927 | libsasl2-dev
+2023-05-16 13:18:54.927 | memcached
+2023-05-16 13:18:54.927 | python3-mysqldb
+2023-05-16 13:18:54.927 | sqlite3
+2023-05-16 13:18:54.927 | conntrack
+2023-05-16 13:18:54.928 | curl
+2023-05-16 13:18:54.928 | ebtables
+2023-05-16 13:18:54.928 | genisoimage 
+2023-05-16 13:18:54.928 | iptables
+2023-05-16 13:18:54.928 | iputils-arping
+2023-05-16 13:18:54.928 | kpartx
+2023-05-16 13:18:54.929 | libjs-jquery-tablesorter 
+2023-05-16 13:18:54.929 | parted
+2023-05-16 13:18:54.929 | pm-utils
+2023-05-16 13:18:54.929 | python3-mysqldb
+2023-05-16 13:18:54.929 | socat 
+2023-05-16 13:18:54.929 | sqlite3
+2023-05-16 13:18:54.929 | sudo
+2023-05-16 13:18:54.930 | vlan
+2023-05-16 13:18:54.930 | lsscsi
+2023-05-16 13:18:54.930 | open-iscsi
+2023-05-16 13:18:54.930 | cryptsetup
+2023-05-16 13:18:54.930 | dosfstools
+2023-05-16 13:18:54.930 | genisoimage
+2023-05-16 13:18:54.930 | gir1.2-libosinfo-1.0
+2023-05-16 13:18:54.931 | netcat-openbsd
+2023-05-16 13:18:54.931 | open-iscsi
+2023-05-16 13:18:54.931 | qemu-utils
+2023-05-16 13:18:54.931 | sg3-utils
+2023-05-16 13:18:54.931 | sysfsutils
+2023-05-16 13:18:54.931 | lvm2
+2023-05-16 13:18:54.931 | qemu-utils
+2023-05-16 13:18:54.932 | thin-provisioning-tools
+2023-05-16 13:18:54.932 | acl
+2023-05-16 13:18:54.932 | dnsmasq-base
+2023-05-16 13:18:54.932 | dnsmasq-utils 
+2023-05-16 13:18:54.932 | ebtables
+2023-05-16 13:18:54.932 | haproxy 
+2023-05-16 13:18:54.933 | iptables
+2023-05-16 13:18:54.933 | iputils-arping
+2023-05-16 13:18:54.933 | iputils-ping
+2023-05-16 13:18:54.933 | postgresql-server-dev-all
+2023-05-16 13:18:54.933 | python3-mysqldb
+2023-05-16 13:18:54.933 | sqlite3
+2023-05-16 13:18:54.933 | sudo
+2023-05-16 13:18:54.934 | vlan
+2023-05-16 13:18:54.934 | pcp
+2023-05-16 13:18:54.934 | lvm2
+2023-05-16 13:18:54.934 | qemu-utils
+2023-05-16 13:18:54.934 | thin-provisioning-tools
+2023-05-16 13:18:54.934 | curl
+2023-05-16 13:18:54.934 | liberasurecode-dev
+2023-05-16 13:18:54.935 | make
+2023-05-16 13:18:54.935 | memcached
+2023-05-16 13:18:54.935 | rsync
+2023-05-16 13:18:54.935 | sqlite3
+2023-05-16 13:18:54.935 | xfsprogs'
+2023-05-16 13:18:54.939 | +++[3242mtools/install_prereqs.sh:source:65       (B[m get_plugin_packages
+2023-05-16 13:18:54.995 | ++[3242mtools/install_prereqs.sh:source:65       (B[m PACKAGES='apache2
+2023-05-16 13:18:54.995 | apache2-dev
+2023-05-16 13:18:54.995 | bc
+2023-05-16 13:18:54.996 | bsdmainutils
+2023-05-16 13:18:54.996 | curl
+2023-05-16 13:18:54.996 | g++
+2023-05-16 13:18:54.996 | gawk
+2023-05-16 13:18:54.997 | gcc
+2023-05-16 13:18:54.997 | gettext  
+2023-05-16 13:18:54.997 | git
+2023-05-16 13:18:54.997 | graphviz 
+2023-05-16 13:18:54.997 | iputils-ping
+2023-05-16 13:18:54.998 | libapache2-mod-proxy-uwsgi
+2023-05-16 13:18:54.998 | libffi-dev 
+2023-05-16 13:18:54.998 | libjpeg-dev 
+2023-05-16 13:18:54.998 | libpcre3-dev 
+2023-05-16 13:18:54.999 | libpq-dev  
+2023-05-16 13:18:54.999 | libssl-dev 
+2023-05-16 13:18:54.999 | libsystemd-dev 
+2023-05-16 13:18:54.999 | libxml2-dev  
+2023-05-16 13:18:55.000 | libxslt1-dev  
+2023-05-16 13:18:55.000 | libyaml-dev
+2023-05-16 13:18:55.000 | lsof 
+2023-05-16 13:18:55.000 | openssh-server
+2023-05-16 13:18:55.001 | openssl
+2023-05-16 13:18:55.001 | pkg-config
+2023-05-16 13:18:55.001 | psmisc
+2023-05-16 13:18:55.001 | python3-dev
+2023-05-16 13:18:55.001 | python3-pip
+2023-05-16 13:18:55.002 | python3-systemd
+2023-05-16 13:18:55.002 | python3-venv
+2023-05-16 13:18:55.002 | tar
+2023-05-16 13:18:55.002 | tcpdump
+2023-05-16 13:18:55.002 | unzip
+2023-05-16 13:18:55.003 | uuid-runtime
+2023-05-16 13:18:55.003 | wget
+2023-05-16 13:18:55.003 | wget
+2023-05-16 13:18:55.003 | zlib1g-dev
+2023-05-16 13:18:55.003 | libkrb5-dev
+2023-05-16 13:18:55.003 | libldap2-dev
+2023-05-16 13:18:55.004 | libsasl2-dev
+2023-05-16 13:18:55.004 | memcached
+2023-05-16 13:18:55.004 | python3-mysqldb
+2023-05-16 13:18:55.004 | sqlite3
+2023-05-16 13:18:55.004 | conntrack
+2023-05-16 13:18:55.005 | curl
+2023-05-16 13:18:55.005 | ebtables
+2023-05-16 13:18:55.005 | genisoimage 
+2023-05-16 13:18:55.005 | iptables
+2023-05-16 13:18:55.005 | iputils-arping
+2023-05-16 13:18:55.006 | kpartx
+2023-05-16 13:18:55.006 | libjs-jquery-tablesorter 
+2023-05-16 13:18:55.006 | parted
+2023-05-16 13:18:55.006 | pm-utils
+2023-05-16 13:18:55.006 | python3-mysqldb
+2023-05-16 13:18:55.006 | socat 
+2023-05-16 13:18:55.007 | sqlite3
+2023-05-16 13:18:55.007 | sudo
+2023-05-16 13:18:55.007 | vlan
+2023-05-16 13:18:55.007 | lsscsi
+2023-05-16 13:18:55.007 | open-iscsi
+2023-05-16 13:18:55.007 | cryptsetup
+2023-05-16 13:18:55.008 | dosfstools
+2023-05-16 13:18:55.008 | genisoimage
+2023-05-16 13:18:55.008 | gir1.2-libosinfo-1.0
+2023-05-16 13:18:55.008 | netcat-openbsd
+2023-05-16 13:18:55.008 | open-iscsi
+2023-05-16 13:18:55.008 | qemu-utils
+2023-05-16 13:18:55.008 | sg3-utils
+2023-05-16 13:18:55.008 | sysfsutils
+2023-05-16 13:18:55.009 | lvm2
+2023-05-16 13:18:55.009 | qemu-utils
+2023-05-16 13:18:55.009 | thin-provisioning-tools
+2023-05-16 13:18:55.009 | acl
+2023-05-16 13:18:55.009 | dnsmasq-base
+2023-05-16 13:18:55.009 | dnsmasq-utils 
+2023-05-16 13:18:55.009 | ebtables
+2023-05-16 13:18:55.009 | haproxy 
+2023-05-16 13:18:55.009 | iptables
+2023-05-16 13:18:55.009 | iputils-arping
+2023-05-16 13:18:55.010 | iputils-ping
+2023-05-16 13:18:55.010 | postgresql-server-dev-all
+2023-05-16 13:18:55.010 | python3-mysqldb
+2023-05-16 13:18:55.010 | sqlite3
+2023-05-16 13:18:55.010 | sudo
+2023-05-16 13:18:55.010 | vlan
+2023-05-16 13:18:55.010 | pcp
+2023-05-16 13:18:55.010 | lvm2
+2023-05-16 13:18:55.010 | qemu-utils
+2023-05-16 13:18:55.011 | thin-provisioning-tools
+2023-05-16 13:18:55.011 | curl
+2023-05-16 13:18:55.011 | liberasurecode-dev
+2023-05-16 13:18:55.011 | make
+2023-05-16 13:18:55.011 | memcached
+2023-05-16 13:18:55.011 | rsync
+2023-05-16 13:18:55.011 | sqlite3
+2023-05-16 13:18:55.011 | xfsprogs '
+2023-05-16 13:18:55.012 | ++[3242mtools/install_prereqs.sh:source:67       (B[m is_ubuntu
+2023-05-16 13:18:55.013 | ++[3242mfunctions-common:is_ubuntu:575           (B[m [[ -z deb ]]
+2023-05-16 13:18:55.021 | ++[3242mfunctions-common:is_ubuntu:578           (B[m '[' deb = deb ']'
+2023-05-16 13:18:55.031 | ++[3242mtools/install_prereqs.sh:source:67       (B[m grep -q dkms
+2023-05-16 13:18:55.033 | ++[3242mtools/install_prereqs.sh:source:67       (B[m echo apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libapache2-mod-proxy-uwsgi libffi-dev libjpeg-dev libpcre3-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools curl liberasurecode-dev make memcached rsync sqlite3 xfsprogs
+2023-05-16 13:18:55.041 | ++[3242mtools/install_prereqs.sh:source:72       (B[m install_package apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libapache2-mod-proxy-uwsgi libffi-dev libjpeg-dev libpcre3-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools curl liberasurecode-dev make memcached rsync sqlite3 xfsprogs
+2023-05-16 13:18:55.051 | ++[3242mfunctions-common:install_package:1457    (B[m update_package_repo
+2023-05-16 13:18:55.062 | ++[3242mfunctions-common:update_package_repo:1429 (B[m NO_UPDATE_REPOS=False
+2023-05-16 13:18:55.073 | ++[3242mfunctions-common:update_package_repo:1430 (B[m REPOS_UPDATED=False
+2023-05-16 13:18:55.084 | ++[3242mfunctions-common:update_package_repo:1431 (B[m RETRY_UPDATE=False
+2023-05-16 13:18:55.095 | ++[3242mfunctions-common:update_package_repo:1433 (B[m [[ False = \T\r\u\e ]]
+2023-05-16 13:18:55.107 | ++[3242mfunctions-common:update_package_repo:1437 (B[m is_ubuntu
+2023-05-16 13:18:55.118 | ++[3242mfunctions-common:is_ubuntu:575           (B[m [[ -z deb ]]
+2023-05-16 13:18:55.129 | ++[3242mfunctions-common:is_ubuntu:578           (B[m '[' deb = deb ']'
+2023-05-16 13:18:55.139 | ++[3242mfunctions-common:update_package_repo:1438 (B[m apt_get_update
+2023-05-16 13:18:55.150 | ++[3242mfunctions-common:apt_get_update:1183     (B[m [[ False == \T\r\u\e ]]
+2023-05-16 13:18:55.159 | ++[3242mfunctions-common:apt_get_update:1188     (B[m [[ False = \T\r\u\e ]]
+2023-05-16 13:18:55.170 | ++[3242mfunctions-common:apt_get_update:1190     (B[m local sudo=sudo
+2023-05-16 13:18:55.182 | +++[3242mfunctions-common:apt_get_update:1191     (B[m id -u
+2023-05-16 13:18:55.195 | ++[3242mfunctions-common:apt_get_update:1191     (B[m [[ 1000 = \0 ]]
+2023-05-16 13:18:55.205 | ++[3242mfunctions-common:apt_get_update:1194     (B[m time_start apt-get-update
+2023-05-16 13:18:55.216 | ++[3242mfunctions-common:time_start:2419         (B[m local name=apt-get-update
+2023-05-16 13:18:55.227 | ++[3242mfunctions-common:time_start:2420         (B[m local start_time=
+2023-05-16 13:18:55.238 | ++[3242mfunctions-common:time_start:2421         (B[m [[ -n '' ]]
+2023-05-16 13:18:55.250 | +++[3242mfunctions-common:time_start:2424         (B[m date +%s%3N
+2023-05-16 13:18:55.264 | ++[3242mfunctions-common:time_start:2424         (B[m _TIME_START[$name]=1684243135252
+2023-05-16 13:18:55.275 | ++[3242mfunctions-common:apt_get_update:1196     (B[m local 'proxies=http_proxy=http://16.85.88.10:8080 https_proxy=http://16.85.88.10:8080 no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5 '
+2023-05-16 13:18:55.285 | ++[3242mfunctions-common:apt_get_update:1197     (B[m local 'update_cmd=sudo http_proxy=http://16.85.88.10:8080 https_proxy=http://16.85.88.10:8080 no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5  apt-get update'
+2023-05-16 13:18:55.294 | ++[3242mfunctions-common:apt_get_update:1198     (B[m timeout 300 sh -c 'while ! sudo http_proxy=http://16.85.88.10:8080 https_proxy=http://16.85.88.10:8080 no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5  apt-get update; do sleep 30; done'
+2023-05-16 13:19:02.476 | Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+2023-05-16 13:19:02.481 | Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+2023-05-16 13:19:02.659 | Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+2023-05-16 13:19:03.350 | Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+2023-05-16 13:19:03.860 | Fetched 336 kB in 8s (40.8 kB/s)
+2023-05-16 13:19:04.933 | Reading package lists...
+2023-05-16 13:19:04.984 | ++[3242mfunctions-common:apt_get_update:1202     (B[m REPOS_UPDATED=True
+2023-05-16 13:19:04.995 | ++[3242mfunctions-common:apt_get_update:1204     (B[m time_stop apt-get-update
+2023-05-16 13:19:05.006 | ++[3242mfunctions-common:time_stop:2433          (B[m local name
+2023-05-16 13:19:05.015 | ++[3242mfunctions-common:time_stop:2434          (B[m local end_time
+2023-05-16 13:19:05.024 | ++[3242mfunctions-common:time_stop:2435          (B[m local elapsed_time
+2023-05-16 13:19:05.033 | ++[3242mfunctions-common:time_stop:2436          (B[m local total
+2023-05-16 13:19:05.043 | ++[3242mfunctions-common:time_stop:2437          (B[m local start_time
+2023-05-16 13:19:05.054 | ++[3242mfunctions-common:time_stop:2439          (B[m name=apt-get-update
+2023-05-16 13:19:05.065 | ++[3242mfunctions-common:time_stop:2440          (B[m start_time=1684243135252
+2023-05-16 13:19:05.076 | ++[3242mfunctions-common:time_stop:2442          (B[m [[ -z 1684243135252 ]]
+2023-05-16 13:19:05.087 | +++[3242mfunctions-common:time_stop:2445          (B[m date +%s%3N
+2023-05-16 13:19:05.099 | ++[3242mfunctions-common:time_stop:2445          (B[m end_time=1684243145089
+2023-05-16 13:19:05.108 | ++[3242mfunctions-common:time_stop:2446          (B[m elapsed_time=9837
+2023-05-16 13:19:05.119 | ++[3242mfunctions-common:time_stop:2447          (B[m total=0
+2023-05-16 13:19:05.128 | ++[3242mfunctions-common:time_stop:2449          (B[m _TIME_START[$name]=
+2023-05-16 13:19:05.137 | ++[3242mfunctions-common:time_stop:2450          (B[m _TIME_TOTAL[$name]=9837
+2023-05-16 13:19:05.149 | ++[3242mfunctions-common:install_package:1458    (B[m real_install_package apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libapache2-mod-proxy-uwsgi libffi-dev libjpeg-dev libpcre3-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools curl liberasurecode-dev make memcached rsync sqlite3 xfsprogs
+2023-05-16 13:19:05.160 | ++[3242mfunctions-common:real_install_package:1443 (B[m is_ubuntu
+2023-05-16 13:19:05.171 | ++[3242mfunctions-common:is_ubuntu:575           (B[m [[ -z deb ]]
+2023-05-16 13:19:05.182 | ++[3242mfunctions-common:is_ubuntu:578           (B[m '[' deb = deb ']'
+2023-05-16 13:19:05.192 | ++[3242mfunctions-common:real_install_package:1444 (B[m apt_get install apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libapache2-mod-proxy-uwsgi libffi-dev libjpeg-dev libpcre3-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools curl liberasurecode-dev make memcached rsync sqlite3 xfsprogs
+2023-05-16 13:19:05.259 | ++[3242mfunctions-common:apt_get:1224            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://16.85.88.10:8080 https_proxy=http://16.85.88.10:8080 no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5 apt-get --option Dpkg::Options::=--force-confold --assume-yes install apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libapache2-mod-proxy-uwsgi libffi-dev libjpeg-dev libpcre3-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools curl liberasurecode-dev make memcached rsync sqlite3 xfsprogs
+2023-05-16 13:19:05.359 | Reading package lists...
+2023-05-16 13:19:05.558 | Building dependency tree...
+2023-05-16 13:19:05.559 | Reading state information...
+2023-05-16 13:19:05.580 | acl is already the newest version (2.2.53-6).
+2023-05-16 13:19:05.580 | bc is already the newest version (1.07.1-2build1).
+2023-05-16 13:19:05.581 | bsdmainutils is already the newest version (11.1.2ubuntu3).
+2023-05-16 13:19:05.581 | conntrack is already the newest version (1:1.4.5-2).
+2023-05-16 13:19:05.581 | dosfstools is already the newest version (4.1-2).
+2023-05-16 13:19:05.581 | ebtables is already the newest version (2.0.11-3build1).
+2023-05-16 13:19:05.581 | g++ is already the newest version (4:9.3.0-1ubuntu2).
+2023-05-16 13:19:05.581 | gawk is already the newest version (1:5.0.1+dfsg-1).
+2023-05-16 13:19:05.581 | gcc is already the newest version (4:9.3.0-1ubuntu2).
+2023-05-16 13:19:05.581 | genisoimage is already the newest version (9:1.1.11-3.1ubuntu1).
+2023-05-16 13:19:05.581 | gettext is already the newest version (0.19.8.1-10build1).
+2023-05-16 13:19:05.581 | iptables is already the newest version (1.8.4-3ubuntu2).
+2023-05-16 13:19:05.581 | iputils-arping is already the newest version (3:20190709-3).
+2023-05-16 13:19:05.581 | iputils-ping is already the newest version (3:20190709-3).
+2023-05-16 13:19:05.581 | liberasurecode-dev is already the newest version (1.6.1-4).
+2023-05-16 13:19:05.581 | libffi-dev is already the newest version (3.3-4).
+2023-05-16 13:19:05.581 | libjpeg-dev is already the newest version (8c-2ubuntu8).
+2023-05-16 13:19:05.581 | libyaml-dev is already the newest version (0.2.2-1).
+2023-05-16 13:19:05.581 | lsscsi is already the newest version (0.30-0.1).
+2023-05-16 13:19:05.581 | lvm2 is already the newest version (2.03.07-1ubuntu1).
+2023-05-16 13:19:05.581 | make is already the newest version (4.2.1-1.2).
+2023-05-16 13:19:05.581 | netcat-openbsd is already the newest version (1.206-1ubuntu1).
+2023-05-16 13:19:05.581 | pkg-config is already the newest version (0.29.1-0ubuntu4).
+2023-05-16 13:19:05.581 | psmisc is already the newest version (23.3-1).
+2023-05-16 13:19:05.581 | python3-dev is already the newest version (3.8.2-0ubuntu2).
+2023-05-16 13:19:05.581 | python3-mysqldb is already the newest version (1.4.4-2build1).
+2023-05-16 13:19:05.581 | python3-systemd is already the newest version (234-3build2).
+2023-05-16 13:19:05.581 | sg3-utils is already the newest version (1.44-1ubuntu2).
+2023-05-16 13:19:05.581 | socat is already the newest version (1.7.3.3-2).
+2023-05-16 13:19:05.581 | sysfsutils is already the newest version (2.1.0+repack-6).
+2023-05-16 13:19:05.581 | thin-provisioning-tools is already the newest version (0.8.5-4build1).
+2023-05-16 13:19:05.581 | xfsprogs is already the newest version (5.3.0-1ubuntu2).
+2023-05-16 13:19:05.581 | gir1.2-libosinfo-1.0 is already the newest version (1.7.1-1).
+2023-05-16 13:19:05.582 | graphviz is already the newest version (2.42.2-3build2).
+2023-05-16 13:19:05.582 | libjs-jquery-tablesorter is already the newest version (1:2.31.1+dfsg1-1).
+2023-05-16 13:19:05.582 | pcp is already the newest version (5.0.3-1).
+2023-05-16 13:19:05.582 | pm-utils is already the newest version (1.4.1-19).
+2023-05-16 13:19:05.582 | python3-venv is already the newest version (3.8.2-0ubuntu2).
+2023-05-16 13:19:05.582 | apache2 is already the newest version (2.4.41-4ubuntu3.14).
+2023-05-16 13:19:05.582 | apache2-dev is already the newest version (2.4.41-4ubuntu3.14).
+2023-05-16 13:19:05.582 | cryptsetup is already the newest version (2:2.2.2-3ubuntu2.4).
+2023-05-16 13:19:05.582 | curl is already the newest version (7.68.0-1ubuntu2.18).
+2023-05-16 13:19:05.582 | dnsmasq-base is already the newest version (2.80-1.1ubuntu1.7).
+2023-05-16 13:19:05.582 | dnsmasq-utils is already the newest version (2.80-1.1ubuntu1.7).
+2023-05-16 13:19:05.582 | git is already the newest version (1:2.25.1-1ubuntu3.11).
+2023-05-16 13:19:05.582 | haproxy is already the newest version (2.0.31-0ubuntu0.1).
+2023-05-16 13:19:05.582 | kpartx is already the newest version (0.8.3-1ubuntu2.1).
+2023-05-16 13:19:05.582 | libkrb5-dev is already the newest version (1.17-6ubuntu4.3).
+2023-05-16 13:19:05.582 | libldap2-dev is already the newest version (2.4.49+dfsg-2ubuntu1.9).
+2023-05-16 13:19:05.582 | libpcre3-dev is already the newest version (2:8.39-12ubuntu0.1).
+2023-05-16 13:19:05.582 | libpq-dev is already the newest version (12.14-0ubuntu0.20.04.1).
+2023-05-16 13:19:05.582 | libsasl2-dev is already the newest version (2.1.27+dfsg-2ubuntu0.1).
+2023-05-16 13:19:05.582 | libssl-dev is already the newest version (1.1.1f-1ubuntu2.18).
+2023-05-16 13:19:05.582 | libsystemd-dev is already the newest version (245.4-4ubuntu3.21).
+2023-05-16 13:19:05.582 | libxml2-dev is already the newest version (2.9.10+dfsg-5ubuntu0.20.04.6).
+2023-05-16 13:19:05.582 | libxslt1-dev is already the newest version (1.1.34-4ubuntu0.20.04.1).
+2023-05-16 13:19:05.582 | lsof is already the newest version (4.93.2+dfsg-1ubuntu0.20.04.1).
+2023-05-16 13:19:05.582 | memcached is already the newest version (1.5.22-2ubuntu0.2).
+2023-05-16 13:19:05.582 | open-iscsi is already the newest version (2.0.874-7.1ubuntu6.3).
+2023-05-16 13:19:05.582 | openssh-server is already the newest version (1:8.2p1-4ubuntu0.7).
+2023-05-16 13:19:05.582 | openssl is already the newest version (1.1.1f-1ubuntu2.18).
+2023-05-16 13:19:05.582 | parted is already the newest version (3.3-4ubuntu0.20.04.1).
+2023-05-16 13:19:05.582 | qemu-utils is already the newest version (1:4.2-3ubuntu6.26).
+2023-05-16 13:19:05.582 | rsync is already the newest version (3.1.3-8ubuntu0.5).
+2023-05-16 13:19:05.582 | sqlite3 is already the newest version (3.31.1-4ubuntu0.5).
+2023-05-16 13:19:05.583 | sudo is already the newest version (1.8.31-1ubuntu1.5).
+2023-05-16 13:19:05.583 | tar is already the newest version (1.30+dfsg-7ubuntu0.20.04.3).
+2023-05-16 13:19:05.583 | tcpdump is already the newest version (4.9.3-4ubuntu0.2).
+2023-05-16 13:19:05.583 | unzip is already the newest version (6.0-25ubuntu1.1).
+2023-05-16 13:19:05.764 | uuid-runtime is already the newest version (2.34-0.1ubuntu9.3).
+2023-05-16 13:19:05.764 | wget is already the newest version (1.20.3-1ubuntu2).
+2023-05-16 13:19:05.764 | zlib1g-dev is already the newest version (1:1.2.11.dfsg-2ubuntu1.5).
+2023-05-16 13:19:05.764 | libapache2-mod-proxy-uwsgi is already the newest version (2.4.41-4ubuntu3.14).
+2023-05-16 13:19:05.764 | postgresql-server-dev-all is already the newest version (214ubuntu0.1).
+2023-05-16 13:19:05.764 | python3-pip is already the newest version (20.0.2-5ubuntu1.8).
+2023-05-16 13:19:05.764 | vlan is already the newest version (2.0.4ubuntu1.20.04.1).
+2023-05-16 13:19:05.764 | 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2023-05-16 13:19:05.776 | ++[3242mfunctions-common:apt_get:1228            (B[m result=0
+2023-05-16 13:19:05.785 | ++[3242mfunctions-common:apt_get:1231            (B[m time_stop apt-get
+2023-05-16 13:19:05.795 | ++[3242mfunctions-common:time_stop:2433          (B[m local name
+2023-05-16 13:19:05.806 | ++[3242mfunctions-common:time_stop:2434          (B[m local end_time
+2023-05-16 13:19:05.816 | ++[3242mfunctions-common:time_stop:2435          (B[m local elapsed_time
+2023-05-16 13:19:05.828 | ++[3242mfunctions-common:time_stop:2436          (B[m local total
+2023-05-16 13:19:05.840 | ++[3242mfunctions-common:time_stop:2437          (B[m local start_time
+2023-05-16 13:19:05.851 | ++[3242mfunctions-common:time_stop:2439          (B[m name=apt-get
+2023-05-16 13:19:05.861 | ++[3242mfunctions-common:time_stop:2440          (B[m start_time=1684243145247
+2023-05-16 13:19:05.873 | ++[3242mfunctions-common:time_stop:2442          (B[m [[ -z 1684243145247 ]]
+2023-05-16 13:19:05.886 | +++[3242mfunctions-common:time_stop:2445          (B[m date +%s%3N
+2023-05-16 13:19:05.899 | ++[3242mfunctions-common:time_stop:2445          (B[m end_time=1684243145888
+2023-05-16 13:19:05.911 | ++[3242mfunctions-common:time_stop:2446          (B[m elapsed_time=641
+2023-05-16 13:19:05.921 | ++[3242mfunctions-common:time_stop:2447          (B[m total=654
+2023-05-16 13:19:05.934 | ++[3242mfunctions-common:time_stop:2449          (B[m _TIME_START[$name]=
+2023-05-16 13:19:05.945 | ++[3242mfunctions-common:time_stop:2450          (B[m _TIME_TOTAL[$name]=1295
+2023-05-16 13:19:05.955 | ++[3242mfunctions-common:apt_get:1232            (B[m return 0
+2023-05-16 13:19:05.970 | ++[3242mtools/install_prereqs.sh:source:74       (B[m [[ -n False ]]
+2023-05-16 13:19:05.983 | ++[3242mtools/install_prereqs.sh:source:74       (B[m [[ False != \F\a\l\s\e ]]
+2023-05-16 13:19:05.997 | ++[3242mtools/install_prereqs.sh:source:88       (B[m date +%s
+2023-05-16 13:19:06.015 | ++[3242mtools/install_prereqs.sh:source:89       (B[m date
+2023-05-16 13:19:06.030 | +[3242m./stack.sh:main:801                      (B[m [[ False != \T\r\u\e ]]
+2023-05-16 13:19:06.043 | +[3242m./stack.sh:main:802                      (B[m PYPI_ALTERNATIVE_URL=
+2023-05-16 13:19:06.057 | +[3242m./stack.sh:main:802                      (B[m /opt/stack/devstack/tools/install_pip.sh
+2023-05-16 13:19:06.562 | +[3242mtools/install_pip.sh:main:25             (B[m FILES=/opt/stack/devstack/files
+2023-05-16 13:19:06.573 | +[3242mtools/install_pip.sh:main:40             (B[m PIP_GET_PIP_URL=https://bootstrap.pypa.io/get-pip.py
+2023-05-16 13:19:06.581 | +[3242mtools/install_pip.sh:main:41             (B[m PIP_GET_PIP36_URL=https://bootstrap.pypa.io/pip/3.6/get-pip.py
+2023-05-16 13:19:06.592 | +[3242mtools/install_pip.sh:main:43             (B[m GetDistro
+2023-05-16 13:19:06.601 | +[3242mfunctions-common:GetDistro:449           (B[m GetOSVersion
+2023-05-16 13:19:06.611 | +[3242mfunctions-common:GetOSVersion:416        (B[m source /etc/os-release
+2023-05-16 13:19:06.620 | ++[3242m/etc/os-release:source:1                 (B[m NAME=Ubuntu
+2023-05-16 13:19:06.629 | ++[3242m/etc/os-release:source:2                 (B[m VERSION='20.04.6 LTS (Focal Fossa)'
+2023-05-16 13:19:06.638 | ++[3242m/etc/os-release:source:3                 (B[m ID=ubuntu
+2023-05-16 13:19:06.648 | ++[3242m/etc/os-release:source:4                 (B[m ID_LIKE=debian
+2023-05-16 13:19:06.658 | ++[3242m/etc/os-release:source:5                 (B[m PRETTY_NAME='Ubuntu 20.04.6 LTS'
+2023-05-16 13:19:06.666 | ++[3242m/etc/os-release:source:6                 (B[m VERSION_ID=20.04
+2023-05-16 13:19:06.679 | ++[3242m/etc/os-release:source:7                 (B[m HOME_URL=https://www.ubuntu.com/
+2023-05-16 13:19:06.689 | ++[3242m/etc/os-release:source:8                 (B[m SUPPORT_URL=https://help.ubuntu.com/
+2023-05-16 13:19:06.700 | ++[3242m/etc/os-release:source:9                 (B[m BUG_REPORT_URL=https://bugs.launchpad.net/ubuntu/
+2023-05-16 13:19:06.711 | ++[3242m/etc/os-release:source:10                (B[m PRIVACY_POLICY_URL=https://www.ubuntu.com/legal/terms-and-policies/privacy-policy
+2023-05-16 13:19:06.720 | ++[3242m/etc/os-release:source:11                (B[m VERSION_CODENAME=focal
+2023-05-16 13:19:06.729 | ++[3242m/etc/os-release:source:12                (B[m UBUNTU_CODENAME=focal
+2023-05-16 13:19:06.739 | +[3242mfunctions-common:GetOSVersion:417        (B[m [[ ubuntu20.04.6 LTS (Focal Fossa) == \c\e\n\t\o\s\9 ]]
+2023-05-16 13:19:06.749 | +[3242mfunctions-common:GetOSVersion:421        (B[m [[ ubuntu20.04.6 LTS (Focal Fossa) =~ rocky9 ]]
+2023-05-16 13:19:06.760 | +[3242mfunctions-common:GetOSVersion:425        (B[m _ensure_lsb_release
+2023-05-16 13:19:06.770 | ++[3242mfunctions-common:_ensure_lsb_release:393 (B[m command -v lsb_release
+2023-05-16 13:19:06.780 | +[3242mfunctions-common:_ensure_lsb_release:393 (B[m [[ -x /usr/bin/lsb_release ]]
+2023-05-16 13:19:06.789 | +[3242mfunctions-common:_ensure_lsb_release:394 (B[m return
+2023-05-16 13:19:06.800 | ++[3242mfunctions-common:GetOSVersion:427        (B[m lsb_release -r -s
+2023-05-16 13:19:06.861 | +[3242mfunctions-common:GetOSVersion:427        (B[m os_RELEASE=20.04
+2023-05-16 13:19:06.871 | ++[3242mfunctions-common:GetOSVersion:428        (B[m lsb_release -c -s
+2023-05-16 13:19:06.930 | +[3242mfunctions-common:GetOSVersion:428        (B[m os_CODENAME=focal
+2023-05-16 13:19:06.939 | ++[3242mfunctions-common:GetOSVersion:429        (B[m lsb_release -i -s
+2023-05-16 13:19:06.994 | +[3242mfunctions-common:GetOSVersion:429        (B[m os_VENDOR=Ubuntu
+2023-05-16 13:19:06.999 | +[3242mfunctions-common:GetOSVersion:432        (B[m [[ Ubuntu =~ (Debian|Ubuntu) ]]
+2023-05-16 13:19:07.004 | +[3242mfunctions-common:GetOSVersion:433        (B[m os_PACKAGE=deb
+2023-05-16 13:19:07.010 | +[3242mfunctions-common:GetOSVersion:438        (B[m typeset -xr os_VENDOR
+2023-05-16 13:19:07.018 | +[3242mfunctions-common:GetOSVersion:439        (B[m typeset -xr os_RELEASE
+2023-05-16 13:19:07.026 | +[3242mfunctions-common:GetOSVersion:440        (B[m typeset -xr os_PACKAGE
+2023-05-16 13:19:07.035 | +[3242mfunctions-common:GetOSVersion:441        (B[m typeset -xr os_CODENAME
+2023-05-16 13:19:07.043 | +[3242mfunctions-common:GetDistro:450           (B[m [[ Ubuntu =~ (Ubuntu) ]]
+2023-05-16 13:19:07.054 | +[3242mfunctions-common:GetDistro:453           (B[m DISTRO=focal
+2023-05-16 13:19:07.062 | +[3242mfunctions-common:GetDistro:501           (B[m typeset -xr DISTRO
+2023-05-16 13:19:07.071 | +[3242mtools/install_pip.sh:main:44             (B[m echo 'Distro: focal'
+2023-05-16 13:19:07.071 | Distro: focal
+2023-05-16 13:19:07.080 | +[3242mtools/install_pip.sh:main:124            (B[m get_versions
+2023-05-16 13:19:07.090 | ++[3242mtools/install_pip.sh:get_versions:49     (B[m which pip
+2023-05-16 13:19:07.103 | +[3242mtools/install_pip.sh:get_versions:49     (B[m PIP=/usr/bin/pip
+2023-05-16 13:19:07.114 | +[3242mtools/install_pip.sh:get_versions:50     (B[m [[ -n /usr/bin/pip ]]
+2023-05-16 13:19:07.124 | ++[3242mtools/install_pip.sh:get_versions:51     (B[m awk '{ print $2}'
+2023-05-16 13:19:07.125 | ++[3242mtools/install_pip.sh:get_versions:51     (B[m /usr/bin/pip --version
+2023-05-16 13:19:07.708 | Traceback (most recent call last):
+2023-05-16 13:19:07.708 |   File "/usr/bin/pip", line 11, in <module>
+2023-05-16 13:19:07.708 |     load_entry_point('pip==20.0.2', 'console_scripts', 'pip')()
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 490, in load_entry_point
+2023-05-16 13:19:07.708 |     return get_distribution(dist).load_entry_point(group, name)
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2854, in load_entry_point
+2023-05-16 13:19:07.708 |     return ep.load()
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2445, in load
+2023-05-16 13:19:07.708 |     return self.resolve()
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2451, in resolve
+2023-05-16 13:19:07.708 |     module = __import__(self.module_name, fromlist=['__name__'], level=0)
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main.py", line 10, in <module>
+2023-05-16 13:19:07.708 |     from pip._internal.cli.autocompletion import autocomplete
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/autocompletion.py", line 9, in <module>
+2023-05-16 13:19:07.708 |     from pip._internal.cli.main_parser import create_main_parser
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main_parser.py", line 7, in <module>
+2023-05-16 13:19:07.708 |     from pip._internal.cli import cmdoptions
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/cmdoptions.py", line 24, in <module>
+2023-05-16 13:19:07.708 |     from pip._internal.exceptions import CommandError
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_internal/exceptions.py", line 10, in <module>
+2023-05-16 13:19:07.708 |     from pip._vendor.six import iteritems
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 65, in <module>
+2023-05-16 13:19:07.708 |     vendored("cachecontrol")
+2023-05-16 13:19:07.708 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 36, in vendored
+2023-05-16 13:19:07.708 |     __import__(modulename, globals(), locals(), level=0)
+2023-05-16 13:19:07.708 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.708 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.709 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.709 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/__init__.py", line 9, in <module>
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.709 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.709 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/wrapper.py", line 1, in <module>
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.709 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.709 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/adapter.py", line 5, in <module>
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.709 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.709 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.709 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.709 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.709 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:07.709 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:07.710 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:07.710 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:07.710 |     class X509StoreFlags(object):
+2023-05-16 13:19:07.710 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:07.710 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:07.710 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:07.714 | Error in sys.excepthook:
+2023-05-16 13:19:07.714 | Traceback (most recent call last):
+2023-05-16 13:19:07.714 |   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 72, in apport_excepthook
+2023-05-16 13:19:07.714 |     from apport.fileutils import likely_packaged, get_recent_crashes
+2023-05-16 13:19:07.714 |   File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+2023-05-16 13:19:07.714 |     from apport.report import Report
+2023-05-16 13:19:07.714 |   File "/usr/lib/python3/dist-packages/apport/report.py", line 32, in <module>
+2023-05-16 13:19:07.714 |     import apport.fileutils
+2023-05-16 13:19:07.714 |   File "/usr/lib/python3/dist-packages/apport/fileutils.py", line 12, in <module>
+2023-05-16 13:19:07.714 |     import os, glob, subprocess, os.path, time, pwd, sys, requests_unixsocket
+2023-05-16 13:19:07.714 |   File "/usr/lib/python3/dist-packages/requests_unixsocket/__init__.py", line 1, in <module>
+2023-05-16 13:19:07.714 |     import requests
+2023-05-16 13:19:07.714 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.714 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.714 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.714 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.714 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.714 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:07.714 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.714 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.715 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.715 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.715 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.715 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:07.715 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:07.715 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:07.715 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:07.715 |     class X509StoreFlags(object):
+2023-05-16 13:19:07.715 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:07.715 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:07.715 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:07.725 | 
+2023-05-16 13:19:07.725 | Original exception was:
+2023-05-16 13:19:07.725 | Traceback (most recent call last):
+2023-05-16 13:19:07.725 |   File "/usr/bin/pip", line 11, in <module>
+2023-05-16 13:19:07.725 |     load_entry_point('pip==20.0.2', 'console_scripts', 'pip')()
+2023-05-16 13:19:07.725 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 490, in load_entry_point
+2023-05-16 13:19:07.725 |     return get_distribution(dist).load_entry_point(group, name)
+2023-05-16 13:19:07.725 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2854, in load_entry_point
+2023-05-16 13:19:07.725 |     return ep.load()
+2023-05-16 13:19:07.725 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2445, in load
+2023-05-16 13:19:07.725 |     return self.resolve()
+2023-05-16 13:19:07.725 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2451, in resolve
+2023-05-16 13:19:07.725 |     module = __import__(self.module_name, fromlist=['__name__'], level=0)
+2023-05-16 13:19:07.725 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main.py", line 10, in <module>
+2023-05-16 13:19:07.726 |     from pip._internal.cli.autocompletion import autocomplete
+2023-05-16 13:19:07.726 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/autocompletion.py", line 9, in <module>
+2023-05-16 13:19:07.726 |     from pip._internal.cli.main_parser import create_main_parser
+2023-05-16 13:19:07.726 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main_parser.py", line 7, in <module>
+2023-05-16 13:19:07.726 |     from pip._internal.cli import cmdoptions
+2023-05-16 13:19:07.726 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/cmdoptions.py", line 24, in <module>
+2023-05-16 13:19:07.726 |     from pip._internal.exceptions import CommandError
+2023-05-16 13:19:07.726 |   File "/usr/lib/python3/dist-packages/pip/_internal/exceptions.py", line 10, in <module>
+2023-05-16 13:19:07.726 |     from pip._vendor.six import iteritems
+2023-05-16 13:19:07.726 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 65, in <module>
+2023-05-16 13:19:07.726 |     vendored("cachecontrol")
+2023-05-16 13:19:07.726 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 36, in vendored
+2023-05-16 13:19:07.726 |     __import__(modulename, globals(), locals(), level=0)
+2023-05-16 13:19:07.726 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.726 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.726 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.726 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.726 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.726 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/__init__.py", line 9, in <module>
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.727 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.727 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/wrapper.py", line 1, in <module>
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.727 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.727 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/adapter.py", line 5, in <module>
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.727 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.728 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.728 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:07.728 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:07.728 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:07.728 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:07.728 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:07.728 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:07.728 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:07.728 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:07.728 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:07.728 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:07.728 |     class X509StoreFlags(object):
+2023-05-16 13:19:07.728 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:07.728 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:07.728 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:07.759 | +[3242mtools/install_pip.sh:get_versions:51     (B[m PIP_VERSION=
+2023-05-16 13:19:07.767 | +[3242mtools/install_pip.sh:get_versions:52     (B[m echo 'pip: '
+2023-05-16 13:19:07.768 | pip: 
+2023-05-16 13:19:07.774 | +[3242mtools/install_pip.sh:main:126            (B[m [[ -n '' ]]
+2023-05-16 13:19:07.780 | +[3242mtools/install_pip.sh:main:130            (B[m is_fedora
+2023-05-16 13:19:07.787 | +[3242mfunctions-common:is_fedora:525           (B[m [[ -z Ubuntu ]]
+2023-05-16 13:19:07.794 | +[3242mfunctions-common:is_fedora:529           (B[m '[' Ubuntu = Fedora ']'
+2023-05-16 13:19:07.803 | +[3242mfunctions-common:is_fedora:529           (B[m '[' Ubuntu = 'Red Hat' ']'
+2023-05-16 13:19:07.810 | +[3242mfunctions-common:is_fedora:530           (B[m '[' Ubuntu = openEuler ']'
+2023-05-16 13:19:07.818 | +[3242mfunctions-common:is_fedora:531           (B[m '[' Ubuntu = RedHatEnterpriseServer ']'
+2023-05-16 13:19:07.826 | +[3242mfunctions-common:is_fedora:532           (B[m '[' Ubuntu = RedHatEnterprise ']'
+2023-05-16 13:19:07.834 | +[3242mfunctions-common:is_fedora:533           (B[m '[' Ubuntu = Rocky ']'
+2023-05-16 13:19:07.842 | +[3242mfunctions-common:is_fedora:534           (B[m '[' Ubuntu = CentOS ']'
+2023-05-16 13:19:07.851 | +[3242mfunctions-common:is_fedora:534           (B[m '[' Ubuntu = CentOSStream ']'
+2023-05-16 13:19:07.860 | +[3242mfunctions-common:is_fedora:535           (B[m '[' Ubuntu = AlmaLinux ']'
+2023-05-16 13:19:07.869 | +[3242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = OracleServer ']'
+2023-05-16 13:19:07.878 | +[3242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = Virtuozzo ']'
+2023-05-16 13:19:07.886 | +[3242mtools/install_pip.sh:main:141            (B[m is_ubuntu
+2023-05-16 13:19:07.894 | +[3242mfunctions-common:is_ubuntu:575           (B[m [[ -z deb ]]
+2023-05-16 13:19:07.903 | +[3242mfunctions-common:is_ubuntu:578           (B[m '[' deb = deb ']'
+2023-05-16 13:19:07.912 | +[3242mtools/install_pip.sh:main:144            (B[m sed -i -e /setuptools/d /opt/stack/requirements/upper-constraints.txt
+2023-05-16 13:19:07.925 | +[3242mtools/install_pip.sh:main:153            (B[m set -x
+2023-05-16 13:19:07.934 | +[3242mtools/install_pip.sh:main:156            (B[m get_versions
+2023-05-16 13:19:07.944 | ++[3242mtools/install_pip.sh:get_versions:49     (B[m which pip
+2023-05-16 13:19:07.956 | +[3242mtools/install_pip.sh:get_versions:49     (B[m PIP=/usr/bin/pip
+2023-05-16 13:19:07.965 | +[3242mtools/install_pip.sh:get_versions:50     (B[m [[ -n /usr/bin/pip ]]
+2023-05-16 13:19:07.977 | ++[3242mtools/install_pip.sh:get_versions:51     (B[m /usr/bin/pip --version
+2023-05-16 13:19:07.977 | ++[3242mtools/install_pip.sh:get_versions:51     (B[m awk '{ print $2}'
+2023-05-16 13:19:08.514 | Traceback (most recent call last):
+2023-05-16 13:19:08.514 |   File "/usr/bin/pip", line 11, in <module>
+2023-05-16 13:19:08.515 |     load_entry_point('pip==20.0.2', 'console_scripts', 'pip')()
+2023-05-16 13:19:08.515 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 490, in load_entry_point
+2023-05-16 13:19:08.515 |     return get_distribution(dist).load_entry_point(group, name)
+2023-05-16 13:19:08.516 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2854, in load_entry_point
+2023-05-16 13:19:08.516 |     return ep.load()
+2023-05-16 13:19:08.516 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2445, in load
+2023-05-16 13:19:08.517 |     return self.resolve()
+2023-05-16 13:19:08.517 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2451, in resolve
+2023-05-16 13:19:08.517 |     module = __import__(self.module_name, fromlist=['__name__'], level=0)
+2023-05-16 13:19:08.517 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main.py", line 10, in <module>
+2023-05-16 13:19:08.517 |     from pip._internal.cli.autocompletion import autocomplete
+2023-05-16 13:19:08.517 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/autocompletion.py", line 9, in <module>
+2023-05-16 13:19:08.518 |     from pip._internal.cli.main_parser import create_main_parser
+2023-05-16 13:19:08.518 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main_parser.py", line 7, in <module>
+2023-05-16 13:19:08.518 |     from pip._internal.cli import cmdoptions
+2023-05-16 13:19:08.518 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/cmdoptions.py", line 24, in <module>
+2023-05-16 13:19:08.518 |     from pip._internal.exceptions import CommandError
+2023-05-16 13:19:08.519 |   File "/usr/lib/python3/dist-packages/pip/_internal/exceptions.py", line 10, in <module>
+2023-05-16 13:19:08.519 |     from pip._vendor.six import iteritems
+2023-05-16 13:19:08.519 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 65, in <module>
+2023-05-16 13:19:08.519 |     vendored("cachecontrol")
+2023-05-16 13:19:08.519 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 36, in vendored
+2023-05-16 13:19:08.519 |     __import__(modulename, globals(), locals(), level=0)
+2023-05-16 13:19:08.520 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.520 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.520 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.520 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.520 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.520 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/__init__.py", line 9, in <module>
+2023-05-16 13:19:08.520 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.521 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.521 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.521 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.521 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.521 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/wrapper.py", line 1, in <module>
+2023-05-16 13:19:08.521 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.521 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.521 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.522 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.522 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.522 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/adapter.py", line 5, in <module>
+2023-05-16 13:19:08.522 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.522 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.522 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.522 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.522 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.523 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:08.523 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.523 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.523 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.523 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.523 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.523 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:08.523 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:08.524 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:08.524 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:08.524 |     class X509StoreFlags(object):
+2023-05-16 13:19:08.524 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:08.524 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:08.524 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:08.524 | Error in sys.excepthook:
+2023-05-16 13:19:08.525 | Traceback (most recent call last):
+2023-05-16 13:19:08.525 |   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 72, in apport_excepthook
+2023-05-16 13:19:08.525 |     from apport.fileutils import likely_packaged, get_recent_crashes
+2023-05-16 13:19:08.525 |   File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+2023-05-16 13:19:08.525 |     from apport.report import Report
+2023-05-16 13:19:08.525 |   File "/usr/lib/python3/dist-packages/apport/report.py", line 32, in <module>
+2023-05-16 13:19:08.525 |     import apport.fileutils
+2023-05-16 13:19:08.526 |   File "/usr/lib/python3/dist-packages/apport/fileutils.py", line 12, in <module>
+2023-05-16 13:19:08.526 |     import os, glob, subprocess, os.path, time, pwd, sys, requests_unixsocket
+2023-05-16 13:19:08.526 |   File "/usr/lib/python3/dist-packages/requests_unixsocket/__init__.py", line 1, in <module>
+2023-05-16 13:19:08.526 |     import requests
+2023-05-16 13:19:08.526 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.526 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.526 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.527 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.527 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.527 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:08.527 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.527 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.527 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.527 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.528 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.528 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:08.528 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:08.528 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:08.528 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:08.528 |     class X509StoreFlags(object):
+2023-05-16 13:19:08.529 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:08.529 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:08.529 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:08.529 | 
+2023-05-16 13:19:08.529 | Original exception was:
+2023-05-16 13:19:08.529 | Traceback (most recent call last):
+2023-05-16 13:19:08.530 |   File "/usr/bin/pip", line 11, in <module>
+2023-05-16 13:19:08.530 |     load_entry_point('pip==20.0.2', 'console_scripts', 'pip')()
+2023-05-16 13:19:08.530 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 490, in load_entry_point
+2023-05-16 13:19:08.530 |     return get_distribution(dist).load_entry_point(group, name)
+2023-05-16 13:19:08.530 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2854, in load_entry_point
+2023-05-16 13:19:08.530 |     return ep.load()
+2023-05-16 13:19:08.530 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2445, in load
+2023-05-16 13:19:08.530 |     return self.resolve()
+2023-05-16 13:19:08.531 |   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2451, in resolve
+2023-05-16 13:19:08.531 |     module = __import__(self.module_name, fromlist=['__name__'], level=0)
+2023-05-16 13:19:08.531 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main.py", line 10, in <module>
+2023-05-16 13:19:08.531 |     from pip._internal.cli.autocompletion import autocomplete
+2023-05-16 13:19:08.531 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/autocompletion.py", line 9, in <module>
+2023-05-16 13:19:08.531 |     from pip._internal.cli.main_parser import create_main_parser
+2023-05-16 13:19:08.531 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main_parser.py", line 7, in <module>
+2023-05-16 13:19:08.531 |     from pip._internal.cli import cmdoptions
+2023-05-16 13:19:08.531 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/cmdoptions.py", line 24, in <module>
+2023-05-16 13:19:08.532 |     from pip._internal.exceptions import CommandError
+2023-05-16 13:19:08.532 |   File "/usr/lib/python3/dist-packages/pip/_internal/exceptions.py", line 10, in <module>
+2023-05-16 13:19:08.532 |     from pip._vendor.six import iteritems
+2023-05-16 13:19:08.532 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 65, in <module>
+2023-05-16 13:19:08.532 |     vendored("cachecontrol")
+2023-05-16 13:19:08.532 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 36, in vendored
+2023-05-16 13:19:08.532 |     __import__(modulename, globals(), locals(), level=0)
+2023-05-16 13:19:08.532 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.532 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.532 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.532 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.533 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.533 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/__init__.py", line 9, in <module>
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.533 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.533 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/wrapper.py", line 1, in <module>
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.533 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.534 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.534 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/adapter.py", line 5, in <module>
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.534 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.534 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:08.534 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:08.535 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:08.535 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:08.535 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:08.535 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:08.535 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:08.535 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:08.535 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:08.535 |     class X509StoreFlags(object):
+2023-05-16 13:19:08.535 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:08.535 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:08.535 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:08.563 | +[3242mtools/install_pip.sh:get_versions:51     (B[m PIP_VERSION=
+2023-05-16 13:19:08.570 | +[3242mtools/install_pip.sh:get_versions:52     (B[m echo 'pip: '
+2023-05-16 13:19:08.570 | pip: 
+2023-05-16 13:19:08.577 | +[3242m./stack.sh:main:806                      (B[m source /opt/stack/devstack/tools/fixup_stuff.sh
+2023-05-16 13:19:08.586 | ++[3242mtools/fixup_stuff.sh:source:12           (B[m [[ -z /opt/stack/devstack ]]
+2023-05-16 13:19:08.597 | +[3242m./stack.sh:main:807                      (B[m fixup_all
+2023-05-16 13:19:08.607 | +[3242mtools/fixup_stuff.sh:fixup_all:157       (B[m fixup_ubuntu
+2023-05-16 13:19:08.617 | +[3242mtools/fixup_stuff.sh:fixup_ubuntu:141    (B[m is_ubuntu
+2023-05-16 13:19:08.627 | +[3242mfunctions-common:is_ubuntu:575           (B[m [[ -z deb ]]
+2023-05-16 13:19:08.636 | +[3242mfunctions-common:is_ubuntu:578           (B[m '[' deb = deb ']'
+2023-05-16 13:19:08.647 | +[3242mtools/fixup_stuff.sh:fixup_ubuntu:151    (B[m sudo rm -rf '/usr/lib/python3/dist-packages/PyYAML-*.egg-info'
+2023-05-16 13:19:08.672 | +[3242mtools/fixup_stuff.sh:fixup_ubuntu:152    (B[m sudo rm -rf '/usr/lib/python3/dist-packages/pyasn1_modules-*.egg-info'
+2023-05-16 13:19:08.695 | +[3242mtools/fixup_stuff.sh:fixup_ubuntu:153    (B[m sudo rm -rf '/usr/lib/python3/dist-packages/simplejson-*.egg-info'
+2023-05-16 13:19:08.714 | +[3242mtools/fixup_stuff.sh:fixup_all:158       (B[m fixup_fedora
+2023-05-16 13:19:08.722 | +[3242mtools/fixup_stuff.sh:fixup_fedora:33     (B[m is_fedora
+2023-05-16 13:19:08.729 | +[3242mfunctions-common:is_fedora:525           (B[m [[ -z Ubuntu ]]
+2023-05-16 13:19:08.738 | +[3242mfunctions-common:is_fedora:529           (B[m '[' Ubuntu = Fedora ']'
+2023-05-16 13:19:08.748 | +[3242mfunctions-common:is_fedora:529           (B[m '[' Ubuntu = 'Red Hat' ']'
+2023-05-16 13:19:08.756 | +[3242mfunctions-common:is_fedora:530           (B[m '[' Ubuntu = openEuler ']'
+2023-05-16 13:19:08.765 | +[3242mfunctions-common:is_fedora:531           (B[m '[' Ubuntu = RedHatEnterpriseServer ']'
+2023-05-16 13:19:08.776 | +[3242mfunctions-common:is_fedora:532           (B[m '[' Ubuntu = RedHatEnterprise ']'
+2023-05-16 13:19:08.787 | +[3242mfunctions-common:is_fedora:533           (B[m '[' Ubuntu = Rocky ']'
+2023-05-16 13:19:08.799 | +[3242mfunctions-common:is_fedora:534           (B[m '[' Ubuntu = CentOS ']'
+2023-05-16 13:19:08.810 | +[3242mfunctions-common:is_fedora:534           (B[m '[' Ubuntu = CentOSStream ']'
+2023-05-16 13:19:08.821 | +[3242mfunctions-common:is_fedora:535           (B[m '[' Ubuntu = AlmaLinux ']'
+2023-05-16 13:19:08.832 | +[3242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = OracleServer ']'
+2023-05-16 13:19:08.844 | +[3242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = Virtuozzo ']'
+2023-05-16 13:19:08.855 | +[3242mtools/fixup_stuff.sh:fixup_fedora:34     (B[m return
+2023-05-16 13:19:08.867 | +[3242mtools/fixup_stuff.sh:fixup_all:159       (B[m fixup_suse
+2023-05-16 13:19:08.877 | +[3242mtools/fixup_stuff.sh:fixup_suse:94       (B[m is_suse
+2023-05-16 13:19:08.888 | +[3242mfunctions-common:is_suse:544             (B[m is_opensuse
+2023-05-16 13:19:08.899 | +[3242mfunctions-common:is_opensuse:551         (B[m [[ -z Ubuntu ]]
+2023-05-16 13:19:08.909 | +[3242mfunctions-common:is_opensuse:555         (B[m [[ Ubuntu =~ (openSUSE) ]]
+2023-05-16 13:19:08.920 | +[3242mfunctions-common:is_suse:544             (B[m is_suse_linux_enterprise
+2023-05-16 13:19:08.932 | +[3242mfunctions-common:is_suse_linux_enterprise:563 (B[m [[ -z Ubuntu ]]
+2023-05-16 13:19:08.943 | +[3242mfunctions-common:is_suse_linux_enterprise:567 (B[m [[ Ubuntu =~ (^SUSE) ]]
+2023-05-16 13:19:08.955 | +[3242mtools/fixup_stuff.sh:fixup_suse:95       (B[m return
+2023-05-16 13:19:08.965 | +[3242m./stack.sh:main:810                      (B[m pip_install -U os-testr
+2023-05-16 13:19:09.021 | Using python 3.8 to install os-testr
+2023-05-16 13:19:09.032 | +[3242minc/python:pip_install:190               (B[m sudo -H LC_ALL=en_US.UTF-8 SETUPTOOLS_USE_DISTUTILS=stdlib http_proxy=http://16.85.88.10:8080 https_proxy=http://16.85.88.10:8080 no_proxy=192.168.79.1,192.168.79.16,192.168.79.17,192.168.79.18,192.168.79.19,192.168.79.20,192.168.79.21,192.168.79.22,192.168.79.23,192.168.79.24,192.168.79.25,192.168.79.26,192.168.79.27,192.168.79.28,192.168.79.29,192.168.79.30,192.168.79.31,192.168.79.32,192.168.79.33,192.168.79.34,192.168.79.35,192.168.79.36,192.168.79.37,192.168.79.38,192.168.79.39,192.168.79.40,192.168.79.41,192.168.79.42,192.168.79.43,192.168.79.44,192.168.79.45,192.168.79.46,192.168.79.47,192.168.79.48,192.168.79.49,192.168.79.50,192.168.67.2,192.168.67.5 PIP_FIND_LINKS= python3.8 -m pip install -c /opt/stack/requirements/upper-constraints.txt -U os-testr
+2023-05-16 13:19:09.465 | Traceback (most recent call last):
+2023-05-16 13:19:09.466 |   File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+2023-05-16 13:19:09.466 |     return _run_code(code, main_globals, None,
+2023-05-16 13:19:09.466 |   File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+2023-05-16 13:19:09.466 |     exec(code, run_globals)
+2023-05-16 13:19:09.466 |   File "/usr/lib/python3/dist-packages/pip/__main__.py", line 16, in <module>
+2023-05-16 13:19:09.467 |     from pip._internal.cli.main import main as _main  # isort:skip # noqa
+2023-05-16 13:19:09.467 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main.py", line 10, in <module>
+2023-05-16 13:19:09.467 |     from pip._internal.cli.autocompletion import autocomplete
+2023-05-16 13:19:09.467 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/autocompletion.py", line 9, in <module>
+2023-05-16 13:19:09.467 |     from pip._internal.cli.main_parser import create_main_parser
+2023-05-16 13:19:09.468 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main_parser.py", line 7, in <module>
+2023-05-16 13:19:09.468 |     from pip._internal.cli import cmdoptions
+2023-05-16 13:19:09.468 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/cmdoptions.py", line 24, in <module>
+2023-05-16 13:19:09.468 |     from pip._internal.exceptions import CommandError
+2023-05-16 13:19:09.468 |   File "/usr/lib/python3/dist-packages/pip/_internal/exceptions.py", line 10, in <module>
+2023-05-16 13:19:09.469 |     from pip._vendor.six import iteritems
+2023-05-16 13:19:09.469 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 65, in <module>
+2023-05-16 13:19:09.469 |     vendored("cachecontrol")
+2023-05-16 13:19:09.469 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 36, in vendored
+2023-05-16 13:19:09.469 |     __import__(modulename, globals(), locals(), level=0)
+2023-05-16 13:19:09.469 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.470 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.470 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.470 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.470 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.470 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/__init__.py", line 9, in <module>
+2023-05-16 13:19:09.470 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.471 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.471 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.471 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.471 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.471 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/wrapper.py", line 1, in <module>
+2023-05-16 13:19:09.471 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.471 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.472 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.472 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.472 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.472 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/adapter.py", line 5, in <module>
+2023-05-16 13:19:09.472 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.472 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.472 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.472 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.472 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.473 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:09.473 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.473 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.473 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.473 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.473 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.473 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:09.473 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:09.473 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:09.473 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:09.474 |     class X509StoreFlags(object):
+2023-05-16 13:19:09.474 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:09.474 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:09.474 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:09.474 | Error in sys.excepthook:
+2023-05-16 13:19:09.474 | Traceback (most recent call last):
+2023-05-16 13:19:09.474 |   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 72, in apport_excepthook
+2023-05-16 13:19:09.474 |     from apport.fileutils import likely_packaged, get_recent_crashes
+2023-05-16 13:19:09.474 |   File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+2023-05-16 13:19:09.475 |     from apport.report import Report
+2023-05-16 13:19:09.475 |   File "/usr/lib/python3/dist-packages/apport/report.py", line 32, in <module>
+2023-05-16 13:19:09.475 |     import apport.fileutils
+2023-05-16 13:19:09.475 |   File "/usr/lib/python3/dist-packages/apport/fileutils.py", line 12, in <module>
+2023-05-16 13:19:09.475 |     import os, glob, subprocess, os.path, time, pwd, sys, requests_unixsocket
+2023-05-16 13:19:09.475 |   File "/usr/lib/python3/dist-packages/requests_unixsocket/__init__.py", line 1, in <module>
+2023-05-16 13:19:09.475 |     import requests
+2023-05-16 13:19:09.475 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.475 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.475 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.476 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.476 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.476 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:09.476 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.476 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.476 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.476 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.476 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.476 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:09.476 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:09.477 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:09.477 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:09.477 |     class X509StoreFlags(object):
+2023-05-16 13:19:09.477 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:09.477 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:09.477 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:09.478 | 
+2023-05-16 13:19:09.478 | Original exception was:
+2023-05-16 13:19:09.479 | Traceback (most recent call last):
+2023-05-16 13:19:09.479 |   File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+2023-05-16 13:19:09.479 |     return _run_code(code, main_globals, None,
+2023-05-16 13:19:09.479 |   File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+2023-05-16 13:19:09.479 |     exec(code, run_globals)
+2023-05-16 13:19:09.479 |   File "/usr/lib/python3/dist-packages/pip/__main__.py", line 16, in <module>
+2023-05-16 13:19:09.479 |     from pip._internal.cli.main import main as _main  # isort:skip # noqa
+2023-05-16 13:19:09.479 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main.py", line 10, in <module>
+2023-05-16 13:19:09.480 |     from pip._internal.cli.autocompletion import autocomplete
+2023-05-16 13:19:09.480 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/autocompletion.py", line 9, in <module>
+2023-05-16 13:19:09.480 |     from pip._internal.cli.main_parser import create_main_parser
+2023-05-16 13:19:09.480 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/main_parser.py", line 7, in <module>
+2023-05-16 13:19:09.480 |     from pip._internal.cli import cmdoptions
+2023-05-16 13:19:09.480 |   File "/usr/lib/python3/dist-packages/pip/_internal/cli/cmdoptions.py", line 24, in <module>
+2023-05-16 13:19:09.480 |     from pip._internal.exceptions import CommandError
+2023-05-16 13:19:09.480 |   File "/usr/lib/python3/dist-packages/pip/_internal/exceptions.py", line 10, in <module>
+2023-05-16 13:19:09.480 |     from pip._vendor.six import iteritems
+2023-05-16 13:19:09.481 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 65, in <module>
+2023-05-16 13:19:09.481 |     vendored("cachecontrol")
+2023-05-16 13:19:09.481 |   File "/usr/lib/python3/dist-packages/pip/_vendor/__init__.py", line 36, in vendored
+2023-05-16 13:19:09.481 |     __import__(modulename, globals(), locals(), level=0)
+2023-05-16 13:19:09.481 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.481 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.481 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.481 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.481 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.481 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/__init__.py", line 9, in <module>
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.482 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.482 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/wrapper.py", line 1, in <module>
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.482 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.483 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.483 |   File "/usr/share/python-wheels/CacheControl-0.12.6-py2.py3-none-any.whl/cachecontrol/adapter.py", line 5, in <module>
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.483 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.483 |   File "/usr/share/python-wheels/requests-2.22.0-py2.py3-none-any.whl/requests/__init__.py", line 95, in <module>
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+2023-05-16 13:19:09.483 |   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+2023-05-16 13:19:09.484 |   File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+2023-05-16 13:19:09.484 |   File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+2023-05-16 13:19:09.484 |   File "<frozen zipimport>", line 259, in load_module
+2023-05-16 13:19:09.484 |   File "/usr/share/python-wheels/urllib3-1.25.8-py2.py3-none-any.whl/urllib3/contrib/pyopenssl.py", line 46, in <module>
+2023-05-16 13:19:09.484 |   File "/usr/lib/python3/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+2023-05-16 13:19:09.484 |     from OpenSSL import crypto, SSL
+2023-05-16 13:19:09.484 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1553, in <module>
+2023-05-16 13:19:09.484 |     class X509StoreFlags(object):
+2023-05-16 13:19:09.484 |   File "/usr/lib/python3/dist-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+2023-05-16 13:19:09.484 |     CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+2023-05-16 13:19:09.485 | AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+2023-05-16 13:19:09.505 | +[3242minc/python:pip_install:1                 (B[m exit_trap
+2023-05-16 13:19:09.513 | +[3242m./stack.sh:exit_trap:532                 (B[m local r=1
+2023-05-16 13:19:09.522 | ++[3242m./stack.sh:exit_trap:533                 (B[m jobs -p
+2023-05-16 13:19:09.533 | +[3242m./stack.sh:exit_trap:533                 (B[m jobs=
+2023-05-16 13:19:09.542 | +[3242m./stack.sh:exit_trap:536                 (B[m [[ -n '' ]]
+2023-05-16 13:19:09.551 | +[3242m./stack.sh:exit_trap:542                 (B[m '[' -f '' ']'
+2023-05-16 13:19:09.561 | +[3242m./stack.sh:exit_trap:547                 (B[m kill_spinner
+2023-05-16 13:19:09.570 | +[3242m./stack.sh:kill_spinner:442              (B[m '[' '!' -z '' ']'
+2023-05-16 13:19:09.578 | +[3242m./stack.sh:exit_trap:549                 (B[m [[ 1 -ne 0 ]]
+2023-05-16 13:19:09.588 | +[3242m./stack.sh:exit_trap:550                 (B[m echo 'Error on exit'
+2023-05-16 13:19:09.588 | Error on exit
+2023-05-16 13:19:09.597 | +[3242m./stack.sh:exit_trap:552                 (B[m type -p generate-subunit
+2023-05-16 13:19:09.609 | +[3242m./stack.sh:exit_trap:555                 (B[m [[ -z /tmp/devstack_logs ]]
+2023-05-16 13:19:09.620 | +[3242m./stack.sh:exit_trap:558                 (B[m /usr/bin/python3.8 /opt/stack/devstack/tools/worlddump.py -d /tmp/devstack_logs
+2023-05-16 13:19:09.952 | +[3242m./stack.sh:exit_trap:567                 (B[m exit 1
