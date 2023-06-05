@@ -1,88 +1,44 @@
--- Logs begin at Thu 2023-04-13 11:10:16 UTC, end at Thu 2023-04-13 15:24:26 UTC. --
-Apr 13 15:11:29 ubuntu systemd[1]: Starting Devstack devstack@etcd.service...
-Apr 13 15:11:29 ubuntu etcd[74439]: etcd Version: 3.3.12
-Apr 13 15:11:29 ubuntu etcd[74439]: Git SHA: d57e8b8
-Apr 13 15:11:29 ubuntu etcd[74439]: Go Version: go1.10.8
-Apr 13 15:11:29 ubuntu etcd[74439]: Go OS/Arch: linux/amd64
-Apr 13 15:11:29 ubuntu etcd[74439]: setting maximum number of CPUs to 4, total number of available CPUs is 4
-Apr 13 15:11:29 ubuntu etcd[74439]: listening for peers on http://0.0.0.0:2380
-Apr 13 15:11:29 ubuntu etcd[74439]: listening for client requests on 192.168.79.44:2379
-Apr 13 15:11:29 ubuntu etcd[74439]: name = ubuntu
-Apr 13 15:11:29 ubuntu etcd[74439]: data dir = /opt/stack/data/etcd
-Apr 13 15:11:29 ubuntu etcd[74439]: member dir = /opt/stack/data/etcd/member
-Apr 13 15:11:29 ubuntu etcd[74439]: heartbeat = 100ms
-Apr 13 15:11:29 ubuntu etcd[74439]: election = 1000ms
-Apr 13 15:11:29 ubuntu etcd[74439]: snapshot count = 100000
-Apr 13 15:11:29 ubuntu etcd[74439]: advertise client URLs = http://192.168.79.44:2379
-Apr 13 15:11:29 ubuntu etcd[74439]: initial advertise peer URLs = http://192.168.79.44:2380
-Apr 13 15:11:29 ubuntu etcd[74439]: initial cluster = ubuntu=http://192.168.79.44:2380
-Apr 13 15:11:29 ubuntu etcd[74439]: starting member 24e8d83e93d35374 in cluster 71c518a31ce4508f
-Apr 13 15:11:29 ubuntu etcd[74439]: 24e8d83e93d35374 became follower at term 0
-Apr 13 15:11:29 ubuntu etcd[74439]: newRaft 24e8d83e93d35374 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
-Apr 13 15:11:29 ubuntu etcd[74439]: 24e8d83e93d35374 became follower at term 1
-Apr 13 15:11:29 ubuntu etcd[74439]: simple token is not cryptographically signed
-Apr 13 15:11:29 ubuntu etcd[74439]: starting server... [version: 3.3.12, cluster version: to_be_decided]
-Apr 13 15:11:29 ubuntu etcd[74439]: 24e8d83e93d35374 as single-node; fast-forwarding 9 ticks (election ticks 10)
-Apr 13 15:11:29 ubuntu etcd[74439]: added member 24e8d83e93d35374 [http://192.168.79.44:2380] to cluster 71c518a31ce4508f
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 is starting a new election at term 1
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 became candidate at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 received MsgVoteResp from 24e8d83e93d35374 at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 became leader at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: raft.node: 24e8d83e93d35374 elected leader 24e8d83e93d35374 at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: setting up the initial cluster version to 3.3
-Apr 13 15:11:30 ubuntu etcd[74439]: set the initial cluster version to 3.3
-Apr 13 15:11:30 ubuntu etcd[74439]: enabled capabilities for version 3.3
-Apr 13 15:11:30 ubuntu etcd[74439]: ready to serve client requests
-Apr 13 15:11:30 ubuntu etcd[74439]: published {Name:ubuntu ClientURLs:[http://192.168.79.44:2379]} to cluster 71c518a31ce4508f
-Apr 13 15:11:30 ubuntu systemd[1]: Started Devstack devstack@etcd.service.
-Apr 13 15:11:30 ubuntu etcd[74439]: serving insecure client requests on 192.168.79.44:2379, this is strongly discouraged!
-Apr 13 15:11:30 ubuntu etcd[74439]: INFO: 2023/04/13 15:11:30 dialing to target with scheme: ""
-Apr 13 15:11:30 ubuntu etcd[74439]: INFO: 2023/04/13 15:11:30 could not get resolver for scheme: ""
-Apr 13 15:18:48 ubuntu etcd[74439]: start time = 2023-04-13 15:18:48.656913597 +0000 UTC m=+439.268319358, time spent = 30.546412ms, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Apr 13 15:18:48 ubuntu etcd[74439]: start time = 2023-04-13 15:18:48.691988134 +0000 UTC m=+439.303393906, time spent = 139.52µs, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Apr 13 15:18:57 ubuntu etcd[74439]: start time = 2023-04-13 15:18:57.237280436 +0000 UTC m=+447.848686183, time spent = 177.113µs, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Apr 13 15:18:59 ubuntu etcd[74439]: start time = 2023-04-13 15:18:59.608827948 +0000 UTC m=+450.220233701, time spent = 204.788µs, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
--- Logs begin at Thu 2023-04-13 11:10:16 UTC, end at Thu 2023-04-13 15:25:06 UTC. --
-Apr 13 15:11:29 ubuntu systemd[1]: Starting Devstack devstack@etcd.service...
-Apr 13 15:11:29 ubuntu etcd[74439]: etcd Version: 3.3.12
-Apr 13 15:11:29 ubuntu etcd[74439]: Git SHA: d57e8b8
-Apr 13 15:11:29 ubuntu etcd[74439]: Go Version: go1.10.8
-Apr 13 15:11:29 ubuntu etcd[74439]: Go OS/Arch: linux/amd64
-Apr 13 15:11:29 ubuntu etcd[74439]: setting maximum number of CPUs to 4, total number of available CPUs is 4
-Apr 13 15:11:29 ubuntu etcd[74439]: listening for peers on http://0.0.0.0:2380
-Apr 13 15:11:29 ubuntu etcd[74439]: listening for client requests on 192.168.79.44:2379
-Apr 13 15:11:29 ubuntu etcd[74439]: name = ubuntu
-Apr 13 15:11:29 ubuntu etcd[74439]: data dir = /opt/stack/data/etcd
-Apr 13 15:11:29 ubuntu etcd[74439]: member dir = /opt/stack/data/etcd/member
-Apr 13 15:11:29 ubuntu etcd[74439]: heartbeat = 100ms
-Apr 13 15:11:29 ubuntu etcd[74439]: election = 1000ms
-Apr 13 15:11:29 ubuntu etcd[74439]: snapshot count = 100000
-Apr 13 15:11:29 ubuntu etcd[74439]: advertise client URLs = http://192.168.79.44:2379
-Apr 13 15:11:29 ubuntu etcd[74439]: initial advertise peer URLs = http://192.168.79.44:2380
-Apr 13 15:11:29 ubuntu etcd[74439]: initial cluster = ubuntu=http://192.168.79.44:2380
-Apr 13 15:11:29 ubuntu etcd[74439]: starting member 24e8d83e93d35374 in cluster 71c518a31ce4508f
-Apr 13 15:11:29 ubuntu etcd[74439]: 24e8d83e93d35374 became follower at term 0
-Apr 13 15:11:29 ubuntu etcd[74439]: newRaft 24e8d83e93d35374 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
-Apr 13 15:11:29 ubuntu etcd[74439]: 24e8d83e93d35374 became follower at term 1
-Apr 13 15:11:29 ubuntu etcd[74439]: simple token is not cryptographically signed
-Apr 13 15:11:29 ubuntu etcd[74439]: starting server... [version: 3.3.12, cluster version: to_be_decided]
-Apr 13 15:11:29 ubuntu etcd[74439]: 24e8d83e93d35374 as single-node; fast-forwarding 9 ticks (election ticks 10)
-Apr 13 15:11:29 ubuntu etcd[74439]: added member 24e8d83e93d35374 [http://192.168.79.44:2380] to cluster 71c518a31ce4508f
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 is starting a new election at term 1
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 became candidate at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 received MsgVoteResp from 24e8d83e93d35374 at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: 24e8d83e93d35374 became leader at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: raft.node: 24e8d83e93d35374 elected leader 24e8d83e93d35374 at term 2
-Apr 13 15:11:30 ubuntu etcd[74439]: setting up the initial cluster version to 3.3
-Apr 13 15:11:30 ubuntu etcd[74439]: set the initial cluster version to 3.3
-Apr 13 15:11:30 ubuntu etcd[74439]: enabled capabilities for version 3.3
-Apr 13 15:11:30 ubuntu etcd[74439]: ready to serve client requests
-Apr 13 15:11:30 ubuntu etcd[74439]: published {Name:ubuntu ClientURLs:[http://192.168.79.44:2379]} to cluster 71c518a31ce4508f
-Apr 13 15:11:30 ubuntu systemd[1]: Started Devstack devstack@etcd.service.
-Apr 13 15:11:30 ubuntu etcd[74439]: serving insecure client requests on 192.168.79.44:2379, this is strongly discouraged!
-Apr 13 15:11:30 ubuntu etcd[74439]: INFO: 2023/04/13 15:11:30 dialing to target with scheme: ""
-Apr 13 15:11:30 ubuntu etcd[74439]: INFO: 2023/04/13 15:11:30 could not get resolver for scheme: ""
-Apr 13 15:18:48 ubuntu etcd[74439]: start time = 2023-04-13 15:18:48.656913597 +0000 UTC m=+439.268319358, time spent = 30.546412ms, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Apr 13 15:18:48 ubuntu etcd[74439]: start time = 2023-04-13 15:18:48.691988134 +0000 UTC m=+439.303393906, time spent = 139.52µs, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Apr 13 15:18:57 ubuntu etcd[74439]: start time = 2023-04-13 15:18:57.237280436 +0000 UTC m=+447.848686183, time spent = 177.113µs, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Apr 13 15:18:59 ubuntu etcd[74439]: start time = 2023-04-13 15:18:59.608827948 +0000 UTC m=+450.220233701, time spent = 204.788µs, remote = 192.168.79.44:57668, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+-- Logs begin at Mon 2023-06-05 21:12:12 UTC, end at Mon 2023-06-05 22:49:50 UTC. --
+Jun 05 22:36:41 ubuntu systemd[1]: Starting Devstack devstack@etcd.service...
+Jun 05 22:36:41 ubuntu etcd[91474]: etcd Version: 3.3.12
+Jun 05 22:36:41 ubuntu etcd[91474]: Git SHA: d57e8b8
+Jun 05 22:36:41 ubuntu etcd[91474]: Go Version: go1.10.8
+Jun 05 22:36:41 ubuntu etcd[91474]: Go OS/Arch: linux/amd64
+Jun 05 22:36:41 ubuntu etcd[91474]: setting maximum number of CPUs to 4, total number of available CPUs is 4
+Jun 05 22:36:41 ubuntu etcd[91474]: listening for peers on http://0.0.0.0:2380
+Jun 05 22:36:41 ubuntu etcd[91474]: listening for client requests on 192.168.79.38:2379
+Jun 05 22:36:41 ubuntu etcd[91474]: name = ubuntu
+Jun 05 22:36:41 ubuntu etcd[91474]: data dir = /opt/stack/data/etcd
+Jun 05 22:36:41 ubuntu etcd[91474]: member dir = /opt/stack/data/etcd/member
+Jun 05 22:36:41 ubuntu etcd[91474]: heartbeat = 100ms
+Jun 05 22:36:41 ubuntu etcd[91474]: election = 1000ms
+Jun 05 22:36:41 ubuntu etcd[91474]: snapshot count = 100000
+Jun 05 22:36:41 ubuntu etcd[91474]: advertise client URLs = http://192.168.79.38:2379
+Jun 05 22:36:41 ubuntu etcd[91474]: initial advertise peer URLs = http://192.168.79.38:2380
+Jun 05 22:36:41 ubuntu etcd[91474]: initial cluster = ubuntu=http://192.168.79.38:2380
+Jun 05 22:36:41 ubuntu etcd[91474]: starting member c79b320cdfc8bd8b in cluster fc0a92a72ceb7dc5
+Jun 05 22:36:41 ubuntu etcd[91474]: c79b320cdfc8bd8b became follower at term 0
+Jun 05 22:36:41 ubuntu etcd[91474]: newRaft c79b320cdfc8bd8b [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+Jun 05 22:36:41 ubuntu etcd[91474]: c79b320cdfc8bd8b became follower at term 1
+Jun 05 22:36:41 ubuntu etcd[91474]: simple token is not cryptographically signed
+Jun 05 22:36:41 ubuntu etcd[91474]: starting server... [version: 3.3.12, cluster version: to_be_decided]
+Jun 05 22:36:41 ubuntu etcd[91474]: added member c79b320cdfc8bd8b [http://192.168.79.38:2380] to cluster fc0a92a72ceb7dc5
+Jun 05 22:36:41 ubuntu etcd[91474]: c79b320cdfc8bd8b as single-node; fast-forwarding 9 ticks (election ticks 10)
+Jun 05 22:36:42 ubuntu etcd[91474]: c79b320cdfc8bd8b is starting a new election at term 1
+Jun 05 22:36:42 ubuntu etcd[91474]: c79b320cdfc8bd8b became candidate at term 2
+Jun 05 22:36:42 ubuntu etcd[91474]: c79b320cdfc8bd8b received MsgVoteResp from c79b320cdfc8bd8b at term 2
+Jun 05 22:36:42 ubuntu etcd[91474]: c79b320cdfc8bd8b became leader at term 2
+Jun 05 22:36:42 ubuntu etcd[91474]: raft.node: c79b320cdfc8bd8b elected leader c79b320cdfc8bd8b at term 2
+Jun 05 22:36:42 ubuntu etcd[91474]: ready to serve client requests
+Jun 05 22:36:42 ubuntu etcd[91474]: setting up the initial cluster version to 3.3
+Jun 05 22:36:42 ubuntu etcd[91474]: published {Name:ubuntu ClientURLs:[http://192.168.79.38:2379]} to cluster fc0a92a72ceb7dc5
+Jun 05 22:36:42 ubuntu etcd[91474]: set the initial cluster version to 3.3
+Jun 05 22:36:42 ubuntu etcd[91474]: INFO: 2023/06/05 22:36:42 dialing to target with scheme: ""
+Jun 05 22:36:42 ubuntu etcd[91474]: INFO: 2023/06/05 22:36:42 could not get resolver for scheme: ""
+Jun 05 22:36:42 ubuntu etcd[91474]: enabled capabilities for version 3.3
+Jun 05 22:36:42 ubuntu systemd[1]: Started Devstack devstack@etcd.service.
+Jun 05 22:36:42 ubuntu etcd[91474]: serving insecure client requests on 192.168.79.38:2379, this is strongly discouraged!
+Jun 05 22:44:16 ubuntu etcd[91474]: start time = 2023-06-05 22:44:16.096914772 +0000 UTC m=+454.330447360, time spent = 45.790324ms, remote = 192.168.79.38:51208, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Jun 05 22:44:16 ubuntu etcd[91474]: start time = 2023-06-05 22:44:16.096914753 +0000 UTC m=+454.330447331, time spent = 45.860756ms, remote = 192.168.79.38:51208, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Jun 05 22:44:24 ubuntu etcd[91474]: start time = 2023-06-05 22:44:24.556443346 +0000 UTC m=+462.789975993, time spent = 277.732µs, remote = 192.168.79.38:51208, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Jun 05 22:44:26 ubuntu etcd[91474]: start time = 2023-06-05 22:44:26.994958634 +0000 UTC m=+465.228491204, time spent = 328.435µs, remote = 192.168.79.38:51208, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
