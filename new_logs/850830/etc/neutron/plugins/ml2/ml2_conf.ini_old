@@ -454,8 +454,11 @@ ovn_nb_connection = tcp:10.201.4.32:6641
 #ovn_emit_need_to_frag = false
 
 # Disable OVN's built-in DHCP for baremetal ports (VNIC type "baremetal"). This
-# alllow operators to plug their own DHCP server of choice for PXE booting
-# baremetal nodes. Defaults to False. (boolean value)
+# allows operators to plug their own DHCP server of choice for PXE booting
+# baremetal nodes. OVN 23.06.0 and newer also supports baremetal ``PXE`` based
+# provisioning over IPv6. If an older version of OVN is used for baremetal
+# provisioning over IPv6 this option should be set to "True" and neutron-dhcp-
+# agent should be used instead. Defaults to "False". (boolean value)
 #disable_ovn_dhcp_for_baremetal_ports = false
 
 # DEPRECATED: If OVN older than 21.06 is used together with Neutron, this
@@ -552,7 +555,6 @@ ovn_nb_connection = tcp:10.201.4.32:6641
 # port allows to offload the OVS flows using tc to the SR-IOV NIC. This allows
 # to support hardware offload via tc and that allows us to manage the VF by
 # OpenFlow control plane using representor net-device. (list value)
-# Deprecated group/name - [ovs_driver]/vnic_type_blacklist
 #vnic_type_prohibit_list =
 
 
@@ -593,5 +595,4 @@ enable_security_group = True
 # operating system, and on other factors. In the case of SRIOV mechanism
 # drivers the valid VNIC types are direct, macvtap and direct-physical. (list
 # value)
-# Deprecated group/name - [sriov_driver]/vnic_type_blacklist
 #vnic_type_prohibit_list =
