@@ -532,12 +532,21 @@ ovn_nb_connection = tcp:10.201.4.32:6641
 
 # Enable IGMP snooping for integration bridge. If this option is set to True,
 # support for Internet Group Management Protocol (IGMP) is enabled in
-# integration bridge. Setting this option to True will also enable the Open
-# vSwitch mcast-snooping-disable-flood-unregistered flag. This option will
-# disable flooding of unregistered multicast packets to all ports. The switch
-# will send unregistered multicast packets only to ports connected to multicast
-# routers. (boolean value)
+# integration bridge. (boolean value)
 #igmp_snooping_enable = false
+
+# Multicast packets (except reports) are unconditionally forwarded to the ports
+# bridging a logical network to a physical network. (boolean value)
+#igmp_flood = false
+
+# Multicast reports are unconditionally forwarded to the ports bridging a
+# logical network to a physical network. (boolean value)
+#igmp_flood_reports = true
+
+# This option enables or disables flooding of unregistered multicast packets to
+# all ports. If False, The switch will send unregistered multicast packets only
+# to ports connected to multicast routers. (boolean value)
+#igmp_flood_unregistered = false
 
 
 [ovs_driver]
