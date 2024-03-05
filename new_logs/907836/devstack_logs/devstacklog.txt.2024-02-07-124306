@@ -357,7 +357,7 @@
 2024-02-07 12:43:11.870 | ++[3242mlib/database:define_database_baseurl:106 (B[m get_database_type_mysql
 2024-02-07 12:43:11.883 | ++[3242mlib/databases/mysql:get_database_type_mysql:32 (B[m [[ PyMySQL == \P\y\M\y\S\Q\L ]]
 2024-02-07 12:43:11.896 | ++[3242mlib/databases/mysql:get_database_type_mysql:33 (B[m echo mysql+pymysql
-2024-02-07 12:43:11.911 | +[3242mlib/database:define_database_baseurl:106 (B[m BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-07 12:43:11.911 | +[3242mlib/database:define_database_baseurl:106 (B[m BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-07 12:43:11.923 | +[3242m./stack.sh:main:741                      (B[m is_service_enabled rabbit
 2024-02-07 12:43:11.985 | +[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 12:43:11.997 | +[3242m./stack.sh:main:742                      (B[m read_password RABBIT_PASSWORD 'ENTER A PASSWORD TO USE FOR RABBIT.'
@@ -375,7 +375,7 @@
 2024-02-07 12:43:12.430 | +[3242mfunctions-common:save_stackenv:62        (B[m time_stamp=2024-02-07-124312
 2024-02-07 12:43:12.442 | +[3242mfunctions-common:save_stackenv:63        (B[m echo '# 2024-02-07-124312 785'
 2024-02-07 12:43:12.455 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
-2024-02-07 12:43:12.468 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-07 12:43:12.468 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-07 12:43:12.483 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
 2024-02-07 12:43:12.497 | +[3242mfunctions-common:save_stackenv:65        (B[m echo DATA_DIR=/opt/stack/data
 2024-02-07 12:43:12.511 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
@@ -2638,8 +2638,8 @@
 2024-02-07 12:47:01.755 | +[3242mlib/rpc_backend:restart_rpc_backend:83   (B[m local rc=0
 2024-02-07 12:47:01.767 | +[3242mlib/rpc_backend:restart_rpc_backend:85   (B[m [[ 1 -eq 20 ]]
 2024-02-07 12:47:01.778 | +[3242mlib/rpc_backend:restart_rpc_backend:87   (B[m [[ 1 == \0 ]]
-2024-02-07 12:47:01.792 | +[3242mlib/rpc_backend:restart_rpc_backend:91   (B[m rabbit_setuser stackrabbit hpinvent
-2024-02-07 12:47:01.806 | +[3242mlib/rpc_backend:rabbit_setuser:160       (B[m local user=stackrabbit pass=hpinvent found= out=
+2024-02-07 12:47:01.792 | +[3242mlib/rpc_backend:restart_rpc_backend:91   (B[m rabbit_setuser stackrabbit ******
+2024-02-07 12:47:01.806 | +[3242mlib/rpc_backend:rabbit_setuser:160       (B[m local user=stackrabbit pass=****** found= out=
 2024-02-07 12:47:01.822 | ++[3242mlib/rpc_backend:rabbit_setuser:161       (B[m sudo rabbitmqctl list_users
 2024-02-07 12:47:02.395 | +[3242mlib/rpc_backend:rabbit_setuser:161       (B[m out='Listing users ...
 2024-02-07 12:47:02.395 | user	tags
@@ -2650,13 +2650,13 @@
 2024-02-07 12:47:02.411 | guest	[administrator]'
 2024-02-07 12:47:02.422 | +[3242mlib/rpc_backend:rabbit_setuser:163       (B[m found=
 2024-02-07 12:47:02.432 | +[3242mlib/rpc_backend:rabbit_setuser:164       (B[m '[' '' = stackrabbit ']'
-2024-02-07 12:47:02.441 | +[3242mlib/rpc_backend:rabbit_setuser:168       (B[m sudo rabbitmqctl add_user stackrabbit hpinvent
+2024-02-07 12:47:02.441 | +[3242mlib/rpc_backend:rabbit_setuser:168       (B[m sudo rabbitmqctl add_user stackrabbit ******
 2024-02-07 12:47:02.964 | Adding user "stackrabbit" ...
 2024-02-07 12:47:02.970 | Done. Don't forget to grant the user permissions to some virtual hosts! See 'rabbitmqctl help set_permissions' to learn more.
 2024-02-07 12:47:02.998 | +[3242mlib/rpc_backend:rabbit_setuser:171       (B[m sudo rabbitmqctl set_permissions stackrabbit '.*' '.*' '.*'
 2024-02-07 12:47:03.502 | Setting permissions for user "stackrabbit" in vhost "/" ...
 2024-02-07 12:47:03.538 | +[3242mlib/rpc_backend:restart_rpc_backend:92   (B[m '[' 0 -ne 0 ']'
-2024-02-07 12:47:03.549 | +[3242mlib/rpc_backend:restart_rpc_backend:97   (B[m sudo rabbitmqctl change_password stackrabbit hpinvent
+2024-02-07 12:47:03.549 | +[3242mlib/rpc_backend:restart_rpc_backend:97   (B[m sudo rabbitmqctl change_password stackrabbit ******
 2024-02-07 12:47:04.061 | Changing password for user "stackrabbit" ...
 2024-02-07 12:47:04.088 | +[3242mlib/rpc_backend:restart_rpc_backend:99   (B[m '[' 0 -ne 0 ']'
 2024-02-07 12:47:04.096 | +[3242mlib/rpc_backend:restart_rpc_backend:103  (B[m break
@@ -4483,8 +4483,8 @@
 2024-02-07 12:50:48.244 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=
 2024-02-07 12:50:48.255 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 12:50:48.313 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 12:50:48.323 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
-2024-02-07 12:50:48.335 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-07 12:50:48.323 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/
+2024-02-07 12:50:48.335 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-07 12:50:48.418 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 12:50:48.429 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 12:50:48.441 | +[3242mlib/keystone:configure_keystone:215      (B[m local service_port=5000
@@ -4502,8 +4502,8 @@
 2024-02-07 12:50:48.807 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 12:50:48.871 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 12:50:48.882 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 12:50:48.893 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
-2024-02-07 12:50:48.906 | +[3242mlib/keystone:configure_keystone:232      (B[m iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+2024-02-07 12:50:48.893 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+2024-02-07 12:50:48.906 | +[3242mlib/keystone:configure_keystone:232      (B[m iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 2024-02-07 12:50:48.971 | +[3242mlib/keystone:configure_keystone:235      (B[m '[' False '!=' False ']'
 2024-02-07 12:50:48.979 | +[3242mlib/keystone:configure_keystone:240      (B[m setup_logging /etc/keystone/keystone.conf
 2024-02-07 12:50:48.987 | +[3242mfunctions:setup_logging:685              (B[m setup_systemd_logging /etc/keystone/keystone.conf
@@ -5148,10 +5148,10 @@
 2024-02-07 12:51:57.899 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 12:51:57.964 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 12:51:57.976 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 12:51:57.988 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
-2024-02-07 12:51:58.002 | +[3242mlib/glance:configure_glance:327          (B[m dburl='mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+2024-02-07 12:51:57.988 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+2024-02-07 12:51:58.002 | +[3242mlib/glance:configure_glance:327          (B[m dburl='mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 2024-02-07 12:51:58.015 | +[3242mlib/glance:configure_glance:329          (B[m iniset /etc/glance/glance-api.conf DEFAULT debug True
-2024-02-07 12:51:58.101 | +[3242mlib/glance:configure_glance:330          (B[m iniset /etc/glance/glance-api.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+2024-02-07 12:51:58.101 | +[3242mlib/glance:configure_glance:330          (B[m iniset /etc/glance/glance-api.conf database connection 'mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 2024-02-07 12:51:58.191 | +[3242mlib/glance:configure_glance:331          (B[m iniset /etc/glance/glance-api.conf DEFAULT use_syslog False
 2024-02-07 12:51:58.269 | +[3242mlib/glance:configure_glance:332          (B[m iniset /etc/glance/glance-api.conf DEFAULT image_cache_dir /opt/stack/data/glance/cache/
 2024-02-07 12:51:58.326 | +[3242mlib/glance:configure_glance:333          (B[m iniset /etc/glance/glance-api.conf DEFAULT image_cache_driver sqlite
@@ -5165,7 +5165,7 @@
 2024-02-07 12:51:58.651 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken interface public
 2024-02-07 12:51:58.716 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken auth_url http://10.201.4.32/identity
 2024-02-07 12:51:58.791 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken username glance
-2024-02-07 12:51:58.877 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken password hpinvent
+2024-02-07 12:51:58.877 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken password ******
 2024-02-07 12:51:58.959 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken user_domain_name Default
 2024-02-07 12:51:59.027 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken project_name service
 2024-02-07 12:51:59.087 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/glance/glance-api.conf keystone_authtoken project_domain_name Default
@@ -5183,8 +5183,8 @@
 2024-02-07 12:51:59.468 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=
 2024-02-07 12:51:59.480 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 12:51:59.542 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 12:51:59.554 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
-2024-02-07 12:51:59.566 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/glance/glance-api.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-07 12:51:59.554 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/
+2024-02-07 12:51:59.566 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/glance/glance-api.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-07 12:51:59.636 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 12:51:59.645 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 12:51:59.655 | +[3242mlib/glance:configure_glance:339          (B[m '[' libvirt = libvirt ']'
@@ -5226,7 +5226,7 @@
 2024-02-07 12:52:01.062 | +[3242mlib/glance:configure_glance:398          (B[m iniset /etc/glance/glance-cache.conf DEFAULT auth_url http://10.201.4.32/identity
 2024-02-07 12:52:01.134 | +[3242mlib/glance:configure_glance:399          (B[m iniset /etc/glance/glance-cache.conf DEFAULT admin_tenant_name service
 2024-02-07 12:52:01.213 | +[3242mlib/glance:configure_glance:400          (B[m iniset /etc/glance/glance-cache.conf DEFAULT admin_user glance
-2024-02-07 12:52:01.289 | +[3242mlib/glance:configure_glance:401          (B[m iniset /etc/glance/glance-cache.conf DEFAULT admin_password hpinvent
+2024-02-07 12:52:01.289 | +[3242mlib/glance:configure_glance:401          (B[m iniset /etc/glance/glance-cache.conf DEFAULT admin_password ******
 2024-02-07 12:52:01.365 | +[3242mlib/glance:configure_glance:404          (B[m iniset /etc/glance/glance-cache.conf glance_store filesystem_store_datadir /opt/stack/data/glance/images/
 2024-02-07 12:52:01.436 | +[3242mlib/glance:configure_glance:407          (B[m iniset /etc/glance/glance-image-import.conf image_import_opts image_import_plugins '[]'
 2024-02-07 12:52:01.495 | +[3242mlib/glance:configure_glance:408          (B[m iniset /etc/glance/glance-image-import.conf inject_metadata_properties ignore_user_roles admin
@@ -5913,7 +5913,7 @@
 2024-02-07 12:54:22.433 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken interface public
 2024-02-07 12:54:22.512 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken auth_url http://10.201.4.32/identity
 2024-02-07 12:54:22.582 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken username cinder
-2024-02-07 12:54:22.640 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken password hpinvent
+2024-02-07 12:54:22.640 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken password ******
 2024-02-07 12:54:22.698 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken user_domain_name Default
 2024-02-07 12:54:22.797 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken project_name service
 2024-02-07 12:54:22.890 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/cinder/cinder.conf keystone_authtoken project_domain_name Default
@@ -5930,8 +5930,8 @@
 2024-02-07 12:54:23.351 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 12:54:23.401 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 12:54:23.408 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 12:54:23.416 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
-2024-02-07 12:54:23.424 | +[3242mlib/cinder:configure_cinder:309          (B[m iniset /etc/cinder/cinder.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
+2024-02-07 12:54:23.416 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
+2024-02-07 12:54:23.424 | +[3242mlib/cinder:configure_cinder:309          (B[m iniset /etc/cinder/cinder.conf database connection 'mysql+pymysql://root:******@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
 2024-02-07 12:54:23.493 | +[3242mlib/cinder:configure_cinder:310          (B[m iniset /etc/cinder/cinder.conf DEFAULT api_paste_config /etc/cinder/api-paste.ini
 2024-02-07 12:54:23.557 | +[3242mlib/cinder:configure_cinder:311          (B[m iniset /etc/cinder/cinder.conf DEFAULT rootwrap_config /etc/cinder/rootwrap.conf
 2024-02-07 12:54:23.618 | +[3242mlib/cinder:configure_cinder:312          (B[m iniset /etc/cinder/cinder.conf DEFAULT osapi_volume_extension cinder.api.contrib.standard_extensions
@@ -6007,8 +6007,8 @@
 2024-02-07 12:54:25.765 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=
 2024-02-07 12:54:25.771 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 12:54:25.803 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 12:54:25.808 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
-2024-02-07 12:54:25.814 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/cinder/cinder.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-07 12:54:25.808 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/
+2024-02-07 12:54:25.814 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/cinder/cinder.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-07 12:54:25.857 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 12:54:25.862 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 12:54:25.868 | +[3242mlib/cinder:configure_cinder:391          (B[m setup_logging /etc/cinder/cinder.conf True
@@ -6101,7 +6101,7 @@
 2024-02-07 12:54:28.221 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/cinder/cinder.conf nova interface public
 2024-02-07 12:54:28.295 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/cinder/cinder.conf nova auth_url http://10.201.4.32/identity
 2024-02-07 12:54:28.371 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/cinder/cinder.conf nova username nova
-2024-02-07 12:54:28.446 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/cinder/cinder.conf nova password hpinvent
+2024-02-07 12:54:28.446 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/cinder/cinder.conf nova password ******
 2024-02-07 12:54:28.514 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/cinder/cinder.conf nova user_domain_name Default
 2024-02-07 12:54:28.585 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/cinder/cinder.conf nova project_name service
 2024-02-07 12:54:28.650 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/cinder/cinder.conf nova project_domain_name Default
@@ -7897,8 +7897,8 @@
 2024-02-07 13:00:49.466 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 13:00:49.518 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:00:49.528 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 13:00:49.536 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
-2024-02-07 13:00:49.548 | +[3242mlib/nova:create_nova_conf:489            (B[m iniset /etc/nova/nova.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-07 13:00:49.536 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-07 13:00:49.548 | +[3242mlib/nova:create_nova_conf:489            (B[m iniset /etc/nova/nova.conf database connection 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
 2024-02-07 13:00:49.621 | ++[3242mlib/nova:create_nova_conf:490            (B[m database_connection_url nova_api
 2024-02-07 13:00:49.628 | ++[3242mlib/database:database_connection_url:134 (B[m local db=nova_api
 2024-02-07 13:00:49.639 | ++[3242mlib/database:database_connection_url:135 (B[m database_connection_url_mysql nova_api
@@ -7908,8 +7908,8 @@
 2024-02-07 13:00:49.674 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 13:00:49.735 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:00:49.746 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 13:00:49.757 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
-2024-02-07 13:00:49.771 | +[3242mlib/nova:create_nova_conf:490            (B[m iniset /etc/nova/nova.conf api_database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
+2024-02-07 13:00:49.757 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
+2024-02-07 13:00:49.771 | +[3242mlib/nova:create_nova_conf:490            (B[m iniset /etc/nova/nova.conf api_database connection 'mysql+pymysql://root:******@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
 2024-02-07 13:00:49.857 | +[3242mlib/nova:create_nova_conf:495            (B[m iniset /etc/nova/nova.conf cache enabled True
 2024-02-07 13:00:49.933 | +[3242mlib/nova:create_nova_conf:496            (B[m iniset /etc/nova/nova.conf cache backend dogpile.cache.memcached
 2024-02-07 13:00:50.002 | +[3242mlib/nova:create_nova_conf:497            (B[m iniset /etc/nova/nova.conf cache memcache_servers localhost:11211
@@ -7934,7 +7934,7 @@
 2024-02-07 13:00:50.704 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/nova/nova.conf keystone_authtoken interface public
 2024-02-07 13:00:50.793 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/nova/nova.conf keystone_authtoken auth_url http://10.201.4.32/identity
 2024-02-07 13:00:50.861 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/nova/nova.conf keystone_authtoken username nova
-2024-02-07 13:00:50.914 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/nova/nova.conf keystone_authtoken password hpinvent
+2024-02-07 13:00:50.914 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/nova/nova.conf keystone_authtoken password ******
 2024-02-07 13:00:50.967 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/nova/nova.conf keystone_authtoken user_domain_name Default
 2024-02-07 13:00:51.015 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/nova/nova.conf keystone_authtoken project_name service
 2024-02-07 13:00:51.064 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/nova/nova.conf keystone_authtoken project_domain_name Default
@@ -7947,7 +7947,7 @@
 2024-02-07 13:00:51.321 | +[3242mlib/nova:configure_cinder_access:651     (B[m iniset /etc/nova/nova.conf cinder auth_type password
 2024-02-07 13:00:51.363 | +[3242mlib/nova:configure_cinder_access:652     (B[m iniset /etc/nova/nova.conf cinder auth_url http://10.201.4.32/identity
 2024-02-07 13:00:51.411 | +[3242mlib/nova:configure_cinder_access:659     (B[m iniset /etc/nova/nova.conf cinder username nova
-2024-02-07 13:00:51.471 | +[3242mlib/nova:configure_cinder_access:660     (B[m iniset /etc/nova/nova.conf cinder password hpinvent
+2024-02-07 13:00:51.471 | +[3242mlib/nova:configure_cinder_access:660     (B[m iniset /etc/nova/nova.conf cinder password ******
 2024-02-07 13:00:51.519 | +[3242mlib/nova:configure_cinder_access:661     (B[m iniset /etc/nova/nova.conf cinder user_domain_name Default
 2024-02-07 13:00:51.564 | +[3242mlib/nova:configure_cinder_access:662     (B[m iniset /etc/nova/nova.conf cinder project_name service
 2024-02-07 13:00:51.613 | +[3242mlib/nova:configure_cinder_access:663     (B[m iniset /etc/nova/nova.conf cinder project_domain_name Default
@@ -8093,8 +8093,8 @@
 2024-02-07 13:00:55.667 | ++[3242mlib/rpc_backend:get_notification_url:136 (B[m local virtual_host=
 2024-02-07 13:00:55.679 | ++[3242mlib/rpc_backend:get_notification_url:137 (B[m is_service_enabled rabbit
 2024-02-07 13:00:55.732 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 13:00:55.743 | ++[3242mlib/rpc_backend:get_notification_url:138 (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
-2024-02-07 13:00:55.754 | +[3242mlib/nova:create_nova_conf:568            (B[m iniset /etc/nova/nova.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-07 13:00:55.743 | ++[3242mlib/rpc_backend:get_notification_url:138 (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/
+2024-02-07 13:00:55.754 | +[3242mlib/nova:create_nova_conf:568            (B[m iniset /etc/nova/nova.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-07 13:00:55.846 | +[3242mlib/nova:create_nova_conf:569            (B[m iniset /etc/nova/nova.conf notifications notification_format unversioned
 2024-02-07 13:00:55.934 | +[3242mlib/nova:create_nova_conf:570            (B[m iniset_rpc_backend nova /etc/nova/nova.conf
 2024-02-07 13:00:55.946 | +[3242mlib/rpc_backend:iniset_rpc_backend:144   (B[m local package=nova
@@ -8107,8 +8107,8 @@
 2024-02-07 13:00:56.081 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=
 2024-02-07 13:00:56.094 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 13:00:56.159 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 13:00:56.172 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
-2024-02-07 13:00:56.189 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/nova/nova.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-07 13:00:56.172 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/
+2024-02-07 13:00:56.189 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/nova/nova.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-07 13:00:56.264 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 13:00:56.273 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 13:00:56.285 | +[3242mlib/nova:create_nova_conf:572            (B[m iniset /etc/nova/nova.conf DEFAULT osapi_compute_workers 2
@@ -8123,7 +8123,7 @@
 2024-02-07 13:00:56.747 | +[3242mlib/nova:init_nova_service_user_conf:834 (B[m iniset /etc/nova/nova.conf service_user auth_type password
 2024-02-07 13:00:56.825 | +[3242mlib/nova:init_nova_service_user_conf:835 (B[m iniset /etc/nova/nova.conf service_user auth_url http://10.201.4.32/identity
 2024-02-07 13:00:56.895 | +[3242mlib/nova:init_nova_service_user_conf:836 (B[m iniset /etc/nova/nova.conf service_user username nova
-2024-02-07 13:00:56.980 | +[3242mlib/nova:init_nova_service_user_conf:837 (B[m iniset /etc/nova/nova.conf service_user password hpinvent
+2024-02-07 13:00:56.980 | +[3242mlib/nova:init_nova_service_user_conf:837 (B[m iniset /etc/nova/nova.conf service_user password ******
 2024-02-07 13:00:57.066 | +[3242mlib/nova:init_nova_service_user_conf:838 (B[m iniset /etc/nova/nova.conf service_user user_domain_name Default
 2024-02-07 13:00:57.147 | +[3242mlib/nova:init_nova_service_user_conf:839 (B[m iniset /etc/nova/nova.conf service_user project_name service
 2024-02-07 13:00:57.234 | +[3242mlib/nova:init_nova_service_user_conf:840 (B[m iniset /etc/nova/nova.conf service_user project_domain_name Default
@@ -8149,8 +8149,8 @@
 2024-02-07 13:00:57.659 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 13:00:57.725 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:00:57.739 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 13:00:57.754 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
-2024-02-07 13:00:57.768 | +[3242mlib/nova:create_nova_conf:596            (B[m iniset /etc/nova/nova_cell1.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
+2024-02-07 13:00:57.754 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
+2024-02-07 13:00:57.768 | +[3242mlib/nova:create_nova_conf:596            (B[m iniset /etc/nova/nova_cell1.conf database connection 'mysql+pymysql://root:******@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
 2024-02-07 13:00:57.858 | +[3242mlib/nova:create_nova_conf:597            (B[m iniset /etc/nova/nova_cell1.conf conductor workers 2
 2024-02-07 13:00:57.941 | +[3242mlib/nova:create_nova_conf:598            (B[m iniset /etc/nova/nova_cell1.conf DEFAULT debug True
 2024-02-07 13:00:58.019 | +[3242mlib/nova:create_nova_conf:600            (B[m [[ superconductor == \s\i\n\g\l\e\c\o\n\d\u\c\t\o\r ]]
@@ -8176,8 +8176,8 @@
 2024-02-07 13:01:00.094 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=nova_cell1
 2024-02-07 13:01:00.107 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 13:01:00.168 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 13:01:00.179 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
-2024-02-07 13:01:00.192 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/nova/nova_cell1.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
+2024-02-07 13:01:00.179 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
+2024-02-07 13:01:00.192 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/nova/nova_cell1.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
 2024-02-07 13:01:00.296 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 13:01:00.308 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 13:01:00.322 | +[3242mlib/nova:create_nova_conf:608            (B[m is_service_enabled placement placement-client
@@ -8187,7 +8187,7 @@
 2024-02-07 13:01:00.427 | +[3242mlib/nova:configure_placement_nova_compute:638 (B[m iniset /etc/nova/nova_cell1.conf placement auth_type password
 2024-02-07 13:01:00.513 | +[3242mlib/nova:configure_placement_nova_compute:639 (B[m iniset /etc/nova/nova_cell1.conf placement auth_url http://10.201.4.32/identity
 2024-02-07 13:01:00.590 | +[3242mlib/nova:configure_placement_nova_compute:640 (B[m iniset /etc/nova/nova_cell1.conf placement username placement
-2024-02-07 13:01:00.679 | +[3242mlib/nova:configure_placement_nova_compute:641 (B[m iniset /etc/nova/nova_cell1.conf placement password hpinvent
+2024-02-07 13:01:00.679 | +[3242mlib/nova:configure_placement_nova_compute:641 (B[m iniset /etc/nova/nova_cell1.conf placement password ******
 2024-02-07 13:01:00.771 | +[3242mlib/nova:configure_placement_nova_compute:642 (B[m iniset /etc/nova/nova_cell1.conf placement user_domain_name Default
 2024-02-07 13:01:00.836 | +[3242mlib/nova:configure_placement_nova_compute:643 (B[m iniset /etc/nova/nova_cell1.conf placement project_name service
 2024-02-07 13:01:00.888 | +[3242mlib/nova:configure_placement_nova_compute:644 (B[m iniset /etc/nova/nova_cell1.conf placement project_domain_name Default
@@ -8809,8 +8809,8 @@
 2024-02-07 13:01:36.465 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 13:01:36.527 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:01:36.538 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 13:01:36.551 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
-2024-02-07 13:01:36.562 | +[3242mlib/placement:create_placement_conf:103  (B[m iniset /etc/placement/placement.conf placement_database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
+2024-02-07 13:01:36.551 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
+2024-02-07 13:01:36.562 | +[3242mlib/placement:create_placement_conf:103  (B[m iniset /etc/placement/placement.conf placement_database connection 'mysql+pymysql://root:******@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
 2024-02-07 13:01:36.633 | +[3242mlib/placement:create_placement_conf:104  (B[m iniset /etc/placement/placement.conf DEFAULT debug True
 2024-02-07 13:01:36.696 | +[3242mlib/placement:create_placement_conf:105  (B[m iniset /etc/placement/placement.conf api auth_strategy keystone
 2024-02-07 13:01:36.769 | +[3242mlib/placement:create_placement_conf:106  (B[m configure_keystone_authtoken_middleware /etc/placement/placement.conf placement
@@ -8821,7 +8821,7 @@
 2024-02-07 13:01:36.893 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/placement/placement.conf keystone_authtoken interface public
 2024-02-07 13:01:36.956 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/placement/placement.conf keystone_authtoken auth_url http://10.201.4.32/identity
 2024-02-07 13:01:37.015 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/placement/placement.conf keystone_authtoken username placement
-2024-02-07 13:01:37.068 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/placement/placement.conf keystone_authtoken password hpinvent
+2024-02-07 13:01:37.068 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/placement/placement.conf keystone_authtoken password ******
 2024-02-07 13:01:37.119 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/placement/placement.conf keystone_authtoken user_domain_name Default
 2024-02-07 13:01:37.167 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/placement/placement.conf keystone_authtoken project_name service
 2024-02-07 13:01:37.221 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/placement/placement.conf keystone_authtoken project_domain_name Default
@@ -8916,7 +8916,7 @@
 2024-02-07 13:01:39.755 | +[3242mlib/nova:configure_placement_nova_compute:638 (B[m iniset /etc/nova/nova.conf placement auth_type password
 2024-02-07 13:01:39.836 | +[3242mlib/nova:configure_placement_nova_compute:639 (B[m iniset /etc/nova/nova.conf placement auth_url http://10.201.4.32/identity
 2024-02-07 13:01:39.927 | +[3242mlib/nova:configure_placement_nova_compute:640 (B[m iniset /etc/nova/nova.conf placement username placement
-2024-02-07 13:01:40.012 | +[3242mlib/nova:configure_placement_nova_compute:641 (B[m iniset /etc/nova/nova.conf placement password hpinvent
+2024-02-07 13:01:40.012 | +[3242mlib/nova:configure_placement_nova_compute:641 (B[m iniset /etc/nova/nova.conf placement password ******
 2024-02-07 13:01:40.094 | +[3242mlib/nova:configure_placement_nova_compute:642 (B[m iniset /etc/nova/nova.conf placement user_domain_name Default
 2024-02-07 13:01:40.196 | +[3242mlib/nova:configure_placement_nova_compute:643 (B[m iniset /etc/nova/nova.conf placement project_name service
 2024-02-07 13:01:40.276 | +[3242mlib/nova:configure_placement_nova_compute:644 (B[m iniset /etc/nova/nova.conf placement project_domain_name Default
@@ -9112,7 +9112,7 @@
 2024-02-07 13:01:51.712 | +[3242mfunctions-common:is_ubuntu:559           (B[m '[' deb = deb ']'
 2024-02-07 13:01:51.719 | +[3242mlib/databases/mysql:configure_database_mysql:110 (B[m [[ jammy == \j\a\m\m\y ]]
 2024-02-07 13:01:51.726 | +[3242mlib/databases/mysql:configure_database_mysql:110 (B[m '[' mysql == mariadb ']'
-2024-02-07 13:01:51.732 | +[3242mlib/databases/mysql:configure_database_mysql:111 (B[m sudo mysqladmin -u root password hpinvent
+2024-02-07 13:01:51.732 | +[3242mlib/databases/mysql:configure_database_mysql:111 (B[m sudo mysqladmin -u root password ******
 2024-02-07 13:01:51.749 | mysqladmin: connect to server at 'localhost' failed
 2024-02-07 13:01:51.749 | error: 'Access denied for user 'root'@'localhost' (using password: NO)'
 2024-02-07 13:01:51.757 | +[3242mlib/databases/mysql:configure_database_mysql:111 (B[m true
@@ -9120,7 +9120,7 @@
 2024-02-07 13:01:51.776 | +[3242mfunctions-common:is_ubuntu:556           (B[m [[ -z deb ]]
 2024-02-07 13:01:51.784 | +[3242mfunctions-common:is_ubuntu:559           (B[m '[' deb = deb ']'
 2024-02-07 13:01:51.791 | +[3242mlib/databases/mysql:configure_database_mysql:116 (B[m '[' mysql == mariadb ']'
-2024-02-07 13:01:51.799 | +[3242mlib/databases/mysql:configure_database_mysql:119 (B[m local 'cmd_args=-uroot -phpinvent -h127.0.0.1 '
+2024-02-07 13:01:51.799 | +[3242mlib/databases/mysql:configure_database_mysql:119 (B[m local 'cmd_args=-uroot -p****** -h127.0.0.1 '
 2024-02-07 13:01:51.806 | +[3242mlib/databases/mysql:configure_database_mysql:126 (B[m is_ubuntu
 2024-02-07 13:01:51.814 | +[3242mfunctions-common:is_ubuntu:556           (B[m [[ -z deb ]]
 2024-02-07 13:01:51.821 | +[3242mfunctions-common:is_ubuntu:559           (B[m '[' deb = deb ']'
@@ -9131,9 +9131,9 @@
 2024-02-07 13:01:51.861 | +[3242mfunctions-common:is_ubuntu:559           (B[m '[' deb = deb ']'
 2024-02-07 13:01:51.868 | +[3242mlib/databases/mysql:configure_database_mysql:136 (B[m [[ jammy == \j\a\m\m\y ]]
 2024-02-07 13:01:51.875 | +[3242mlib/databases/mysql:configure_database_mysql:136 (B[m '[' mysql == mariadb ']'
-2024-02-07 13:01:51.882 | +[3242mlib/databases/mysql:configure_database_mysql:138 (B[m sudo mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE USER IF NOT EXISTS '\''root'\''@'\''%'\'' identified by '\''hpinvent'\'';'
+2024-02-07 13:01:51.882 | +[3242mlib/databases/mysql:configure_database_mysql:138 (B[m sudo mysql -uroot -p****** -h127.0.0.1 -e 'CREATE USER IF NOT EXISTS '\''root'\''@'\''%'\'' identified by '\''******'\'';'
 2024-02-07 13:01:51.897 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:01:51.939 | +[3242mlib/databases/mysql:configure_database_mysql:140 (B[m sudo mysql -uroot -phpinvent -h127.0.0.1 -e 'GRANT ALL PRIVILEGES ON *.* TO '\''root'\''@'\''%'\'';'
+2024-02-07 13:01:51.939 | +[3242mlib/databases/mysql:configure_database_mysql:140 (B[m sudo mysql -uroot -p****** -h127.0.0.1 -e 'GRANT ALL PRIVILEGES ON *.* TO '\''root'\''@'\''%'\'';'
 2024-02-07 13:01:51.954 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:01:52.000 | +[3242mlib/databases/mysql:configure_database_mysql:146 (B[m iniset -sudo /etc/mysql/my.cnf mysqld sql_mode TRADITIONAL
 2024-02-07 13:01:52.100 | +[3242mlib/databases/mysql:configure_database_mysql:147 (B[m iniset -sudo /etc/mysql/my.cnf mysqld default-storage-engine InnoDB
@@ -9184,11 +9184,11 @@
 2024-02-07 13:02:08.412 | +[3242mlib/database:recreate_database:112       (B[m local db=stats
 2024-02-07 13:02:08.418 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql stats
 2024-02-07 13:02:08.423 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=stats
-2024-02-07 13:02:08.433 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS stats;'
+2024-02-07 13:02:08.433 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS stats;'
 2024-02-07 13:02:08.437 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:02:08.460 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE stats CHARACTER SET utf8;'
+2024-02-07 13:02:08.460 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE stats CHARACTER SET utf8;'
 2024-02-07 13:02:08.463 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:02:08.485 | +[3242mlib/databases/mysql:configure_database_mysql:178 (B[m mysql -u root -phpinvent -h 127.0.0.1 -e 'CREATE TABLE queries (db VARCHAR(32), op VARCHAR(32),
+2024-02-07 13:02:08.485 | +[3242mlib/databases/mysql:configure_database_mysql:178 (B[m mysql -u root -p****** -h 127.0.0.1 -e 'CREATE TABLE queries (db VARCHAR(32), op VARCHAR(32),
 2024-02-07 13:02:08.485 |                 count INT, PRIMARY KEY (db, op)) ENGINE MEMORY' stats
 2024-02-07 13:02:08.488 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:02:08.520 | +[3242mlib/databases/mysql:configure_database_mysql:183 (B[m [[ True == \T\r\u\e ]]
@@ -9208,7 +9208,7 @@
 2024-02-07 13:02:10.892 | +[3242mfunctions-common:save_stackenv:62        (B[m time_stamp=2024-02-07-130210
 2024-02-07 13:02:10.898 | +[3242mfunctions-common:save_stackenv:63        (B[m echo '# 2024-02-07-130210 1081'
 2024-02-07 13:02:10.904 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
-2024-02-07 13:02:10.913 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-07 13:02:10.913 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-07 13:02:10.922 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
 2024-02-07 13:02:10.929 | +[3242mfunctions-common:save_stackenv:65        (B[m echo DATA_DIR=/opt/stack/data
 2024-02-07 13:02:10.937 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
@@ -9427,17 +9427,17 @@
 2024-02-07 13:02:17.369 | +[3242mfunctions-common:write_clouds_yaml:82    (B[m sudo chown -R ubuntu /etc/openstack
 2024-02-07 13:02:17.391 | +[3242mfunctions-common:write_clouds_yaml:84    (B[m CA_CERT_ARG=
 2024-02-07 13:02:17.402 | +[3242mfunctions-common:write_clouds_yaml:85    (B[m '[' -f /opt/stack/data/ca-bundle.pem ']'
-2024-02-07 13:02:17.414 | +[3242mfunctions-common:write_clouds_yaml:89    (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo --os-password hpinvent --os-project-name demo
+2024-02-07 13:02:17.414 | +[3242mfunctions-common:write_clouds_yaml:89    (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo --os-password ****** --os-project-name demo
 2024-02-07 13:02:17.461 | The user clouds.yaml file didn't exist.
-2024-02-07 13:02:17.482 | +[3242mfunctions-common:write_clouds_yaml:100   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password hpinvent --os-project-name admin
-2024-02-07 13:02:17.550 | +[3242mfunctions-common:write_clouds_yaml:111   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin-demo --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password hpinvent --os-project-name demo
-2024-02-07 13:02:17.622 | +[3242mfunctions-common:write_clouds_yaml:122   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo --os-password hpinvent --os-project-name alt_demo
-2024-02-07 13:02:17.691 | +[3242mfunctions-common:write_clouds_yaml:133   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_member --os-password hpinvent --os-project-name alt_demo
-2024-02-07 13:02:17.761 | +[3242mfunctions-common:write_clouds_yaml:144   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_reader --os-password hpinvent --os-project-name alt_demo
-2024-02-07 13:02:17.834 | +[3242mfunctions-common:write_clouds_yaml:155   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo_reader --os-password hpinvent --os-project-name demo
-2024-02-07 13:02:17.917 | +[3242mfunctions-common:write_clouds_yaml:166   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password hpinvent --os-system-scope all
-2024-02-07 13:02:17.990 | +[3242mfunctions-common:write_clouds_yaml:177   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_member --os-password hpinvent --os-system-scope all
-2024-02-07 13:02:18.060 | +[3242mfunctions-common:write_clouds_yaml:188   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_reader --os-password hpinvent --os-system-scope all
+2024-02-07 13:02:17.482 | +[3242mfunctions-common:write_clouds_yaml:100   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password ****** --os-project-name admin
+2024-02-07 13:02:17.550 | +[3242mfunctions-common:write_clouds_yaml:111   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin-demo --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password ****** --os-project-name demo
+2024-02-07 13:02:17.622 | +[3242mfunctions-common:write_clouds_yaml:122   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo --os-password ****** --os-project-name alt_demo
+2024-02-07 13:02:17.691 | +[3242mfunctions-common:write_clouds_yaml:133   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_member --os-password ****** --os-project-name alt_demo
+2024-02-07 13:02:17.761 | +[3242mfunctions-common:write_clouds_yaml:144   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_reader --os-password ****** --os-project-name alt_demo
+2024-02-07 13:02:17.834 | +[3242mfunctions-common:write_clouds_yaml:155   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo_reader --os-password ****** --os-project-name demo
+2024-02-07 13:02:17.917 | +[3242mfunctions-common:write_clouds_yaml:166   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password ****** --os-system-scope all
+2024-02-07 13:02:17.990 | +[3242mfunctions-common:write_clouds_yaml:177   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_member --os-password ****** --os-system-scope all
+2024-02-07 13:02:18.060 | +[3242mfunctions-common:write_clouds_yaml:188   (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_reader --os-password ****** --os-system-scope all
 2024-02-07 13:02:18.134 | +[3242mfunctions-common:write_clouds_yaml:198   (B[m cat
 2024-02-07 13:02:18.154 | ++[3242mfunctions-common:write_clouds_yaml:204   (B[m eval echo '~ubuntu'
 2024-02-07 13:02:18.167 | +++[3242mfunctions-common:write_clouds_yaml:204   (B[m echo /home/ubuntu
@@ -9459,9 +9459,9 @@
 2024-02-07 13:02:18.461 | +[3242mlib/database:recreate_database:112       (B[m local db=keystone
 2024-02-07 13:02:18.469 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql keystone
 2024-02-07 13:02:18.477 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=keystone
-2024-02-07 13:02:18.487 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS keystone;'
+2024-02-07 13:02:18.487 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS keystone;'
 2024-02-07 13:02:18.491 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:02:18.527 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE keystone CHARACTER SET utf8;'
+2024-02-07 13:02:18.527 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE keystone CHARACTER SET utf8;'
 2024-02-07 13:02:18.531 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:02:18.578 | +[3242mlib/keystone:init_keystone:487           (B[m time_start dbsync
 2024-02-07 13:02:18.592 | +[3242mfunctions-common:time_start:2407         (B[m local name=dbsync
@@ -9668,7 +9668,7 @@
 2024-02-07 13:02:30.560 | +[3242mfunctions-common:restart_service:2305    (B[m '[' -x /bin/systemctl ']'
 2024-02-07 13:02:30.572 | +[3242mfunctions-common:restart_service:2306    (B[m sudo /bin/systemctl restart memcached
 2024-02-07 13:02:31.512 | +[3242m./stack.sh:main:1140                     (B[m bootstrap_keystone
-2024-02-07 13:02:31.525 | +[3242mlib/keystone:bootstrap_keystone:607      (B[m /opt/stack/data/venv/bin/keystone-manage bootstrap --bootstrap-username admin --bootstrap-password hpinvent --bootstrap-project-name admin --bootstrap-role-name admin --bootstrap-service-name keystone --bootstrap-region-id RegionOne --bootstrap-public-url http://10.201.4.32/identity
+2024-02-07 13:02:31.525 | +[3242mlib/keystone:bootstrap_keystone:607      (B[m /opt/stack/data/venv/bin/keystone-manage bootstrap --bootstrap-username admin --bootstrap-password ****** --bootstrap-project-name admin --bootstrap-role-name admin --bootstrap-service-name keystone --bootstrap-region-id RegionOne --bootstrap-public-url http://10.201.4.32/identity
 2024-02-07 13:02:32.959 | [00;32mDEBUG keystone.notifications [[00;36m-[00;32m] [01;35m[00;32mCallback: `keystone.application_credential.core.Manager._delete_app_creds_on_user_delete_callback` subscribed to event `identity.user.deleted`.[00m [00;33m{{(pid=64586) register_event_callback /opt/stack/keystone/keystone/notifications.py:295}}[00m[00m
 2024-02-07 13:02:32.959 | [00;32mDEBUG keystone.notifications [[00;36m-[00;32m] [01;35m[00;32mCallback: `keystone.application_credential.core.Manager._delete_app_creds_on_user_delete_callback` subscribed to event `identity.user.disabled`.[00m [00;33m{{(pid=64586) register_event_callback /opt/stack/keystone/keystone/notifications.py:295}}[00m[00m
 2024-02-07 13:02:32.959 | [00;32mDEBUG keystone.notifications [[00;36m-[00;32m] [01;35m[00;32mCallback: `keystone.application_credential.core.Manager._delete_app_creds_on_assignment_removal` subscribed to event `identity.remove_application_credentials_for_user.internal`.[00m [00;33m{{(pid=64586) register_event_callback /opt/stack/keystone/keystone/notifications.py:295}}[00m[00m
@@ -9836,11 +9836,11 @@
 2024-02-07 13:02:43.254 | ++[3242mfunctions-common:get_or_create_project:933 (B[m echo e33d7b86ec994885ad218fafbe3cb60d
 2024-02-07 13:02:43.267 | +[3242mlib/keystone:create_keystone_accounts:349 (B[m demo_project=e33d7b86ec994885ad218fafbe3cb60d
 2024-02-07 13:02:43.278 | +[3242mlib/keystone:create_keystone_accounts:350 (B[m local demo_user
-2024-02-07 13:02:43.296 | ++[3242mlib/keystone:create_keystone_accounts:352 (B[m get_or_create_user demo hpinvent default demo@example.com
+2024-02-07 13:02:43.296 | ++[3242mlib/keystone:create_keystone_accounts:352 (B[m get_or_create_user demo ****** default demo@example.com
 2024-02-07 13:02:43.308 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:43.320 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z demo@example.com ]]
 2024-02-07 13:02:43.329 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=demo@example.com
-2024-02-07 13:02:43.340 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create demo --password hpinvent --domain=default --email=demo@example.com --or-show -f value -c id
+2024-02-07 13:02:43.340 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create demo --password ****** --domain=default --email=demo@example.com --or-show -f value -c id
 2024-02-07 13:02:44.653 | +++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:02:44.664 | ++[3242mfunctions-common:get_or_create_user:919  (B[m user_id=ccb6061fc5e141a390998df16a952397
 2024-02-07 13:02:44.674 | ++[3242mfunctions-common:get_or_create_user:920  (B[m echo ccb6061fc5e141a390998df16a952397
@@ -9917,11 +9917,11 @@
 2024-02-07 13:02:46.129 | +[3242minc/async:async_inner:63                 (B[m get_or_add_user_project_role member ccb6061fc5e141a390998df16a952397 e9a75fd7719544159c463dbc5e3a741f
 2024-02-07 13:02:46.346 | [7121 Async ks-demo-invis:66899]: running: get_or_add_user_project_role member ccb6061fc5e141a390998df16a952397 e9a75fd7719544159c463dbc5e3a741f
 2024-02-07 13:02:46.403 | +[3242mlib/keystone:create_keystone_accounts:363 (B[m local demo_reader
-2024-02-07 13:02:46.460 | ++[3242mlib/keystone:create_keystone_accounts:365 (B[m get_or_create_user demo_reader hpinvent default demo_reader@example.com
+2024-02-07 13:02:46.460 | ++[3242mlib/keystone:create_keystone_accounts:365 (B[m get_or_create_user demo_reader ****** default demo_reader@example.com
 2024-02-07 13:02:46.480 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:46.506 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z demo_reader@example.com ]]
 2024-02-07 13:02:46.506 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=demo_reader@example.com
-2024-02-07 13:02:46.550 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create demo_reader --password hpinvent --domain=default --email=demo_reader@example.com --or-show -f value -c id
+2024-02-07 13:02:46.550 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create demo_reader --password ****** --domain=default --email=demo_reader@example.com --or-show -f value -c id
 2024-02-07 13:02:49.417 | +[3242minc/async:async_inner:64                 (B[m rc=0
 2024-02-07 13:02:49.422 | +++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:02:49.424 | ++[3242mfunctions-common:get_or_create_user:919  (B[m user_id=d5dba8b657694b72a8e124d9dd483f55
@@ -9948,11 +9948,11 @@
 2024-02-07 13:02:51.500 | ++[3242mfunctions-common:get_or_create_project:933 (B[m echo ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:51.507 | +[3242mlib/keystone:create_keystone_accounts:371 (B[m alt_demo_project=ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:51.513 | +[3242mlib/keystone:create_keystone_accounts:373 (B[m local alt_demo_user
-2024-02-07 13:02:51.520 | ++[3242mlib/keystone:create_keystone_accounts:375 (B[m get_or_create_user alt_demo hpinvent default alt_demo@example.com
+2024-02-07 13:02:51.520 | ++[3242mlib/keystone:create_keystone_accounts:375 (B[m get_or_create_user alt_demo ****** default alt_demo@example.com
 2024-02-07 13:02:51.531 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:51.539 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z alt_demo@example.com ]]
 2024-02-07 13:02:51.547 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=alt_demo@example.com
-2024-02-07 13:02:51.558 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create alt_demo --password hpinvent --domain=default --email=alt_demo@example.com --or-show -f value -c id
+2024-02-07 13:02:51.558 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create alt_demo --password ****** --domain=default --email=alt_demo@example.com --or-show -f value -c id
 2024-02-07 13:02:52.921 | +++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:02:52.932 | ++[3242mfunctions-common:get_or_create_user:919  (B[m user_id=f58e2e45338541e89f4e952f5f7f95bc
 2024-02-07 13:02:52.943 | ++[3242mfunctions-common:get_or_create_user:920  (B[m echo f58e2e45338541e89f4e952f5f7f95bc
@@ -9964,11 +9964,11 @@
 2024-02-07 13:02:53.203 | +[3242minc/async:async_inner:63                 (B[m get_or_add_user_project_role anotherrole f58e2e45338541e89f4e952f5f7f95bc ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:53.233 | [7121 Async ks-alt-another:67916]: running: get_or_add_user_project_role anotherrole f58e2e45338541e89f4e952f5f7f95bc ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:53.240 | +[3242mlib/keystone:create_keystone_accounts:381 (B[m local alt_demo_member
-2024-02-07 13:02:53.246 | ++[3242mlib/keystone:create_keystone_accounts:383 (B[m get_or_create_user alt_demo_member hpinvent default alt_demo_member@example.com
+2024-02-07 13:02:53.246 | ++[3242mlib/keystone:create_keystone_accounts:383 (B[m get_or_create_user alt_demo_member ****** default alt_demo_member@example.com
 2024-02-07 13:02:53.252 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:53.258 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z alt_demo_member@example.com ]]
 2024-02-07 13:02:53.265 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=alt_demo_member@example.com
-2024-02-07 13:02:53.274 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create alt_demo_member --password hpinvent --domain=default --email=alt_demo_member@example.com --or-show -f value -c id
+2024-02-07 13:02:53.274 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create alt_demo_member --password ****** --domain=default --email=alt_demo_member@example.com --or-show -f value -c id
 2024-02-07 13:02:53.426 | +[3242minc/async:async_inner:64                 (B[m rc=0
 2024-02-07 13:02:53.448 | [67297 Async ks-demo-reader:67297]: finished successfully
 2024-02-07 13:02:54.732 | +++[3242mfunctions-common:oscwrap:2461            (B[m return 0
@@ -9979,11 +9979,11 @@
 2024-02-07 13:02:54.837 | +[3242minc/async:async_inner:63                 (B[m get_or_add_user_project_role member 611e3c6a9794415492ed77b7a3b28ddf ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:54.868 | [7121 Async ks-alt-member-user:68194]: running: get_or_add_user_project_role member 611e3c6a9794415492ed77b7a3b28ddf ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:54.875 | +[3242mlib/keystone:create_keystone_accounts:387 (B[m local alt_demo_reader
-2024-02-07 13:02:54.883 | ++[3242mlib/keystone:create_keystone_accounts:389 (B[m get_or_create_user alt_demo_reader hpinvent default alt_demo_reader@example.com
+2024-02-07 13:02:54.883 | ++[3242mlib/keystone:create_keystone_accounts:389 (B[m get_or_create_user alt_demo_reader ****** default alt_demo_reader@example.com
 2024-02-07 13:02:54.890 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:54.897 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z alt_demo_reader@example.com ]]
 2024-02-07 13:02:54.904 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=alt_demo_reader@example.com
-2024-02-07 13:02:54.913 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create alt_demo_reader --password hpinvent --domain=default --email=alt_demo_reader@example.com --or-show -f value -c id
+2024-02-07 13:02:54.913 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create alt_demo_reader --password ****** --domain=default --email=alt_demo_reader@example.com --or-show -f value -c id
 2024-02-07 13:02:56.281 | +++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:02:56.288 | ++[3242mfunctions-common:get_or_create_user:919  (B[m user_id=36e1a63b27a94b4bbb33d4588f921c76
 2024-02-07 13:02:56.293 | ++[3242mfunctions-common:get_or_create_user:920  (B[m echo 36e1a63b27a94b4bbb33d4588f921c76
@@ -9991,11 +9991,11 @@
 2024-02-07 13:02:56.308 | +[3242mlib/keystone:create_keystone_accounts:390 (B[m async_run ks-alt-reader-user get_or_add_user_project_role reader 36e1a63b27a94b4bbb33d4588f921c76 ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:56.385 | +[3242minc/async:async_inner:63                 (B[m get_or_add_user_project_role reader 36e1a63b27a94b4bbb33d4588f921c76 ff39302e798c4597861a81f9ab645705
 2024-02-07 13:02:56.427 | [7121 Async ks-alt-reader-user:68422]: running: get_or_add_user_project_role reader 36e1a63b27a94b4bbb33d4588f921c76 ff39302e798c4597861a81f9ab645705
-2024-02-07 13:02:56.436 | ++[3242mlib/keystone:create_keystone_accounts:397 (B[m get_or_create_user system_member hpinvent default system_member@example.com
+2024-02-07 13:02:56.436 | ++[3242mlib/keystone:create_keystone_accounts:397 (B[m get_or_create_user system_member ****** default system_member@example.com
 2024-02-07 13:02:56.444 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:56.452 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z system_member@example.com ]]
 2024-02-07 13:02:56.458 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=system_member@example.com
-2024-02-07 13:02:56.465 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create system_member --password hpinvent --domain=default --email=system_member@example.com --or-show -f value -c id
+2024-02-07 13:02:56.465 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create system_member --password ****** --domain=default --email=system_member@example.com --or-show -f value -c id
 2024-02-07 13:02:56.862 | +[3242minc/async:async_inner:64                 (B[m rc=0
 2024-02-07 13:02:56.924 | [67786 Async ks-alt-admin:67786]: finished successfully
 2024-02-07 13:02:56.926 | +[3242minc/async:async_inner:64                 (B[m rc=0
@@ -10007,11 +10007,11 @@
 2024-02-07 13:02:57.894 | +[3242mlib/keystone:create_keystone_accounts:398 (B[m async_run ks-system-member get_or_add_user_system_role member bf6a3252654d414a8e6a4a86551c1e39 all
 2024-02-07 13:02:57.990 | +[3242minc/async:async_inner:63                 (B[m get_or_add_user_system_role member bf6a3252654d414a8e6a4a86551c1e39 all
 2024-02-07 13:02:58.066 | [7121 Async ks-system-member:68746]: running: get_or_add_user_system_role member bf6a3252654d414a8e6a4a86551c1e39 all
-2024-02-07 13:02:58.076 | ++[3242mlib/keystone:create_keystone_accounts:401 (B[m get_or_create_user system_reader hpinvent default system_reader@example.com
+2024-02-07 13:02:58.076 | ++[3242mlib/keystone:create_keystone_accounts:401 (B[m get_or_create_user system_reader ****** default system_reader@example.com
 2024-02-07 13:02:58.083 | ++[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:02:58.097 | ++[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z system_reader@example.com ]]
 2024-02-07 13:02:58.104 | ++[3242mfunctions-common:get_or_create_user:905  (B[m local email=--email=system_reader@example.com
-2024-02-07 13:02:58.111 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create system_reader --password hpinvent --domain=default --email=system_reader@example.com --or-show -f value -c id
+2024-02-07 13:02:58.111 | +++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create system_reader --password ****** --domain=default --email=system_reader@example.com --or-show -f value -c id
 2024-02-07 13:02:58.600 | +[3242minc/async:async_inner:64                 (B[m rc=0
 2024-02-07 13:02:58.622 | [68194 Async ks-alt-member-user:68194]: finished successfully
 2024-02-07 13:02:59.452 | +++[3242mfunctions-common:oscwrap:2461            (B[m return 0
@@ -10409,11 +10409,11 @@
 2024-02-07 13:03:32.772 | [7121 Async create_nova_accounts:72013]: Signaled
 2024-02-07 13:03:32.773 | +[3242mlib/nova:create_nova_accounts:386        (B[m [[ key,n-api,n-cpu,n-cond,n-sch,n-novnc,n-api-meta,placement-api,placement-client,g-api,c-sch,c-api,c-vol,ovn-controller,ovn-northd,ovs-vswitchd,ovsdb-server,q-svc,q-ovn-metadata-agent,rabbit,tempest,mysql,etcd3,dstat,cinder,c-bak =~ n-api ]]
 2024-02-07 13:03:32.773 | +[3242mlib/nova:create_nova_accounts:390        (B[m create_service_user nova admin
-2024-02-07 13:03:32.773 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user nova hpinvent Default
+2024-02-07 13:03:32.773 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user nova ****** Default
 2024-02-07 13:03:32.773 | +[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:03:32.773 | +[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z '' ]]
 2024-02-07 13:03:32.773 | +[3242mfunctions-common:get_or_create_user:907  (B[m local email=
-2024-02-07 13:03:32.773 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create nova --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-07 13:03:32.773 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create nova --password ****** --domain=Default --or-show -f value -c id
 2024-02-07 13:03:32.773 | ++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:03:32.773 | +[3242mfunctions-common:get_or_create_user:919  (B[m user_id=55f52a1c6e164cfaad5d27a714a42612
 2024-02-07 13:03:32.773 | +[3242mfunctions-common:get_or_create_user:920  (B[m echo 55f52a1c6e164cfaad5d27a714a42612
@@ -10529,11 +10529,11 @@
 2024-02-07 13:03:34.357 | +[3242mlib/glance:create_glance_accounts:457    (B[m is_service_enabled g-api
 2024-02-07 13:03:34.357 | +[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:03:34.357 | +[3242mlib/glance:create_glance_accounts:459    (B[m create_service_user glance
-2024-02-07 13:03:34.358 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user glance hpinvent Default
+2024-02-07 13:03:34.358 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user glance ****** Default
 2024-02-07 13:03:34.358 | +[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:03:34.358 | +[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z '' ]]
 2024-02-07 13:03:34.358 | +[3242mfunctions-common:get_or_create_user:907  (B[m local email=
-2024-02-07 13:03:34.358 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create glance --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-07 13:03:34.358 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create glance --password ****** --domain=Default --or-show -f value -c id
 2024-02-07 13:03:34.358 | ++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:03:34.358 | +[3242mfunctions-common:get_or_create_user:919  (B[m user_id=6dabd81a3dea48a88d881310bb092e33
 2024-02-07 13:03:34.358 | +[3242mfunctions-common:get_or_create_user:920  (B[m echo 6dabd81a3dea48a88d881310bb092e33
@@ -10642,7 +10642,7 @@
 2024-02-07 13:03:34.363 | +---------------+----------------------------------+
 2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:304   (B[m iniset /etc/glance/glance-api.conf DEFAULT use_keystone_limits True
 2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:307   (B[m iniset /etc/glance/glance-api.conf oslo_limit user_domain_name Default
-2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:308   (B[m iniset /etc/glance/glance-api.conf oslo_limit password hpinvent
+2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:308   (B[m iniset /etc/glance/glance-api.conf oslo_limit password ******
 2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:309   (B[m iniset /etc/glance/glance-api.conf oslo_limit username glance
 2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:310   (B[m iniset /etc/glance/glance-api.conf oslo_limit auth_type password
 2024-02-07 13:03:34.364 | +[3242mlib/glance:configure_glance_quotas:311   (B[m iniset /etc/glance/glance-api.conf oslo_limit auth_url http://10.201.4.32/identity
@@ -10661,11 +10661,11 @@
 2024-02-07 13:03:34.584 | +[3242mlib/cinder:create_cinder_accounts:446    (B[m is_service_enabled barbican
 2024-02-07 13:03:34.584 | +[3242mfunctions-common:is_service_enabled:2077 (B[m return 1
 2024-02-07 13:03:34.585 | +[3242mlib/cinder:create_cinder_accounts:450    (B[m create_service_user cinder
-2024-02-07 13:03:34.585 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user cinder hpinvent Default
+2024-02-07 13:03:34.585 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user cinder ****** Default
 2024-02-07 13:03:34.585 | +[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:03:34.585 | +[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z '' ]]
 2024-02-07 13:03:34.585 | +[3242mfunctions-common:get_or_create_user:907  (B[m local email=
-2024-02-07 13:03:34.585 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create cinder --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-07 13:03:34.585 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create cinder --password ****** --domain=Default --or-show -f value -c id
 2024-02-07 13:03:34.585 | ++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:03:34.585 | +[3242mfunctions-common:get_or_create_user:919  (B[m user_id=24b02e9137dd4da992b04253b57763a4
 2024-02-07 13:03:34.585 | +[3242mfunctions-common:get_or_create_user:920  (B[m echo 24b02e9137dd4da992b04253b57763a4
@@ -10775,11 +10775,11 @@
 2024-02-07 13:03:34.844 | +[3242mlib/neutron:create_neutron_accounts:507  (B[m is_service_enabled q-svc neutron-api
 2024-02-07 13:03:34.844 | +[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:03:34.844 | +[3242mlib/neutron:create_neutron_accounts:509  (B[m create_service_user neutron
-2024-02-07 13:03:34.844 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user neutron hpinvent Default
+2024-02-07 13:03:34.844 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user neutron ****** Default
 2024-02-07 13:03:34.844 | +[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:03:34.844 | +[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z '' ]]
 2024-02-07 13:03:34.844 | +[3242mfunctions-common:get_or_create_user:907  (B[m local email=
-2024-02-07 13:03:34.844 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create neutron --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-07 13:03:34.844 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create neutron --password ****** --domain=Default --or-show -f value -c id
 2024-02-07 13:03:34.844 | ++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:03:34.844 | +[3242mfunctions-common:get_or_create_user:919  (B[m user_id=c7a4c88eb5be4ebcb0f9cd6fe38367c1
 2024-02-07 13:03:34.844 | +[3242mfunctions-common:get_or_create_user:920  (B[m echo c7a4c88eb5be4ebcb0f9cd6fe38367c1
@@ -10888,8 +10888,8 @@
 2024-02-07 13:03:53.463 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 13:03:53.522 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:03:53.531 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 13:03:53.538 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
-2024-02-07 13:03:53.548 | +[3242mlib/neutron:_configure_neutron_common:918 (B[m iniset /etc/neutron/neutron.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
+2024-02-07 13:03:53.538 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
+2024-02-07 13:03:53.548 | +[3242mlib/neutron:_configure_neutron_common:918 (B[m iniset /etc/neutron/neutron.conf database connection 'mysql+pymysql://root:******@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
 2024-02-07 13:03:53.617 | +[3242mlib/neutron:_configure_neutron_common:919 (B[m iniset /etc/neutron/neutron.conf DEFAULT state_path /opt/stack/data/neutron
 2024-02-07 13:03:53.703 | +[3242mlib/neutron:_configure_neutron_common:920 (B[m iniset /etc/neutron/neutron.conf DEFAULT use_syslog False
 2024-02-07 13:03:53.782 | +[3242mlib/neutron:_configure_neutron_common:921 (B[m iniset /etc/neutron/neutron.conf DEFAULT bind_host 0.0.0.0
@@ -10948,8 +10948,8 @@
 2024-02-07 13:03:55.120 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=
 2024-02-07 13:03:55.135 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 13:03:55.205 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 13:03:55.218 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
-2024-02-07 13:03:55.237 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/neutron/neutron.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-07 13:03:55.218 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/
+2024-02-07 13:03:55.237 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/neutron/neutron.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-07 13:03:55.335 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 13:03:55.348 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 13:03:55.360 | +[3242mlib/neutron:configure_neutron:392        (B[m is_service_enabled q-metering neutron-metering
@@ -11756,7 +11756,7 @@
 2024-02-07 13:04:20.864 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken interface public
 2024-02-07 13:04:20.932 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken auth_url http://10.201.4.32/identity
 2024-02-07 13:04:20.997 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken username neutron
-2024-02-07 13:04:21.078 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken password hpinvent
+2024-02-07 13:04:21.078 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken password ******
 2024-02-07 13:04:21.147 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken user_domain_name Default
 2024-02-07 13:04:21.230 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken project_name service
 2024-02-07 13:04:21.312 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/neutron/neutron.conf keystone_authtoken project_domain_name Default
@@ -11772,7 +11772,7 @@
 2024-02-07 13:04:21.827 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/neutron/neutron.conf nova interface public
 2024-02-07 13:04:21.891 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/neutron/neutron.conf nova auth_url http://10.201.4.32/identity
 2024-02-07 13:04:21.969 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/neutron/neutron.conf nova username nova
-2024-02-07 13:04:22.041 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/neutron/neutron.conf nova password hpinvent
+2024-02-07 13:04:22.041 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/neutron/neutron.conf nova password ******
 2024-02-07 13:04:22.113 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/neutron/neutron.conf nova user_domain_name Default
 2024-02-07 13:04:22.178 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/neutron/neutron.conf nova project_name service
 2024-02-07 13:04:22.261 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/neutron/neutron.conf nova project_domain_name Default
@@ -11786,7 +11786,7 @@
 2024-02-07 13:04:22.629 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:457 (B[m iniset /etc/neutron/neutron.conf placement interface public
 2024-02-07 13:04:22.698 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:458 (B[m iniset /etc/neutron/neutron.conf placement auth_url http://10.201.4.32/identity
 2024-02-07 13:04:22.771 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:459 (B[m iniset /etc/neutron/neutron.conf placement username placement
-2024-02-07 13:04:22.843 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/neutron/neutron.conf placement password hpinvent
+2024-02-07 13:04:22.843 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:460 (B[m iniset /etc/neutron/neutron.conf placement password ******
 2024-02-07 13:04:22.913 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:461 (B[m iniset /etc/neutron/neutron.conf placement user_domain_name Default
 2024-02-07 13:04:22.983 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:462 (B[m iniset /etc/neutron/neutron.conf placement project_name service
 2024-02-07 13:04:23.053 | +[3242mlib/keystone:configure_keystone_authtoken_middleware:463 (B[m iniset /etc/neutron/neutron.conf placement project_domain_name Default
@@ -11944,9 +11944,9 @@
 2024-02-07 13:04:44.672 | +[3242mlib/database:recreate_database:112       (B[m local db=neutron
 2024-02-07 13:04:44.672 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql neutron
 2024-02-07 13:04:44.672 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=neutron
-2024-02-07 13:04:44.672 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS neutron;'
+2024-02-07 13:04:44.672 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS neutron;'
 2024-02-07 13:04:44.672 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:44.672 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE neutron CHARACTER SET utf8;'
+2024-02-07 13:04:44.672 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE neutron CHARACTER SET utf8;'
 2024-02-07 13:04:44.673 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:44.673 | +[3242mlib/neutron:init_neutron:521             (B[m time_start dbsync
 2024-02-07 13:04:44.673 | +[3242mfunctions-common:time_start:2407         (B[m local name=dbsync
@@ -12125,18 +12125,18 @@
 2024-02-07 13:04:44.880 | +[3242mlib/database:recreate_database:112       (B[m local db=placement
 2024-02-07 13:04:44.881 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql placement
 2024-02-07 13:04:44.881 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=placement
-2024-02-07 13:04:44.881 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS placement;'
+2024-02-07 13:04:44.881 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS placement;'
 2024-02-07 13:04:44.881 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:44.882 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE placement CHARACTER SET utf8;'
+2024-02-07 13:04:44.882 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE placement CHARACTER SET utf8;'
 2024-02-07 13:04:44.882 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:44.882 | +[3242mlib/placement:init_placement:144         (B[m /opt/stack/data/venv/bin/placement-manage db sync
 2024-02-07 13:04:44.882 | +[3242mlib/placement:init_placement:145         (B[m create_placement_accounts
 2024-02-07 13:04:44.882 | +[3242mlib/placement:create_placement_accounts:132 (B[m create_service_user placement admin
-2024-02-07 13:04:44.883 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user placement hpinvent Default
+2024-02-07 13:04:44.883 | +[3242mlib/keystone:create_service_user:436     (B[m get_or_create_user placement ****** Default
 2024-02-07 13:04:44.883 | +[3242mfunctions-common:get_or_create_user:903  (B[m local user_id
 2024-02-07 13:04:44.883 | +[3242mfunctions-common:get_or_create_user:904  (B[m [[ ! -z '' ]]
 2024-02-07 13:04:44.883 | +[3242mfunctions-common:get_or_create_user:907  (B[m local email=
-2024-02-07 13:04:44.883 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create placement --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-07 13:04:44.883 | ++[3242mfunctions-common:get_or_create_user:921  (B[m oscwrap --os-cloud devstack-system-admin user create placement --password ****** --domain=Default --or-show -f value -c id
 2024-02-07 13:04:44.883 | ++[3242mfunctions-common:oscwrap:2461            (B[m return 0
 2024-02-07 13:04:44.883 | +[3242mfunctions-common:get_or_create_user:919  (B[m user_id=d836e399988e45798e3baffe5228e612
 2024-02-07 13:04:44.884 | +[3242mfunctions-common:get_or_create_user:920  (B[m echo d836e399988e45798e3baffe5228e612
@@ -12218,9 +12218,9 @@
 2024-02-07 13:04:45.194 | +[3242mlib/database:recreate_database:112       (B[m local db=glance
 2024-02-07 13:04:45.194 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql glance
 2024-02-07 13:04:45.194 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=glance
-2024-02-07 13:04:45.194 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS glance;'
+2024-02-07 13:04:45.194 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS glance;'
 2024-02-07 13:04:45.194 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:45.194 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE glance CHARACTER SET utf8;'
+2024-02-07 13:04:45.194 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE glance CHARACTER SET utf8;'
 2024-02-07 13:04:45.194 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:45.194 | +[3242mlib/glance:init_glance:493               (B[m time_start dbsync
 2024-02-07 13:04:45.195 | +[3242mfunctions-common:time_start:2407         (B[m local name=dbsync
@@ -12382,9 +12382,9 @@
 2024-02-07 13:04:45.569 | +[3242mlib/database:recreate_database:112       (B[m local db=cinder
 2024-02-07 13:04:45.570 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql cinder
 2024-02-07 13:04:45.570 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=cinder
-2024-02-07 13:04:45.570 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS cinder;'
+2024-02-07 13:04:45.570 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS cinder;'
 2024-02-07 13:04:45.570 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:45.570 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE cinder CHARACTER SET utf8;'
+2024-02-07 13:04:45.570 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE cinder CHARACTER SET utf8;'
 2024-02-07 13:04:45.570 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:45.570 | +[3242mlib/cinder:init_cinder:488               (B[m time_start dbsync
 2024-02-07 13:04:45.570 | +[3242mfunctions-common:time_start:2407         (B[m local name=dbsync
@@ -12547,9 +12547,9 @@
 2024-02-07 13:04:46.374 | +[3242mlib/database:recreate_database:112       (B[m local db=nova_api
 2024-02-07 13:04:46.382 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql nova_api
 2024-02-07 13:04:46.389 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=nova_api
-2024-02-07 13:04:46.395 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_api;'
+2024-02-07 13:04:46.395 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_api;'
 2024-02-07 13:04:46.398 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:46.421 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE nova_api CHARACTER SET utf8;'
+2024-02-07 13:04:46.421 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE nova_api CHARACTER SET utf8;'
 2024-02-07 13:04:46.424 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:46.447 | +[3242mlib/nova:init_nova:884                   (B[m /opt/stack/data/venv/bin/nova-manage --config-file /etc/nova/nova.conf api_db sync
 2024-02-07 13:04:48.401 | [00;36mINFO dbcounter [[00;36m-[00;36m] [01;35m[00;36mRegistered counter for database nova_api[00m[00m
@@ -12571,8 +12571,8 @@
 2024-02-07 13:04:51.311 | ++[3242mlib/databases/mysql:database_connection_url_mysql:254 (B[m is_service_enabled mysql
 2024-02-07 13:04:51.355 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:04:51.361 | ++[3242mlib/databases/mysql:database_connection_url_mysql:255 (B[m plugin='&plugin=dbcounter'
-2024-02-07 13:04:51.368 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
-2024-02-07 13:04:51.378 | +[3242mlib/nova:init_nova:888                   (B[m /opt/stack/data/venv/bin/nova-manage cell_v2 map_cell0 --database_connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-07 13:04:51.368 | ++[3242mlib/databases/mysql:database_connection_url_mysql:259 (B[m echo 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-07 13:04:51.378 | +[3242mlib/nova:init_nova:888                   (B[m /opt/stack/data/venv/bin/nova-manage cell_v2 map_cell0 --database_connection 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
 2024-02-07 13:04:53.061 | [00;36mINFO dbcounter [[01;36mNone req-b707ba2e-2905-44af-9c1c-70007c86e284 [00;36mNone None[00;36m] [01;35m[00;36mRegistered counter for database nova_api[00m[00m
 2024-02-07 13:04:53.074 | [00;32mDEBUG dbcounter [[00;36m-[00;32m] [01;35m[00;32m[85718] Writer thread running[00m [00;33m{{(pid=85718) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:102}}[00m[00m
 2024-02-07 13:04:53.445 | ++[3242mlib/nova:init_nova:891                   (B[m seq 0 1
@@ -12592,9 +12592,9 @@
 2024-02-07 13:04:55.530 | +[3242mlib/database:recreate_database:112       (B[m local db=nova_cell0
 2024-02-07 13:04:55.530 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql nova_cell0
 2024-02-07 13:04:55.530 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=nova_cell0
-2024-02-07 13:04:55.530 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell0;'
+2024-02-07 13:04:55.530 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell0;'
 2024-02-07 13:04:55.530 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:55.530 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE nova_cell0 CHARACTER SET utf8;'
+2024-02-07 13:04:55.530 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE nova_cell0 CHARACTER SET utf8;'
 2024-02-07 13:04:55.530 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:55.530 | +[3242mlib/nova:init_nova_db:859                (B[m /opt/stack/data/venv/bin/nova-manage --config-file /etc/nova/nova.conf db sync --local_cell
 2024-02-07 13:04:55.530 | [00;36mINFO dbcounter [[00;36m-[00;36m] [01;35m[00;36mRegistered counter for database nova_cell0[00m[00m
@@ -12629,9 +12629,9 @@
 2024-02-07 13:04:55.774 | +[3242mlib/database:recreate_database:112       (B[m local db=nova_cell1
 2024-02-07 13:04:55.774 | +[3242mlib/database:recreate_database:113       (B[m recreate_database_mysql nova_cell1
 2024-02-07 13:04:55.774 | +[3242mlib/databases/mysql:recreate_database_mysql:60 (B[m local db=nova_cell1
-2024-02-07 13:04:55.774 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell1;'
+2024-02-07 13:04:55.774 | +[3242mlib/databases/mysql:recreate_database_mysql:61 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell1;'
 2024-02-07 13:04:55.774 | mysql: [Warning] Using a password on the command line interface can be insecure.
-2024-02-07 13:04:55.774 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE nova_cell1 CHARACTER SET utf8;'
+2024-02-07 13:04:55.774 | +[3242mlib/databases/mysql:recreate_database_mysql:62 (B[m mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE nova_cell1 CHARACTER SET utf8;'
 2024-02-07 13:04:55.774 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-07 13:04:55.775 | +[3242mlib/nova:init_nova_db:859                (B[m /opt/stack/data/venv/bin/nova-manage --config-file /etc/nova/nova_cell1.conf db sync --local_cell
 2024-02-07 13:04:55.775 | [00;36mINFO dbcounter [[00;36m-[00;36m] [01;35m[00;36mRegistered counter for database nova_cell1[00m[00m
@@ -12877,7 +12877,7 @@
 2024-02-07 13:05:02.350 | +[3242mlib/neutron:create_nova_conf_neutron:468 (B[m iniset /etc/nova/nova.conf neutron auth_type password
 2024-02-07 13:05:02.350 | +[3242mlib/neutron:create_nova_conf_neutron:469 (B[m iniset /etc/nova/nova.conf neutron auth_url http://10.201.4.32/identity
 2024-02-07 13:05:02.350 | +[3242mlib/neutron:create_nova_conf_neutron:470 (B[m iniset /etc/nova/nova.conf neutron username neutron
-2024-02-07 13:05:02.350 | +[3242mlib/neutron:create_nova_conf_neutron:471 (B[m iniset /etc/nova/nova.conf neutron password hpinvent
+2024-02-07 13:05:02.350 | +[3242mlib/neutron:create_nova_conf_neutron:471 (B[m iniset /etc/nova/nova.conf neutron password ******
 2024-02-07 13:05:02.350 | +[3242mlib/neutron:create_nova_conf_neutron:472 (B[m iniset /etc/nova/nova.conf neutron user_domain_name Default
 2024-02-07 13:05:02.351 | +[3242mlib/neutron:create_nova_conf_neutron:473 (B[m iniset /etc/nova/nova.conf neutron project_name service
 2024-02-07 13:05:02.351 | +[3242mlib/neutron:create_nova_conf_neutron:474 (B[m iniset /etc/nova/nova.conf neutron project_domain_name Default
@@ -12903,7 +12903,7 @@
 2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:468 (B[m iniset /etc/nova/nova_cell1.conf neutron auth_type password
 2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:469 (B[m iniset /etc/nova/nova_cell1.conf neutron auth_url http://10.201.4.32/identity
 2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:470 (B[m iniset /etc/nova/nova_cell1.conf neutron username neutron
-2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:471 (B[m iniset /etc/nova/nova_cell1.conf neutron password hpinvent
+2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:471 (B[m iniset /etc/nova/nova_cell1.conf neutron password ******
 2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:472 (B[m iniset /etc/nova/nova_cell1.conf neutron user_domain_name Default
 2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:473 (B[m iniset /etc/nova/nova_cell1.conf neutron project_name service
 2024-02-07 13:05:02.352 | +[3242mlib/neutron:create_nova_conf_neutron:474 (B[m iniset /etc/nova/nova_cell1.conf neutron project_domain_name Default
@@ -15139,8 +15139,8 @@
 2024-02-07 13:06:28.876 | ++[3242mlib/rpc_backend:get_transport_url:126    (B[m local virtual_host=nova_cell1
 2024-02-07 13:06:28.883 | ++[3242mlib/rpc_backend:get_transport_url:127    (B[m is_service_enabled rabbit
 2024-02-07 13:06:28.930 | ++[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 13:06:28.937 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
-2024-02-07 13:06:28.945 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/nova/nova-cpu.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
+2024-02-07 13:06:28.937 | ++[3242mlib/rpc_backend:get_transport_url:128    (B[m echo rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
+2024-02-07 13:06:28.945 | +[3242mlib/rpc_backend:iniset_rpc_backend:149   (B[m iniset /etc/nova/nova-cpu.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
 2024-02-07 13:06:29.004 | +[3242mlib/rpc_backend:iniset_rpc_backend:150   (B[m '[' -n '' ']'
 2024-02-07 13:06:29.013 | +[3242mlib/rpc_backend:iniset_rpc_backend:153   (B[m '[' -n '' ']'
 2024-02-07 13:06:29.020 | +[3242mlib/nova:start_nova_compute:1047         (B[m inidelete /etc/nova/nova-cpu.conf database connection
@@ -15271,8 +15271,8 @@
 2024-02-07 13:06:34.408 | +-------+--------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------+----------+
 2024-02-07 13:06:34.408 | |  Name |                 UUID                 |                       Transport URL                       |                               Database Connection                                | Disabled |
 2024-02-07 13:06:34.408 | +-------+--------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------+----------+
-2024-02-07 13:06:34.408 | | cell0 | 00000000-0000-0000-0000-000000000000 |                          none:///                         | mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter |  False   |
-2024-02-07 13:06:34.408 | | cell1 | 374f5b37-915b-41fd-a6fa-7781c5e6e30e | rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1 | mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter |  False   |
+2024-02-07 13:06:34.408 | | cell0 | 00000000-0000-0000-0000-000000000000 |                          none:///                         | mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter |  False   |
+2024-02-07 13:06:34.408 | | cell1 | 374f5b37-915b-41fd-a6fa-7781c5e6e30e | rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1 | mysql+pymysql://root:******@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter |  False   |
 2024-02-07 13:06:34.408 | +-------+--------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------+----------+
 2024-02-07 13:06:34.822 | +[3242m./stack.sh:main:1358                     (B[m async_runfunc create_flavors
 2024-02-07 13:06:34.831 | +[3242minc/async:async_runfunc:116              (B[m async_run create_flavors create_flavors
@@ -16061,14 +16061,14 @@
 2024-02-07 13:07:07.501 | +[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
 2024-02-07 13:07:07.513 | +[3242m./stack.sh:main:1416                     (B[m is_service_enabled keystone
 2024-02-07 13:07:07.565 | +[3242mfunctions-common:is_service_enabled:2077 (B[m return 0
-2024-02-07 13:07:07.573 | +[3242m./stack.sh:main:1417                     (B[m USERRC_PARAMS='-PA --target-dir /opt/stack/devstack/accrc --os-password hpinvent'
+2024-02-07 13:07:07.573 | +[3242m./stack.sh:main:1417                     (B[m USERRC_PARAMS='-PA --target-dir /opt/stack/devstack/accrc --os-password ******'
 2024-02-07 13:07:07.584 | +[3242m./stack.sh:main:1419                     (B[m '[' -f /opt/stack/data/ca-bundle.pem ']'
-2024-02-07 13:07:07.596 | +[3242m./stack.sh:main:1423                     (B[m /opt/stack/devstack/tools/create_userrc.sh -PA --target-dir /opt/stack/devstack/accrc --os-password hpinvent
+2024-02-07 13:07:07.596 | +[3242m./stack.sh:main:1423                     (B[m /opt/stack/devstack/tools/create_userrc.sh -PA --target-dir /opt/stack/devstack/accrc --os-password ******
 2024-02-07 13:07:07.607 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:31 (B[m ACCOUNT_DIR=./accrc
-2024-02-07 13:07:07.615 | ++[3242mopt/stack/devstack/tools/create_userrc.sh:main:80 (B[m getopt -o hPAp:u:r:C: -l os-username:,os-password:,os-tenant-id:,os-tenant-name:,os-project-name:,os-project-id:,os-project-domain-id:,os-project-domain-name:,os-user-domain-id:,os-user-domain-name:,os-auth-url:,target-dir:,heat-url:,skip-project:,os-cacert:,help,debug -- -PA --target-dir /opt/stack/devstack/accrc --os-password hpinvent
-2024-02-07 13:07:07.625 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:80 (B[m options=' -P -A --target-dir '\''/opt/stack/devstack/accrc'\'' --os-password '\''hpinvent'\'' --'
-2024-02-07 13:07:07.633 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:84 (B[m eval set -- -P -A --target-dir ''\''/opt/stack/devstack/accrc'\''' --os-password ''\''hpinvent'\''' --
-2024-02-07 13:07:07.640 | ++[3242mopt/stack/devstack/tools/create_userrc.sh:main:84 (B[m set -- -P -A --target-dir /opt/stack/devstack/accrc --os-password hpinvent --
+2024-02-07 13:07:07.615 | ++[3242mopt/stack/devstack/tools/create_userrc.sh:main:80 (B[m getopt -o hPAp:u:r:C: -l os-username:,os-password:,os-tenant-id:,os-tenant-name:,os-project-name:,os-project-id:,os-project-domain-id:,os-project-domain-name:,os-user-domain-id:,os-user-domain-name:,os-auth-url:,target-dir:,heat-url:,skip-project:,os-cacert:,help,debug -- -PA --target-dir /opt/stack/devstack/accrc --os-password ******
+2024-02-07 13:07:07.625 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:80 (B[m options=' -P -A --target-dir '\''/opt/stack/devstack/accrc'\'' --os-password '\''******'\'' --'
+2024-02-07 13:07:07.633 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:84 (B[m eval set -- -P -A --target-dir ''\''/opt/stack/devstack/accrc'\''' --os-password ''\''******'\''' --
+2024-02-07 13:07:07.640 | ++[3242mopt/stack/devstack/tools/create_userrc.sh:main:84 (B[m set -- -P -A --target-dir /opt/stack/devstack/accrc --os-password ****** --
 2024-02-07 13:07:07.646 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:85 (B[m ADDPASS=
 2024-02-07 13:07:07.653 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:86 (B[m HEAT_URL=
 2024-02-07 13:07:07.661 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:91 (B[m SKIP_PROJECT=service
@@ -16091,15 +16091,15 @@
 2024-02-07 13:07:07.747 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:126 (B[m shift
 2024-02-07 13:07:07.751 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:96 (B[m '[' 3 -gt 0 ']'
 2024-02-07 13:07:07.755 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:97 (B[m case "$1" in
-2024-02-07 13:07:07.759 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:100 (B[m export OS_PASSWORD=hpinvent
-2024-02-07 13:07:07.763 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:100 (B[m OS_PASSWORD=hpinvent
+2024-02-07 13:07:07.759 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:100 (B[m export OS_PASSWORD=******
+2024-02-07 13:07:07.763 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:100 (B[m OS_PASSWORD=******
 2024-02-07 13:07:07.768 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:100 (B[m shift
 2024-02-07 13:07:07.771 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:126 (B[m shift
 2024-02-07 13:07:07.775 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:96 (B[m '[' 1 -gt 0 ']'
 2024-02-07 13:07:07.780 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:97 (B[m case "$1" in
 2024-02-07 13:07:07.784 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:122 (B[m shift
 2024-02-07 13:07:07.788 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:122 (B[m break
-2024-02-07 13:07:07.793 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:129 (B[m '[' -z hpinvent ']'
+2024-02-07 13:07:07.793 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:129 (B[m '[' -z ****** ']'
 2024-02-07 13:07:07.798 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:138 (B[m '[' -z '' -a '' ']'
 2024-02-07 13:07:07.803 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:142 (B[m '[' -z '' -a '' ']'
 2024-02-07 13:07:07.808 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:146 (B[m '[' -z '' -a -z '' ']'
@@ -16115,7 +16115,7 @@
 2024-02-07 13:07:07.856 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:160 (B[m OS_USER_DOMAIN_ID=default
 2024-02-07 13:07:07.860 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:163 (B[m '[' -z '' -a -z '' ']'
 2024-02-07 13:07:07.865 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:165 (B[m OS_PROJECT_DOMAIN_ID=default
-2024-02-07 13:07:07.869 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:168 (B[m USER_PASS=hpinvent
+2024-02-07 13:07:07.869 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:168 (B[m USER_PASS=******
 2024-02-07 13:07:07.873 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:169 (B[m USER_NAME=admin
 2024-02-07 13:07:07.878 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:171 (B[m '[' -z all ']'
 2024-02-07 13:07:07.882 | +[3242mopt/stack/devstack/tools/create_userrc.sh:main:239 (B[m '[' all '!=' create ']'
@@ -16132,7 +16132,7 @@
 2024-02-07 13:07:08.860 | +[3242mfunctions-common:save_stackenv:62        (B[m time_stamp=2024-02-07-130708
 2024-02-07 13:07:08.872 | +[3242mfunctions-common:save_stackenv:63        (B[m echo '# 2024-02-07-130708 '
 2024-02-07 13:07:08.883 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
-2024-02-07 13:07:08.896 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-07 13:07:08.896 | +[3242mfunctions-common:save_stackenv:65        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-07 13:07:08.914 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
 2024-02-07 13:07:08.929 | +[3242mfunctions-common:save_stackenv:65        (B[m echo DATA_DIR=/opt/stack/data
 2024-02-07 13:07:08.946 | +[3242mfunctions-common:save_stackenv:64        (B[m for i in $STACK_ENV_VARS
@@ -17386,7 +17386,7 @@
 2024-02-07 13:07:32.118 | ++[3242mlib/tempest:configure_tempest:254        (B[m image_uuid_alt=7303f72f-efd2-473e-b377-abd013be9f45
 2024-02-07 13:07:32.130 | ++[3242mlib/tempest:configure_tempest:276        (B[m sudo install -d -o ubuntu /opt/stack/tempest/etc
 2024-02-07 13:07:32.167 | ++[3242mlib/tempest:configure_tempest:277        (B[m rm -f /opt/stack/tempest/etc/tempest.conf
-2024-02-07 13:07:32.181 | ++[3242mlib/tempest:configure_tempest:279        (B[m local password=hpinvent
+2024-02-07 13:07:32.181 | ++[3242mlib/tempest:configure_tempest:279        (B[m local password=******
 2024-02-07 13:07:32.195 | ++[3242mlib/tempest:configure_tempest:282        (B[m local admin_username=admin
 2024-02-07 13:07:32.206 | ++[3242mlib/tempest:configure_tempest:283        (B[m local admin_project_name=admin
 2024-02-07 13:07:32.215 | ++[3242mlib/tempest:configure_tempest:284        (B[m local admin_domain_name=Default
@@ -17708,7 +17708,7 @@
 2024-02-07 13:07:46.803 | ++[3242mlib/tempest:configure_tempest:388        (B[m iniset /opt/stack/tempest/etc/tempest.conf identity user_unique_last_password_count 2
 2024-02-07 13:07:46.875 | ++[3242mlib/tempest:configure_tempest:389        (B[m [[ True == \T\r\u\e ]]
 2024-02-07 13:07:46.885 | ++[3242mlib/tempest:configure_tempest:390        (B[m iniset /opt/stack/tempest/etc/tempest.conf auth admin_username admin
-2024-02-07 13:07:46.969 | ++[3242mlib/tempest:configure_tempest:391        (B[m iniset /opt/stack/tempest/etc/tempest.conf auth admin_password hpinvent
+2024-02-07 13:07:46.969 | ++[3242mlib/tempest:configure_tempest:391        (B[m iniset /opt/stack/tempest/etc/tempest.conf auth admin_password ******
 2024-02-07 13:07:47.041 | ++[3242mlib/tempest:configure_tempest:392        (B[m iniset /opt/stack/tempest/etc/tempest.conf auth admin_project_name admin
 2024-02-07 13:07:47.107 | ++[3242mlib/tempest:configure_tempest:393        (B[m iniset /opt/stack/tempest/etc/tempest.conf auth admin_domain_name Default
 2024-02-07 13:07:47.171 | ++[3242mlib/tempest:configure_tempest:395        (B[m '[' '' == True ']'
@@ -18163,7 +18163,7 @@ This is your host IP address: 10.201.4.32
 This is your host IPv6 address: ::1
 Keystone is serving at http://10.201.4.32/identity/
 The default users are: admin and demo
-The password: hpinvent
+The password: ******
 
 Services are running under systemd unit files.
 For more information see: 

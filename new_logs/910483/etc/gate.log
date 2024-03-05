@@ -1931,7 +1931,7 @@ tput: No value for $TERM and no -T specified
 ++lib/databases/mysql:get_database_type_mysql:33  echo mysql+pymysql
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/database:define_database_baseurl:106  BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
++lib/database:define_database_baseurl:106  BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 +./stack.sh:main:741                       is_service_enabled rabbit
@@ -2055,7 +2055,7 @@ tput: No value for $TERM and no -T specified
 +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
++functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
@@ -5674,10 +5674,10 @@ tput: No value for $TERM and no -T specified
 +lib/rpc_backend:restart_rpc_backend:87    [[ 1 == \0 ]]
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:restart_rpc_backend:91    rabbit_setuser stackrabbit hpinvent
++lib/rpc_backend:restart_rpc_backend:91    rabbit_setuser stackrabbit ******
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:rabbit_setuser:160        local user=stackrabbit pass=hpinvent found= out=
++lib/rpc_backend:rabbit_setuser:160        local user=stackrabbit pass=****** found= out=
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 ++lib/rpc_backend:rabbit_setuser:161        sudo rabbitmqctl list_users
@@ -5702,7 +5702,7 @@ tput: No value for $TERM and no -T specified
 +lib/rpc_backend:rabbit_setuser:164        '[' '' = stackrabbit ']'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:rabbit_setuser:168        sudo rabbitmqctl add_user stackrabbit hpinvent
++lib/rpc_backend:rabbit_setuser:168        sudo rabbitmqctl add_user stackrabbit ******
 Adding user "stackrabbit" ...
 Done. Don't forget to grant the user permissions to some virtual hosts! See 'rabbitmqctl help set_permissions' to learn more.
 tput: No value for $TERM and no -T specified
@@ -5714,7 +5714,7 @@ tput: No value for $TERM and no -T specified
 +lib/rpc_backend:restart_rpc_backend:92    '[' 0 -ne 0 ']'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:restart_rpc_backend:97    sudo rabbitmqctl change_password stackrabbit hpinvent
++lib/rpc_backend:restart_rpc_backend:97    sudo rabbitmqctl change_password stackrabbit ******
 Changing password for user "stackrabbit" ...
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -9663,10 +9663,10 @@ tput: No value for $TERM and no -T specified
 ++functions-common:is_service_enabled:2077  return 0
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
++lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -9770,10 +9770,10 @@ tput: No value for $TERM and no -T specified
 ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/keystone:configure_keystone:232       iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
++lib/keystone:configure_keystone:232       iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -11458,10 +11458,10 @@ tput: No value for $TERM and no -T specified
 ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/glance:configure_glance:327           dburl='mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
++lib/glance:configure_glance:327           dburl='mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 +lib/glance:configure_glance:329           iniset /etc/glance/glance-api.conf DEFAULT debug True
@@ -11477,7 +11477,7 @@ tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/glance:configure_glance:330           iniset /etc/glance/glance-api.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
++lib/glance:configure_glance:330           iniset /etc/glance/glance-api.conf database connection 'mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -11619,7 +11619,7 @@ tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/glance/glance-api.conf keystone_authtoken password hpinvent
++lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/glance/glance-api.conf keystone_authtoken password ******
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -11763,10 +11763,10 @@ tput: No value for $TERM and no -T specified
 ++functions-common:is_service_enabled:2077  return 0
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/glance/glance-api.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
++lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/glance/glance-api.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -12092,7 +12092,7 @@ tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/glance:configure_glance:401           iniset /etc/glance/glance-cache.conf DEFAULT admin_password hpinvent
++lib/glance:configure_glance:401           iniset /etc/glance/glance-cache.conf DEFAULT admin_password ******
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -14004,7 +14004,7 @@ tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf keystone_authtoken password hpinvent
++lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf keystone_authtoken password ******
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -14145,10 +14145,10 @@ tput: No value for $TERM and no -T specified
 ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
+++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/cinder:configure_cinder:309           iniset /etc/cinder/cinder.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
++lib/cinder:configure_cinder:309           iniset /etc/cinder/cinder.conf database connection 'mysql+pymysql://root:******@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: tput: No value for $TERM and no -T specifiedNo value for $TERM and no -T specified
@@ -14746,10 +14746,10 @@ tput: No value for $TERM and no -T specified
 ++functions-common:is_service_enabled:2077  return 0
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/cinder/cinder.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
++lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/cinder/cinder.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
@@ -15306,7 +15306,7 @@ tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
-+lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf nova password hpinvent
++lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf nova password ******
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified
 tput: No value for $TERM and no -T specified

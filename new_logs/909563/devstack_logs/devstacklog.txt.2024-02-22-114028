@@ -1368,7 +1368,7 @@
 2024-02-22 11:40:33.447 | ++lib/databases/mysql:get_database_type_mysql:33  echo mysql+pymysql
 2024-02-22 11:40:33.450 | tput: No value for $TERM and no -T specified
 2024-02-22 11:40:33.460 | tput: No value for $TERM and no -T specified
-2024-02-22 11:40:33.461 | +lib/database:define_database_baseurl:106  BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-22 11:40:33.461 | +lib/database:define_database_baseurl:106  BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-22 11:40:33.466 | tput: No value for $TERM and no -T specified
 2024-02-22 11:40:33.479 | tput: No value for $TERM and no -T specified
 2024-02-22 11:40:33.479 | +./stack.sh:main:741                       is_service_enabled rabbit
@@ -1492,7 +1492,7 @@
 2024-02-22 11:40:34.103 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
 2024-02-22 11:40:34.106 | tput: No value for $TERM and no -T specified
 2024-02-22 11:40:34.113 | tput: No value for $TERM and no -T specified
-2024-02-22 11:40:34.113 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-22 11:40:34.113 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-22 11:40:34.116 | tput: No value for $TERM and no -T specified
 2024-02-22 11:40:34.123 | tput: No value for $TERM and no -T specified
 2024-02-22 11:40:34.123 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
@@ -5103,10 +5103,10 @@
 2024-02-22 11:44:18.144 | +lib/rpc_backend:restart_rpc_backend:87    [[ 1 == \0 ]]
 2024-02-22 11:44:18.148 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:18.158 | tput: No value for $TERM and no -T specified
-2024-02-22 11:44:18.158 | +lib/rpc_backend:restart_rpc_backend:91    rabbit_setuser stackrabbit hpinvent
+2024-02-22 11:44:18.158 | +lib/rpc_backend:restart_rpc_backend:91    rabbit_setuser stackrabbit ******
 2024-02-22 11:44:18.162 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:18.170 | tput: No value for $TERM and no -T specified
-2024-02-22 11:44:18.170 | +lib/rpc_backend:rabbit_setuser:160        local user=stackrabbit pass=hpinvent found= out=
+2024-02-22 11:44:18.170 | +lib/rpc_backend:rabbit_setuser:160        local user=stackrabbit pass=****** found= out=
 2024-02-22 11:44:18.176 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:18.185 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:18.186 | ++lib/rpc_backend:rabbit_setuser:161        sudo rabbitmqctl list_users
@@ -5131,7 +5131,7 @@
 2024-02-22 11:44:18.788 | +lib/rpc_backend:rabbit_setuser:164        '[' '' = stackrabbit ']'
 2024-02-22 11:44:18.791 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:18.796 | tput: No value for $TERM and no -T specified
-2024-02-22 11:44:18.796 | +lib/rpc_backend:rabbit_setuser:168        sudo rabbitmqctl add_user stackrabbit hpinvent
+2024-02-22 11:44:18.796 | +lib/rpc_backend:rabbit_setuser:168        sudo rabbitmqctl add_user stackrabbit ******
 2024-02-22 11:44:19.289 | Adding user "stackrabbit" ...
 2024-02-22 11:44:19.295 | Done. Don't forget to grant the user permissions to some virtual hosts! See 'rabbitmqctl help set_permissions' to learn more.
 2024-02-22 11:44:19.314 | tput: No value for $TERM and no -T specified
@@ -5143,7 +5143,7 @@
 2024-02-22 11:44:19.870 | +lib/rpc_backend:restart_rpc_backend:92    '[' 0 -ne 0 ']'
 2024-02-22 11:44:19.873 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:19.881 | tput: No value for $TERM and no -T specified
-2024-02-22 11:44:19.881 | +lib/rpc_backend:restart_rpc_backend:97    sudo rabbitmqctl change_password stackrabbit hpinvent
+2024-02-22 11:44:19.881 | +lib/rpc_backend:restart_rpc_backend:97    sudo rabbitmqctl change_password stackrabbit ******
 2024-02-22 11:44:20.360 | Changing password for user "stackrabbit" ...
 2024-02-22 11:44:20.384 | tput: No value for $TERM and no -T specified
 2024-02-22 11:44:20.389 | tput: No value for $TERM and no -T specified
@@ -9083,10 +9083,10 @@
 2024-02-22 11:49:51.118 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 11:49:51.121 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.129 | tput: No value for $TERM and no -T specified
-2024-02-22 11:49:51.129 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 11:49:51.129 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 11:49:51.133 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.141 | tput: No value for $TERM and no -T specified
-2024-02-22 11:49:51.141 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 11:49:51.141 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 11:49:51.144 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.153 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.160 | tput: No value for $TERM and no -T specified
@@ -9190,10 +9190,10 @@
 2024-02-22 11:49:51.688 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 11:49:51.692 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.700 | tput: No value for $TERM and no -T specified
-2024-02-22 11:49:51.701 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+2024-02-22 11:49:51.701 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 2024-02-22 11:49:51.706 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.716 | tput: No value for $TERM and no -T specified
-2024-02-22 11:49:51.717 | +lib/keystone:configure_keystone:232       iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+2024-02-22 11:49:51.717 | +lib/keystone:configure_keystone:232       iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 2024-02-22 11:49:51.721 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.729 | tput: No value for $TERM and no -T specified
 2024-02-22 11:49:51.736 | tput: No value for $TERM and no -T specified

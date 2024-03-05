@@ -1368,7 +1368,7 @@
 2024-02-22 09:32:32.206 | ++lib/databases/mysql:get_database_type_mysql:33  echo mysql+pymysql
 2024-02-22 09:32:32.212 | tput: No value for $TERM and no -T specified
 2024-02-22 09:32:32.220 | tput: No value for $TERM and no -T specified
-2024-02-22 09:32:32.220 | +lib/database:define_database_baseurl:106  BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-22 09:32:32.220 | +lib/database:define_database_baseurl:106  BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-22 09:32:32.224 | tput: No value for $TERM and no -T specified
 2024-02-22 09:32:32.232 | tput: No value for $TERM and no -T specified
 2024-02-22 09:32:32.232 | +./stack.sh:main:741                       is_service_enabled rabbit
@@ -1492,7 +1492,7 @@
 2024-02-22 09:32:32.805 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
 2024-02-22 09:32:32.809 | tput: No value for $TERM and no -T specified
 2024-02-22 09:32:32.817 | tput: No value for $TERM and no -T specified
-2024-02-22 09:32:32.818 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-22 09:32:32.818 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-22 09:32:32.822 | tput: No value for $TERM and no -T specified
 2024-02-22 09:32:32.832 | tput: No value for $TERM and no -T specified
 2024-02-22 09:32:32.833 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
@@ -5103,10 +5103,10 @@
 2024-02-22 09:37:47.937 | +lib/rpc_backend:restart_rpc_backend:87    [[ 1 == \0 ]]
 2024-02-22 09:37:47.942 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:47.951 | tput: No value for $TERM and no -T specified
-2024-02-22 09:37:47.951 | +lib/rpc_backend:restart_rpc_backend:91    rabbit_setuser stackrabbit hpinvent
+2024-02-22 09:37:47.951 | +lib/rpc_backend:restart_rpc_backend:91    rabbit_setuser stackrabbit ******
 2024-02-22 09:37:47.956 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:47.965 | tput: No value for $TERM and no -T specified
-2024-02-22 09:37:47.966 | +lib/rpc_backend:rabbit_setuser:160        local user=stackrabbit pass=hpinvent found= out=
+2024-02-22 09:37:47.966 | +lib/rpc_backend:rabbit_setuser:160        local user=stackrabbit pass=****** found= out=
 2024-02-22 09:37:47.972 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:47.980 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:47.981 | ++lib/rpc_backend:rabbit_setuser:161        sudo rabbitmqctl list_users
@@ -5131,7 +5131,7 @@
 2024-02-22 09:37:48.557 | +lib/rpc_backend:rabbit_setuser:164        '[' '' = stackrabbit ']'
 2024-02-22 09:37:48.558 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:48.562 | tput: No value for $TERM and no -T specified
-2024-02-22 09:37:48.563 | +lib/rpc_backend:rabbit_setuser:168        sudo rabbitmqctl add_user stackrabbit hpinvent
+2024-02-22 09:37:48.563 | +lib/rpc_backend:rabbit_setuser:168        sudo rabbitmqctl add_user stackrabbit ******
 2024-02-22 09:37:49.046 | Adding user "stackrabbit" ...
 2024-02-22 09:37:49.050 | Done. Don't forget to grant the user permissions to some virtual hosts! See 'rabbitmqctl help set_permissions' to learn more.
 2024-02-22 09:37:49.064 | tput: No value for $TERM and no -T specified
@@ -5143,7 +5143,7 @@
 2024-02-22 09:37:49.633 | +lib/rpc_backend:restart_rpc_backend:92    '[' 0 -ne 0 ']'
 2024-02-22 09:37:49.637 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:49.642 | tput: No value for $TERM and no -T specified
-2024-02-22 09:37:49.643 | +lib/rpc_backend:restart_rpc_backend:97    sudo rabbitmqctl change_password stackrabbit hpinvent
+2024-02-22 09:37:49.643 | +lib/rpc_backend:restart_rpc_backend:97    sudo rabbitmqctl change_password stackrabbit ******
 2024-02-22 09:37:50.171 | Changing password for user "stackrabbit" ...
 2024-02-22 09:37:50.199 | tput: No value for $TERM and no -T specified
 2024-02-22 09:37:50.206 | tput: No value for $TERM and no -T specified
@@ -9083,10 +9083,10 @@
 2024-02-22 09:41:49.066 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:41:49.069 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.077 | tput: No value for $TERM and no -T specified
-2024-02-22 09:41:49.077 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:41:49.077 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:41:49.083 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.094 | tput: No value for $TERM and no -T specified
-2024-02-22 09:41:49.094 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:41:49.094 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/keystone/keystone.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:41:49.099 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.107 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.112 | tput: No value for $TERM and no -T specified
@@ -9190,10 +9190,10 @@
 2024-02-22 09:41:49.657 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:41:49.662 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.670 | tput: No value for $TERM and no -T specified
-2024-02-22 09:41:49.670 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+2024-02-22 09:41:49.670 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 2024-02-22 09:41:49.676 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.685 | tput: No value for $TERM and no -T specified
-2024-02-22 09:41:49.687 | +lib/keystone:configure_keystone:232       iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
+2024-02-22 09:41:49.687 | +lib/keystone:configure_keystone:232       iniset /etc/keystone/keystone.conf database connection 'mysql+pymysql://root:******@127.0.0.1/keystone?charset=utf8&plugin=dbcounter'
 2024-02-22 09:41:49.690 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.698 | tput: No value for $TERM and no -T specified
 2024-02-22 09:41:49.705 | tput: No value for $TERM and no -T specified
@@ -10880,10 +10880,10 @@
 2024-02-22 09:43:11.076 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:43:11.078 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.084 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:11.084 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+2024-02-22 09:43:11.084 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 2024-02-22 09:43:11.087 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.094 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:11.095 | +lib/glance:configure_glance:327           dburl='mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+2024-02-22 09:43:11.095 | +lib/glance:configure_glance:327           dburl='mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 2024-02-22 09:43:11.098 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.104 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.104 | +lib/glance:configure_glance:329           iniset /etc/glance/glance-api.conf DEFAULT debug True
@@ -10899,7 +10899,7 @@
 2024-02-22 09:43:11.143 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.163 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.168 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:11.168 | +lib/glance:configure_glance:330           iniset /etc/glance/glance-api.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
+2024-02-22 09:43:11.168 | +lib/glance:configure_glance:330           iniset /etc/glance/glance-api.conf database connection 'mysql+pymysql://root:******@127.0.0.1/glance?charset=utf8&plugin=dbcounter'
 2024-02-22 09:43:11.170 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.174 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.178 | tput: No value for $TERM and no -T specified
@@ -11041,7 +11041,7 @@
 2024-02-22 09:43:11.790 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.810 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.817 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:11.817 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/glance/glance-api.conf keystone_authtoken password hpinvent
+2024-02-22 09:43:11.817 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/glance/glance-api.conf keystone_authtoken password ******
 2024-02-22 09:43:11.819 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.826 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:11.830 | tput: No value for $TERM and no -T specified
@@ -11185,10 +11185,10 @@
 2024-02-22 09:43:12.494 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:43:12.496 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:12.503 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:12.503 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:43:12.503 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:43:12.508 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:12.515 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:12.516 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/glance/glance-api.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:43:12.516 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/glance/glance-api.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:43:12.520 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:12.528 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:12.534 | tput: No value for $TERM and no -T specified
@@ -11514,7 +11514,7 @@
 2024-02-22 09:43:14.274 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:14.293 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:14.299 | tput: No value for $TERM and no -T specified
-2024-02-22 09:43:14.299 | +lib/glance:configure_glance:401           iniset /etc/glance/glance-cache.conf DEFAULT admin_password hpinvent
+2024-02-22 09:43:14.299 | +lib/glance:configure_glance:401           iniset /etc/glance/glance-cache.conf DEFAULT admin_password ******
 2024-02-22 09:43:14.302 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:14.307 | tput: No value for $TERM and no -T specified
 2024-02-22 09:43:14.312 | tput: No value for $TERM and no -T specified
@@ -13425,7 +13425,7 @@
 2024-02-22 09:45:47.478 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:47.513 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:47.525 | tput: No value for $TERM and no -T specified
-2024-02-22 09:45:47.525 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf keystone_authtoken password hpinvent
+2024-02-22 09:45:47.525 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf keystone_authtoken password ******
 2024-02-22 09:45:47.530 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:47.540 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:47.547 | tput: No value for $TERM and no -T specified
@@ -13566,10 +13566,10 @@
 2024-02-22 09:45:48.395 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:45:48.398 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:48.407 | tput: No value for $TERM and no -T specified
-2024-02-22 09:45:48.407 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
+2024-02-22 09:45:48.407 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
 2024-02-22 09:45:48.412 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:48.420 | tput: No value for $TERM and no -T specified
-2024-02-22 09:45:48.421 | +lib/cinder:configure_cinder:309           iniset /etc/cinder/cinder.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
+2024-02-22 09:45:48.421 | +lib/cinder:configure_cinder:309           iniset /etc/cinder/cinder.conf database connection 'mysql+pymysql://root:******@127.0.0.1/cinder?charset=utf8&plugin=dbcounter'
 2024-02-22 09:45:48.425 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:48.435 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:48.443 | tput: tput: No value for $TERM and no -T specified
@@ -14167,10 +14167,10 @@
 2024-02-22 09:45:51.383 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:45:51.385 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:51.392 | tput: No value for $TERM and no -T specified
-2024-02-22 09:45:51.393 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:45:51.393 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:45:51.396 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:51.405 | tput: No value for $TERM and no -T specified
-2024-02-22 09:45:51.406 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/cinder/cinder.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:45:51.406 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/cinder/cinder.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:45:51.409 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:51.418 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:51.426 | tput: No value for $TERM and no -T specified
@@ -14727,7 +14727,7 @@
 2024-02-22 09:45:54.615 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:54.638 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:54.645 | tput: No value for $TERM and no -T specified
-2024-02-22 09:45:54.645 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf nova password hpinvent
+2024-02-22 09:45:54.645 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/cinder/cinder.conf nova password ******
 2024-02-22 09:45:54.648 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:54.656 | tput: No value for $TERM and no -T specified
 2024-02-22 09:45:54.661 | tput: No value for $TERM and no -T specified
@@ -18665,10 +18665,10 @@
 2024-02-22 09:53:36.426 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:53:36.428 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.432 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:36.432 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-22 09:53:36.432 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
 2024-02-22 09:53:36.435 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.439 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:36.439 | +lib/nova:create_nova_conf:489             iniset /etc/nova/nova.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-22 09:53:36.439 | +lib/nova:create_nova_conf:489             iniset /etc/nova/nova.conf database connection 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
 2024-02-22 09:53:36.441 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.445 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.448 | tput: No value for $TERM and no -T specified
@@ -18718,10 +18718,10 @@
 2024-02-22 09:53:36.570 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:53:36.572 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.576 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:36.576 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
+2024-02-22 09:53:36.576 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
 2024-02-22 09:53:36.579 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.583 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:36.583 | +lib/nova:create_nova_conf:490             iniset /etc/nova/nova.conf api_database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
+2024-02-22 09:53:36.583 | +lib/nova:create_nova_conf:490             iniset /etc/nova/nova.conf api_database connection 'mysql+pymysql://root:******@127.0.0.1/nova_api?charset=utf8&plugin=dbcounter'
 2024-02-22 09:53:36.585 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:36.593 | tput: No value for $TERM and no -T specified
@@ -18936,7 +18936,7 @@
 2024-02-22 09:53:37.570 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:37.592 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:37.597 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:37.598 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/nova/nova.conf keystone_authtoken password hpinvent
+2024-02-22 09:53:37.598 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/nova/nova.conf keystone_authtoken password ******
 2024-02-22 09:53:37.600 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:37.606 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:37.610 | tput: No value for $TERM and no -T specified
@@ -19085,7 +19085,7 @@
 2024-02-22 09:53:38.300 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:38.315 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:38.319 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:38.319 | +lib/nova:configure_cinder_access:660      iniset /etc/nova/nova.conf cinder password hpinvent
+2024-02-22 09:53:38.319 | +lib/nova:configure_cinder_access:660      iniset /etc/nova/nova.conf cinder password ******
 2024-02-22 09:53:38.321 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:38.325 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:38.328 | tput: No value for $TERM and no -T specified
@@ -19987,10 +19987,10 @@
 2024-02-22 09:53:43.005 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:53:43.010 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.018 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:43.019 | ++lib/rpc_backend:get_notification_url:138  echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:53:43.019 | ++lib/rpc_backend:get_notification_url:138  echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:53:43.024 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.033 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:43.033 | +lib/nova:create_nova_conf:568             iniset /etc/nova/nova.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:53:43.033 | +lib/nova:create_nova_conf:568             iniset /etc/nova/nova.conf oslo_messaging_notifications transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:53:43.038 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.047 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.054 | tput: No value for $TERM and no -T specified
@@ -20069,10 +20069,10 @@
 2024-02-22 09:53:43.372 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:53:43.375 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.381 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:43.382 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:53:43.382 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:53:43.384 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.390 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:43.390 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/nova/nova.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:53:43.390 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/nova/nova.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:53:43.392 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.399 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:43.402 | tput: No value for $TERM and no -T specified
@@ -20217,7 +20217,7 @@
 2024-02-22 09:53:44.202 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.225 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.233 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:44.233 | +lib/nova:init_nova_service_user_conf:837  iniset /etc/nova/nova.conf service_user password hpinvent
+2024-02-22 09:53:44.233 | +lib/nova:init_nova_service_user_conf:837  iniset /etc/nova/nova.conf service_user password ******
 2024-02-22 09:53:44.237 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.243 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.248 | tput: No value for $TERM and no -T specified
@@ -20365,10 +20365,10 @@
 2024-02-22 09:53:44.928 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:53:44.931 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.939 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:44.940 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
+2024-02-22 09:53:44.940 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
 2024-02-22 09:53:44.944 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.953 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:44.953 | +lib/nova:create_nova_conf:596             iniset /etc/nova/nova_cell1.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
+2024-02-22 09:53:44.953 | +lib/nova:create_nova_conf:596             iniset /etc/nova/nova_cell1.conf database connection 'mysql+pymysql://root:******@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter'
 2024-02-22 09:53:44.956 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.965 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:44.971 | tput: No value for $TERM and no -T specified
@@ -20502,10 +20502,10 @@
 2024-02-22 09:53:47.130 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:53:47.132 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.139 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:47.139 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
+2024-02-22 09:53:47.139 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
 2024-02-22 09:53:47.143 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.149 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:47.150 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/nova/nova_cell1.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
+2024-02-22 09:53:47.150 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/nova/nova_cell1.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
 2024-02-22 09:53:47.152 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.159 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.164 | tput: No value for $TERM and no -T specified
@@ -20585,7 +20585,7 @@
 2024-02-22 09:53:47.523 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.552 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.560 | tput: No value for $TERM and no -T specified
-2024-02-22 09:53:47.561 | +lib/nova:configure_placement_nova_compute:641  iniset /etc/nova/nova_cell1.conf placement password hpinvent
+2024-02-22 09:53:47.561 | +lib/nova:configure_placement_nova_compute:641  iniset /etc/nova/nova_cell1.conf placement password ******
 2024-02-22 09:53:47.565 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.573 | tput: No value for $TERM and no -T specified
 2024-02-22 09:53:47.579 | tput: No value for $TERM and no -T specified
@@ -22344,10 +22344,10 @@
 2024-02-22 09:54:27.079 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:54:27.082 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.089 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:27.089 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
+2024-02-22 09:54:27.089 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
 2024-02-22 09:54:27.093 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.102 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:27.103 | +lib/placement:create_placement_conf:103   iniset /etc/placement/placement.conf placement_database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
+2024-02-22 09:54:27.103 | +lib/placement:create_placement_conf:103   iniset /etc/placement/placement.conf placement_database connection 'mysql+pymysql://root:******@127.0.0.1/placement?charset=utf8&plugin=dbcounter'
 2024-02-22 09:54:27.106 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.114 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.121 | tput: No value for $TERM and no -T specified
@@ -22450,7 +22450,7 @@
 2024-02-22 09:54:27.751 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.783 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.791 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:27.791 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/placement/placement.conf keystone_authtoken password hpinvent
+2024-02-22 09:54:27.791 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/placement/placement.conf keystone_authtoken password ******
 2024-02-22 09:54:27.795 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.804 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:27.809 | tput: No value for $TERM and no -T specified
@@ -23053,7 +23053,7 @@
 2024-02-22 09:54:31.352 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:31.383 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:31.391 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:31.392 | +lib/nova:configure_placement_nova_compute:641  iniset /etc/nova/nova.conf placement password hpinvent
+2024-02-22 09:54:31.392 | +lib/nova:configure_placement_nova_compute:641  iniset /etc/nova/nova.conf placement password ******
 2024-02-22 09:54:31.398 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:31.406 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:31.411 | tput: No value for $TERM and no -T specified
@@ -23637,7 +23637,7 @@
 2024-02-22 09:54:43.668 | +lib/databases/mysql:configure_database_mysql:110  '[' mysql == mariadb ']'
 2024-02-22 09:54:43.674 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.683 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:43.683 | +lib/databases/mysql:configure_database_mysql:111  sudo mysqladmin -u root password hpinvent
+2024-02-22 09:54:43.683 | +lib/databases/mysql:configure_database_mysql:111  sudo mysqladmin -u root password ******
 2024-02-22 09:54:43.708 | mysqladmin: connect to server at 'localhost' failed
 2024-02-22 09:54:43.708 | error: 'Access denied for user 'root'@'localhost' (using password: NO)'
 2024-02-22 09:54:43.711 | tput: No value for $TERM and no -T specified
@@ -23657,7 +23657,7 @@
 2024-02-22 09:54:43.744 | +lib/databases/mysql:configure_database_mysql:116  '[' mysql == mariadb ']'
 2024-02-22 09:54:43.746 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.751 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:43.751 | +lib/databases/mysql:configure_database_mysql:119  local 'cmd_args=-uroot -phpinvent -h127.0.0.1 '
+2024-02-22 09:54:43.751 | +lib/databases/mysql:configure_database_mysql:119  local 'cmd_args=-uroot -p****** -h127.0.0.1 '
 2024-02-22 09:54:43.753 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.759 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.759 | +lib/databases/mysql:configure_database_mysql:126  is_ubuntu
@@ -23690,11 +23690,11 @@
 2024-02-22 09:54:43.861 | +lib/databases/mysql:configure_database_mysql:136  '[' mysql == mariadb ']'
 2024-02-22 09:54:43.864 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.871 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:43.871 | +lib/databases/mysql:configure_database_mysql:138  sudo mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE USER IF NOT EXISTS '\''root'\''@'\''%'\'' identified by '\''hpinvent'\'';'
+2024-02-22 09:54:43.871 | +lib/databases/mysql:configure_database_mysql:138  sudo mysql -uroot -p****** -h127.0.0.1 -e 'CREATE USER IF NOT EXISTS '\''root'\''@'\''%'\'' identified by '\''******'\'';'
 2024-02-22 09:54:43.888 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:54:43.936 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.941 | tput: No value for $TERM and no -T specified
-2024-02-22 09:54:43.941 | +lib/databases/mysql:configure_database_mysql:140  sudo mysql -uroot -phpinvent -h127.0.0.1 -e 'GRANT ALL PRIVILEGES ON *.* TO '\''root'\''@'\''%'\'';'
+2024-02-22 09:54:43.941 | +lib/databases/mysql:configure_database_mysql:140  sudo mysql -uroot -p****** -h127.0.0.1 -e 'GRANT ALL PRIVILEGES ON *.* TO '\''root'\''@'\''%'\'';'
 2024-02-22 09:54:43.952 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:54:43.976 | tput: No value for $TERM and no -T specified
 2024-02-22 09:54:43.981 | tput: No value for $TERM and no -T specified
@@ -23844,15 +23844,15 @@
 2024-02-22 09:55:01.807 | +lib/databases/mysql:recreate_database_mysql:60  local db=stats
 2024-02-22 09:55:01.809 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:01.814 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:01.814 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS stats;'
+2024-02-22 09:55:01.814 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS stats;'
 2024-02-22 09:55:01.817 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:55:01.836 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:01.841 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:01.842 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE stats CHARACTER SET utf8;'
+2024-02-22 09:55:01.842 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE stats CHARACTER SET utf8;'
 2024-02-22 09:55:01.845 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:55:01.867 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:01.872 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:01.872 | +lib/databases/mysql:configure_database_mysql:178  mysql -u root -phpinvent -h 127.0.0.1 -e 'CREATE TABLE queries (db VARCHAR(32), op VARCHAR(32),
+2024-02-22 09:55:01.872 | +lib/databases/mysql:configure_database_mysql:178  mysql -u root -p****** -h 127.0.0.1 -e 'CREATE TABLE queries (db VARCHAR(32), op VARCHAR(32),
 2024-02-22 09:55:01.872 |                 count INT, PRIMARY KEY (db, op)) ENGINE MEMORY' stats
 2024-02-22 09:55:01.876 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:55:01.905 | tput: No value for $TERM and no -T specified
@@ -23978,7 +23978,7 @@
 2024-02-22 09:55:04.892 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
 2024-02-22 09:55:04.896 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:04.902 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:04.902 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-22 09:55:04.902 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-22 09:55:04.908 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:04.919 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:04.919 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
@@ -24901,35 +24901,35 @@
 2024-02-22 09:55:10.833 | +functions-common:write_clouds_yaml:85     '[' -f /opt/stack/data/ca-bundle.pem ']'
 2024-02-22 09:55:10.836 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:10.843 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:10.843 | +functions-common:write_clouds_yaml:89     /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo --os-password hpinvent --os-project-name demo
+2024-02-22 09:55:10.843 | +functions-common:write_clouds_yaml:89     /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo --os-password ****** --os-project-name demo
 2024-02-22 09:55:10.898 | The user clouds.yaml file didn't exist.
 2024-02-22 09:55:10.909 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:10.918 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:10.920 | +functions-common:write_clouds_yaml:100    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password hpinvent --os-project-name admin
+2024-02-22 09:55:10.920 | +functions-common:write_clouds_yaml:100    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password ****** --os-project-name admin
 2024-02-22 09:55:10.976 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:10.985 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:10.986 | +functions-common:write_clouds_yaml:111    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin-demo --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password hpinvent --os-project-name demo
+2024-02-22 09:55:10.986 | +functions-common:write_clouds_yaml:111    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-admin-demo --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password ****** --os-project-name demo
 2024-02-22 09:55:11.042 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.052 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.052 | +functions-common:write_clouds_yaml:122    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo --os-password hpinvent --os-project-name alt_demo
+2024-02-22 09:55:11.052 | +functions-common:write_clouds_yaml:122    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo --os-password ****** --os-project-name alt_demo
 2024-02-22 09:55:11.111 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.118 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.118 | +functions-common:write_clouds_yaml:133    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_member --os-password hpinvent --os-project-name alt_demo
+2024-02-22 09:55:11.118 | +functions-common:write_clouds_yaml:133    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_member --os-password ****** --os-project-name alt_demo
 2024-02-22 09:55:11.178 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.184 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.185 | +functions-common:write_clouds_yaml:144    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_reader --os-password hpinvent --os-project-name alt_demo
+2024-02-22 09:55:11.185 | +functions-common:write_clouds_yaml:144    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-alt-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username alt_demo_reader --os-password ****** --os-project-name alt_demo
 2024-02-22 09:55:11.246 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.254 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.255 | +functions-common:write_clouds_yaml:155    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo_reader --os-password hpinvent --os-project-name demo
+2024-02-22 09:55:11.255 | +functions-common:write_clouds_yaml:155    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username demo_reader --os-password ****** --os-project-name demo
 2024-02-22 09:55:11.320 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.329 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.329 | +functions-common:write_clouds_yaml:166    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password hpinvent --os-system-scope all
+2024-02-22 09:55:11.329 | +functions-common:write_clouds_yaml:166    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-admin --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username admin --os-password ****** --os-system-scope all
 2024-02-22 09:55:11.398 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.408 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.408 | +functions-common:write_clouds_yaml:177    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_member --os-password hpinvent --os-system-scope all
+2024-02-22 09:55:11.408 | +functions-common:write_clouds_yaml:177    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-member --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_member --os-password ****** --os-system-scope all
 2024-02-22 09:55:11.472 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.482 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.482 | +functions-common:write_clouds_yaml:188    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_reader --os-password hpinvent --os-system-scope all
+2024-02-22 09:55:11.482 | +functions-common:write_clouds_yaml:188    /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/update_clouds_yaml.py --file /etc/openstack/clouds.yaml --os-cloud devstack-system-reader --os-region-name RegionOne --os-auth-url http://10.201.4.32/identity --os-username system_reader --os-password ****** --os-system-scope all
 2024-02-22 09:55:11.553 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.563 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.563 | +functions-common:write_clouds_yaml:198    cat
@@ -25012,11 +25012,11 @@
 2024-02-22 09:55:11.917 | +lib/databases/mysql:recreate_database_mysql:60  local db=keystone
 2024-02-22 09:55:11.922 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.929 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.929 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS keystone;'
+2024-02-22 09:55:11.929 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS keystone;'
 2024-02-22 09:55:11.933 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:55:11.967 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:11.973 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:11.973 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE keystone CHARACTER SET utf8;'
+2024-02-22 09:55:11.973 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE keystone CHARACTER SET utf8;'
 2024-02-22 09:55:11.977 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:55:12.001 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:12.008 | tput: No value for $TERM and no -T specified
@@ -25661,7 +25661,7 @@
 2024-02-22 09:55:24.632 | +./stack.sh:main:1140                      bootstrap_keystone
 2024-02-22 09:55:24.635 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:24.646 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:24.647 | +lib/keystone:bootstrap_keystone:607       /opt/stack/data/venv/bin/keystone-manage bootstrap --bootstrap-username admin --bootstrap-password hpinvent --bootstrap-project-name admin --bootstrap-role-name admin --bootstrap-service-name keystone --bootstrap-region-id RegionOne --bootstrap-public-url http://10.201.4.32/identity
+2024-02-22 09:55:24.647 | +lib/keystone:bootstrap_keystone:607       /opt/stack/data/venv/bin/keystone-manage bootstrap --bootstrap-username admin --bootstrap-password ****** --bootstrap-project-name admin --bootstrap-role-name admin --bootstrap-service-name keystone --bootstrap-region-id RegionOne --bootstrap-public-url http://10.201.4.32/identity
 2024-02-22 09:55:26.071 | [00;32mDEBUG keystone.notifications [[00;36m-[00;32m] [01;35m[00;32mCallback: `keystone.application_credential.core.Manager._delete_app_creds_on_user_delete_callback` subscribed to event `identity.user.deleted`.[00m [00;33m{{(pid=61936) register_event_callback /opt/stack/keystone/keystone/notifications.py:295}}[00m[00m
 2024-02-22 09:55:26.071 | [00;32mDEBUG keystone.notifications [[00;36m-[00;32m] [01;35m[00;32mCallback: `keystone.application_credential.core.Manager._delete_app_creds_on_user_delete_callback` subscribed to event `identity.user.disabled`.[00m [00;33m{{(pid=61936) register_event_callback /opt/stack/keystone/keystone/notifications.py:295}}[00m[00m
 2024-02-22 09:55:26.072 | [00;32mDEBUG keystone.notifications [[00;36m-[00;32m] [01;35m[00;32mCallback: `keystone.application_credential.core.Manager._delete_app_creds_on_assignment_removal` subscribed to event `identity.remove_application_credentials_for_user.internal`.[00m [00;33m{{(pid=61936) register_event_callback /opt/stack/keystone/keystone/notifications.py:295}}[00m[00m
@@ -26045,7 +26045,7 @@
 2024-02-22 09:55:35.931 | +lib/keystone:create_keystone_accounts:350  local demo_user
 2024-02-22 09:55:35.936 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:35.947 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:35.947 | ++lib/keystone:create_keystone_accounts:352  get_or_create_user demo hpinvent default demo@example.com
+2024-02-22 09:55:35.947 | ++lib/keystone:create_keystone_accounts:352  get_or_create_user demo ****** default demo@example.com
 2024-02-22 09:55:35.951 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:35.962 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:35.963 | ++functions-common:get_or_create_user:903   local user_id
@@ -26057,7 +26057,7 @@
 2024-02-22 09:55:35.996 | ++functions-common:get_or_create_user:905   local email=--email=demo@example.com
 2024-02-22 09:55:36.001 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:36.013 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:36.013 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create demo --password hpinvent --domain=default --email=demo@example.com --or-show -f value -c id
+2024-02-22 09:55:36.013 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create demo --password ****** --domain=default --email=demo@example.com --or-show -f value -c id
 2024-02-22 09:55:36.018 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:36.028 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:36.034 | tput: No value for $TERM and no -T specified
@@ -26328,7 +26328,7 @@
 2024-02-22 09:55:38.597 | +lib/keystone:create_keystone_accounts:363  local demo_reader
 2024-02-22 09:55:38.599 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:38.603 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:38.603 | ++lib/keystone:create_keystone_accounts:365  get_or_create_user demo_reader hpinvent default demo_reader@example.com
+2024-02-22 09:55:38.603 | ++lib/keystone:create_keystone_accounts:365  get_or_create_user demo_reader ****** default demo_reader@example.com
 2024-02-22 09:55:38.605 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:38.613 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:38.613 | ++functions-common:get_or_create_user:903   local user_id
@@ -26340,7 +26340,7 @@
 2024-02-22 09:55:38.653 | ++functions-common:get_or_create_user:905   local email=--email=demo_reader@example.com
 2024-02-22 09:55:38.660 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:38.679 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:38.679 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create demo_reader --password hpinvent --domain=default --email=demo_reader@example.com --or-show -f value -c id
+2024-02-22 09:55:38.679 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create demo_reader --password ****** --domain=default --email=demo_reader@example.com --or-show -f value -c id
 2024-02-22 09:55:38.681 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:38.710 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:38.721 | tput: No value for $TERM and no -T specified
@@ -26443,7 +26443,7 @@
 2024-02-22 09:55:43.919 | +lib/keystone:create_keystone_accounts:373  local alt_demo_user
 2024-02-22 09:55:43.923 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:43.930 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:43.930 | ++lib/keystone:create_keystone_accounts:375  get_or_create_user alt_demo hpinvent default alt_demo@example.com
+2024-02-22 09:55:43.930 | ++lib/keystone:create_keystone_accounts:375  get_or_create_user alt_demo ****** default alt_demo@example.com
 2024-02-22 09:55:43.932 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:43.936 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:43.936 | ++functions-common:get_or_create_user:903   local user_id
@@ -26455,7 +26455,7 @@
 2024-02-22 09:55:43.948 | ++functions-common:get_or_create_user:905   local email=--email=alt_demo@example.com
 2024-02-22 09:55:43.951 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:43.958 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:43.958 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create alt_demo --password hpinvent --domain=default --email=alt_demo@example.com --or-show -f value -c id
+2024-02-22 09:55:43.958 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create alt_demo --password ****** --domain=default --email=alt_demo@example.com --or-show -f value -c id
 2024-02-22 09:55:43.961 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:43.964 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:43.967 | tput: No value for $TERM and no -T specified
@@ -26517,7 +26517,7 @@
 2024-02-22 09:55:45.717 | +lib/keystone:create_keystone_accounts:381  local alt_demo_member
 2024-02-22 09:55:45.719 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:45.726 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:45.726 | ++lib/keystone:create_keystone_accounts:383  get_or_create_user alt_demo_member hpinvent default alt_demo_member@example.com
+2024-02-22 09:55:45.726 | ++lib/keystone:create_keystone_accounts:383  get_or_create_user alt_demo_member ****** default alt_demo_member@example.com
 2024-02-22 09:55:45.728 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:45.735 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:45.736 | ++functions-common:get_or_create_user:903   local user_id
@@ -26529,7 +26529,7 @@
 2024-02-22 09:55:45.746 | ++functions-common:get_or_create_user:905   local email=--email=alt_demo_member@example.com
 2024-02-22 09:55:45.748 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:45.759 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:45.759 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create alt_demo_member --password hpinvent --domain=default --email=alt_demo_member@example.com --or-show -f value -c id
+2024-02-22 09:55:45.759 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create alt_demo_member --password ****** --domain=default --email=alt_demo_member@example.com --or-show -f value -c id
 2024-02-22 09:55:45.760 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:45.763 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:45.766 | tput: No value for $TERM and no -T specified
@@ -26580,7 +26580,7 @@
 2024-02-22 09:55:47.571 | +lib/keystone:create_keystone_accounts:387  local alt_demo_reader
 2024-02-22 09:55:47.573 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:47.578 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:47.578 | ++lib/keystone:create_keystone_accounts:389  get_or_create_user alt_demo_reader hpinvent default alt_demo_reader@example.com
+2024-02-22 09:55:47.578 | ++lib/keystone:create_keystone_accounts:389  get_or_create_user alt_demo_reader ****** default alt_demo_reader@example.com
 2024-02-22 09:55:47.581 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:47.587 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:47.587 | ++functions-common:get_or_create_user:903   local user_id
@@ -26592,7 +26592,7 @@
 2024-02-22 09:55:47.600 | ++functions-common:get_or_create_user:905   local email=--email=alt_demo_reader@example.com
 2024-02-22 09:55:47.602 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:47.606 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:47.606 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create alt_demo_reader --password hpinvent --domain=default --email=alt_demo_reader@example.com --or-show -f value -c id
+2024-02-22 09:55:47.606 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create alt_demo_reader --password ****** --domain=default --email=alt_demo_reader@example.com --or-show -f value -c id
 2024-02-22 09:55:47.607 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:47.610 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:47.614 | tput: No value for $TERM and no -T specified
@@ -26646,7 +26646,7 @@
 2024-02-22 09:55:49.770 | [4427 Async ks-alt-reader-user:65829]: running: get_or_add_user_project_role reader f93f3076554441f18f1033672add30f3 3dd0e6fba4984e659d0f9d2b6d2181d2
 2024-02-22 09:55:49.773 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:49.778 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:49.778 | ++lib/keystone:create_keystone_accounts:397  get_or_create_user system_member hpinvent default system_member@example.com
+2024-02-22 09:55:49.778 | ++lib/keystone:create_keystone_accounts:397  get_or_create_user system_member ****** default system_member@example.com
 2024-02-22 09:55:49.781 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:49.786 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:49.786 | ++functions-common:get_or_create_user:903   local user_id
@@ -26658,7 +26658,7 @@
 2024-02-22 09:55:49.802 | ++functions-common:get_or_create_user:905   local email=--email=system_member@example.com
 2024-02-22 09:55:49.806 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:49.812 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:49.812 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create system_member --password hpinvent --domain=default --email=system_member@example.com --or-show -f value -c id
+2024-02-22 09:55:49.812 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create system_member --password ****** --domain=default --email=system_member@example.com --or-show -f value -c id
 2024-02-22 09:55:49.815 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:49.820 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:49.834 | tput: No value for $TERM and no -T specified
@@ -26700,7 +26700,7 @@
 2024-02-22 09:55:51.597 | [4427 Async ks-system-member:66113]: running: get_or_add_user_system_role member e36e809add814595a45f9c8e906bd8fb all
 2024-02-22 09:55:51.600 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:51.607 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:51.607 | ++lib/keystone:create_keystone_accounts:401  get_or_create_user system_reader hpinvent default system_reader@example.com
+2024-02-22 09:55:51.607 | ++lib/keystone:create_keystone_accounts:401  get_or_create_user system_reader ****** default system_reader@example.com
 2024-02-22 09:55:51.610 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:51.616 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:51.616 | ++functions-common:get_or_create_user:903   local user_id
@@ -26712,7 +26712,7 @@
 2024-02-22 09:55:51.643 | ++functions-common:get_or_create_user:905   local email=--email=system_reader@example.com
 2024-02-22 09:55:51.647 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:51.679 | tput: No value for $TERM and no -T specified
-2024-02-22 09:55:51.681 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create system_reader --password hpinvent --domain=default --email=system_reader@example.com --or-show -f value -c id
+2024-02-22 09:55:51.681 | +++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create system_reader --password ****** --domain=default --email=system_reader@example.com --or-show -f value -c id
 2024-02-22 09:55:51.692 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:51.723 | tput: No value for $TERM and no -T specified
 2024-02-22 09:55:51.745 | tput: No value for $TERM and no -T specified
@@ -28116,7 +28116,7 @@
 2024-02-22 09:56:26.590 | +lib/nova:create_nova_accounts:390         create_service_user nova admin
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:26.590 | +lib/keystone:create_service_user:436      get_or_create_user nova hpinvent Default
+2024-02-22 09:56:26.590 | +lib/keystone:create_service_user:436      get_or_create_user nova ****** Default
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:26.590 | +functions-common:get_or_create_user:903   local user_id
@@ -28128,7 +28128,7 @@
 2024-02-22 09:56:26.590 | +functions-common:get_or_create_user:907   local email=
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:26.590 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create nova --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-22 09:56:26.590 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create nova --password ****** --domain=Default --or-show -f value -c id
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:26.590 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:26.591 | tput: No value for $TERM and no -T specified
@@ -28594,7 +28594,7 @@
 2024-02-22 09:56:28.524 | +lib/glance:create_glance_accounts:459     create_service_user glance
 2024-02-22 09:56:28.524 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.524 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.524 | +lib/keystone:create_service_user:436      get_or_create_user glance hpinvent Default
+2024-02-22 09:56:28.524 | +lib/keystone:create_service_user:436      get_or_create_user glance ****** Default
 2024-02-22 09:56:28.524 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.524 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.524 | +functions-common:get_or_create_user:903   local user_id
@@ -28606,7 +28606,7 @@
 2024-02-22 09:56:28.525 | +functions-common:get_or_create_user:907   local email=
 2024-02-22 09:56:28.525 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.525 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.525 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create glance --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-22 09:56:28.525 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create glance --password ****** --domain=Default --or-show -f value -c id
 2024-02-22 09:56:28.525 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.525 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.525 | tput: No value for $TERM and no -T specified
@@ -28953,7 +28953,7 @@
 2024-02-22 09:56:28.533 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.533 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.533 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.533 | +lib/glance:configure_glance_quotas:308    iniset /etc/glance/glance-api.conf oslo_limit password hpinvent
+2024-02-22 09:56:28.533 | +lib/glance:configure_glance_quotas:308    iniset /etc/glance/glance-api.conf oslo_limit password ******
 2024-02-22 09:56:28.534 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.534 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.534 | tput: No value for $TERM and no -T specified
@@ -29080,7 +29080,7 @@
 2024-02-22 09:56:28.701 | +lib/cinder:create_cinder_accounts:450     create_service_user cinder
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.701 | +lib/keystone:create_service_user:436      get_or_create_user cinder hpinvent Default
+2024-02-22 09:56:28.701 | +lib/keystone:create_service_user:436      get_or_create_user cinder ****** Default
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.701 | +functions-common:get_or_create_user:903   local user_id
@@ -29092,7 +29092,7 @@
 2024-02-22 09:56:28.701 | +functions-common:get_or_create_user:907   local email=
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.701 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create cinder --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-22 09:56:28.701 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create cinder --password ****** --domain=Default --or-show -f value -c id
 2024-02-22 09:56:28.701 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.702 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.702 | tput: No value for $TERM and no -T specified
@@ -29534,7 +29534,7 @@
 2024-02-22 09:56:28.988 | +lib/neutron:create_neutron_accounts:509   create_service_user neutron
 2024-02-22 09:56:28.988 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.988 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.988 | +lib/keystone:create_service_user:436      get_or_create_user neutron hpinvent Default
+2024-02-22 09:56:28.988 | +lib/keystone:create_service_user:436      get_or_create_user neutron ****** Default
 2024-02-22 09:56:28.988 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.988 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.988 | +functions-common:get_or_create_user:903   local user_id
@@ -29546,7 +29546,7 @@
 2024-02-22 09:56:28.988 | +functions-common:get_or_create_user:907   local email=
 2024-02-22 09:56:28.988 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.988 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:28.989 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create neutron --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-22 09:56:28.989 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create neutron --password ****** --domain=Default --or-show -f value -c id
 2024-02-22 09:56:28.989 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.989 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:28.989 | tput: No value for $TERM and no -T specified
@@ -29949,10 +29949,10 @@
 2024-02-22 09:56:47.569 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:56:47.571 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:47.574 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:47.575 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
+2024-02-22 09:56:47.575 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
 2024-02-22 09:56:47.577 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:47.580 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:47.581 | +lib/neutron:_configure_neutron_common:918  iniset /etc/neutron/neutron.conf database connection 'mysql+pymysql://root:hpinvent@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
+2024-02-22 09:56:47.581 | +lib/neutron:_configure_neutron_common:918  iniset /etc/neutron/neutron.conf database connection 'mysql+pymysql://root:******@127.0.0.1/neutron?charset=utf8&plugin=dbcounter'
 2024-02-22 09:56:47.582 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:47.585 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:47.588 | tput: No value for $TERM and no -T specified
@@ -30289,10 +30289,10 @@
 2024-02-22 09:56:49.222 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:56:49.225 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:49.231 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:49.232 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:56:49.232 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:56:49.235 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:49.242 | tput: No value for $TERM and no -T specified
-2024-02-22 09:56:49.242 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/neutron/neutron.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/
+2024-02-22 09:56:49.242 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/neutron/neutron.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/
 2024-02-22 09:56:49.244 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:49.251 | tput: No value for $TERM and no -T specified
 2024-02-22 09:56:49.257 | tput: No value for $TERM and no -T specified
@@ -32028,7 +32028,7 @@
 2024-02-22 09:57:14.255 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:14.276 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:14.283 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:14.283 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/neutron/neutron.conf keystone_authtoken password hpinvent
+2024-02-22 09:57:14.283 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/neutron/neutron.conf keystone_authtoken password ******
 2024-02-22 09:57:14.287 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:14.293 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:14.298 | tput: No value for $TERM and no -T specified
@@ -32196,7 +32196,7 @@
 2024-02-22 09:57:15.243 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:15.269 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:15.275 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:15.276 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/neutron/neutron.conf nova password hpinvent
+2024-02-22 09:57:15.276 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/neutron/neutron.conf nova password ******
 2024-02-22 09:57:15.278 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:15.286 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:15.291 | tput: No value for $TERM and no -T specified
@@ -32338,7 +32338,7 @@
 2024-02-22 09:57:16.069 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:16.089 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:16.096 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:16.096 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/neutron/neutron.conf placement password hpinvent
+2024-02-22 09:57:16.096 | +lib/keystone:configure_keystone_authtoken_middleware:460  iniset /etc/neutron/neutron.conf placement password ******
 2024-02-22 09:57:16.098 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:16.105 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:16.111 | tput: No value for $TERM and no -T specified
@@ -33112,11 +33112,11 @@
 2024-02-22 09:57:37.660 | +lib/databases/mysql:recreate_database_mysql:60  local db=neutron
 2024-02-22 09:57:37.660 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:37.660 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:37.660 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS neutron;'
+2024-02-22 09:57:37.660 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS neutron;'
 2024-02-22 09:57:37.660 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:37.660 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:37.660 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:37.660 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE neutron CHARACTER SET utf8;'
+2024-02-22 09:57:37.660 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE neutron CHARACTER SET utf8;'
 2024-02-22 09:57:37.660 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:37.660 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:37.660 | tput: No value for $TERM and no -T specified
@@ -33367,11 +33367,11 @@
 2024-02-22 09:57:38.857 | +lib/databases/mysql:recreate_database_mysql:60  local db=placement
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:38.857 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS placement;'
+2024-02-22 09:57:38.857 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS placement;'
 2024-02-22 09:57:38.857 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:38.857 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE placement CHARACTER SET utf8;'
+2024-02-22 09:57:38.857 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE placement CHARACTER SET utf8;'
 2024-02-22 09:57:38.857 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
@@ -33384,7 +33384,7 @@
 2024-02-22 09:57:38.857 | +lib/placement:create_placement_accounts:132  create_service_user placement admin
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:38.857 | +lib/keystone:create_service_user:436      get_or_create_user placement hpinvent Default
+2024-02-22 09:57:38.857 | +lib/keystone:create_service_user:436      get_or_create_user placement ****** Default
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | +functions-common:get_or_create_user:903   local user_id
@@ -33396,7 +33396,7 @@
 2024-02-22 09:57:38.857 | +functions-common:get_or_create_user:907   local email=
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:38.857 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create placement --password hpinvent --domain=Default --or-show -f value -c id
+2024-02-22 09:57:38.857 | ++functions-common:get_or_create_user:921   oscwrap --os-cloud devstack-system-admin user create placement --password ****** --domain=Default --or-show -f value -c id
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.857 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:38.858 | tput: No value for $TERM and no -T specified
@@ -33690,11 +33690,11 @@
 2024-02-22 09:57:39.042 | +lib/databases/mysql:recreate_database_mysql:60  local db=glance
 2024-02-22 09:57:39.042 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.042 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:39.042 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS glance;'
+2024-02-22 09:57:39.042 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS glance;'
 2024-02-22 09:57:39.043 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:39.043 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.043 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:39.043 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE glance CHARACTER SET utf8;'
+2024-02-22 09:57:39.043 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE glance CHARACTER SET utf8;'
 2024-02-22 09:57:39.043 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:39.043 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.043 | tput: No value for $TERM and no -T specified
@@ -33958,11 +33958,11 @@
 2024-02-22 09:57:39.325 | +lib/databases/mysql:recreate_database_mysql:60  local db=cinder
 2024-02-22 09:57:39.325 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.325 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:39.325 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS cinder;'
+2024-02-22 09:57:39.325 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS cinder;'
 2024-02-22 09:57:39.325 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:39.325 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.325 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:39.325 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE cinder CHARACTER SET utf8;'
+2024-02-22 09:57:39.325 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE cinder CHARACTER SET utf8;'
 2024-02-22 09:57:39.325 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:39.325 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.325 | tput: No value for $TERM and no -T specified
@@ -34422,11 +34422,11 @@
 2024-02-22 09:57:39.941 | +lib/databases/mysql:recreate_database_mysql:60  local db=nova_api
 2024-02-22 09:57:39.942 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.948 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:39.948 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_api;'
+2024-02-22 09:57:39.948 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_api;'
 2024-02-22 09:57:39.955 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:39.975 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:39.982 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:39.982 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE nova_api CHARACTER SET utf8;'
+2024-02-22 09:57:39.982 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE nova_api CHARACTER SET utf8;'
 2024-02-22 09:57:39.987 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:40.012 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:40.023 | tput: No value for $TERM and no -T specified
@@ -34480,10 +34480,10 @@
 2024-02-22 09:57:44.850 | ++lib/databases/mysql:database_connection_url_mysql:255  plugin='&plugin=dbcounter'
 2024-02-22 09:57:44.853 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:44.858 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:44.858 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-22 09:57:44.858 | ++lib/databases/mysql:database_connection_url_mysql:259  echo 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
 2024-02-22 09:57:44.863 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:44.872 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:44.872 | +lib/nova:init_nova:888                    /opt/stack/data/venv/bin/nova-manage cell_v2 map_cell0 --database_connection 'mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
+2024-02-22 09:57:44.872 | +lib/nova:init_nova:888                    /opt/stack/data/venv/bin/nova-manage cell_v2 map_cell0 --database_connection 'mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter'
 2024-02-22 09:57:46.748 | [00;36mINFO dbcounter [[01;36mNone req-a512701a-d15c-43b7-b986-5f7514582d47 [00;36mNone None[00;36m] [01;35m[00;36mRegistered counter for database nova_api[00m[00m
 2024-02-22 09:57:46.762 | [00;32mDEBUG dbcounter [[00;36m-[00;32m] [01;35m[00;32m[83009] Writer thread running[00m [00;33m{{(pid=83009) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:102}}[00m[00m
 2024-02-22 09:57:47.145 | tput: No value for $TERM and no -T specified
@@ -34541,11 +34541,11 @@
 2024-02-22 09:57:49.609 | +lib/databases/mysql:recreate_database_mysql:60  local db=nova_cell0
 2024-02-22 09:57:49.609 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:49.609 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:49.609 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell0;'
+2024-02-22 09:57:49.609 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell0;'
 2024-02-22 09:57:49.609 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:49.609 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:49.609 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:49.609 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE nova_cell0 CHARACTER SET utf8;'
+2024-02-22 09:57:49.609 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE nova_cell0 CHARACTER SET utf8;'
 2024-02-22 09:57:49.610 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:49.610 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:49.610 | tput: No value for $TERM and no -T specified
@@ -34612,11 +34612,11 @@
 2024-02-22 09:57:49.859 | +lib/databases/mysql:recreate_database_mysql:60  local db=nova_cell1
 2024-02-22 09:57:49.859 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:49.859 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:49.859 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -phpinvent -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell1;'
+2024-02-22 09:57:49.859 | +lib/databases/mysql:recreate_database_mysql:61  mysql -uroot -p****** -h127.0.0.1 -e 'DROP DATABASE IF EXISTS nova_cell1;'
 2024-02-22 09:57:49.859 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:49.860 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:49.860 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:49.860 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -phpinvent -h127.0.0.1 -e 'CREATE DATABASE nova_cell1 CHARACTER SET utf8;'
+2024-02-22 09:57:49.860 | +lib/databases/mysql:recreate_database_mysql:62  mysql -uroot -p****** -h127.0.0.1 -e 'CREATE DATABASE nova_cell1 CHARACTER SET utf8;'
 2024-02-22 09:57:49.860 | mysql: [Warning] Using a password on the command line interface can be insecure.
 2024-02-22 09:57:49.860 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:49.860 | tput: No value for $TERM and no -T specified
@@ -35156,7 +35156,7 @@
 2024-02-22 09:57:56.286 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.286 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.286 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:56.286 | +lib/neutron:create_nova_conf_neutron:471  iniset /etc/nova/nova.conf neutron password hpinvent
+2024-02-22 09:57:56.286 | +lib/neutron:create_nova_conf_neutron:471  iniset /etc/nova/nova.conf neutron password ******
 2024-02-22 09:57:56.286 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.286 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.286 | tput: No value for $TERM and no -T specified
@@ -35354,7 +35354,7 @@
 2024-02-22 09:57:56.289 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.289 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.289 | tput: No value for $TERM and no -T specified
-2024-02-22 09:57:56.289 | +lib/neutron:create_nova_conf_neutron:471  iniset /etc/nova/nova_cell1.conf neutron password hpinvent
+2024-02-22 09:57:56.289 | +lib/neutron:create_nova_conf_neutron:471  iniset /etc/nova/nova_cell1.conf neutron password ******
 2024-02-22 09:57:56.289 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.289 | tput: No value for $TERM and no -T specified
 2024-02-22 09:57:56.289 | tput: No value for $TERM and no -T specified
@@ -42386,10 +42386,10 @@
 2024-02-22 09:59:21.099 | ++functions-common:is_service_enabled:2077  return 0
 2024-02-22 09:59:21.102 | tput: No value for $TERM and no -T specified
 2024-02-22 09:59:21.109 | tput: No value for $TERM and no -T specified
-2024-02-22 09:59:21.109 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
+2024-02-22 09:59:21.109 | ++lib/rpc_backend:get_transport_url:128     echo rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
 2024-02-22 09:59:21.114 | tput: No value for $TERM and no -T specified
 2024-02-22 09:59:21.120 | tput: No value for $TERM and no -T specified
-2024-02-22 09:59:21.120 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/nova/nova-cpu.conf DEFAULT transport_url rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1
+2024-02-22 09:59:21.120 | +lib/rpc_backend:iniset_rpc_backend:149    iniset /etc/nova/nova-cpu.conf DEFAULT transport_url rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1
 2024-02-22 09:59:21.123 | tput: No value for $TERM and no -T specified
 2024-02-22 09:59:21.129 | tput: No value for $TERM and no -T specified
 2024-02-22 09:59:21.134 | tput: No value for $TERM and no -T specified
@@ -43026,8 +43026,8 @@
 2024-02-22 09:59:26.446 | +-------+--------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------+----------+
 2024-02-22 09:59:26.446 | |  Name |                 UUID                 |                       Transport URL                       |                               Database Connection                                | Disabled |
 2024-02-22 09:59:26.446 | +-------+--------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------+----------+
-2024-02-22 09:59:26.446 | | cell0 | 00000000-0000-0000-0000-000000000000 |                          none:///                         | mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter |  False   |
-2024-02-22 09:59:26.446 | | cell1 | 2bf5c578-a188-4491-9a2f-619b24a44cc1 | rabbit://stackrabbit:hpinvent@10.201.4.32:5672/nova_cell1 | mysql+pymysql://root:hpinvent@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter |  False   |
+2024-02-22 09:59:26.446 | | cell0 | 00000000-0000-0000-0000-000000000000 |                          none:///                         | mysql+pymysql://root:******@127.0.0.1/nova_cell0?charset=utf8&plugin=dbcounter |  False   |
+2024-02-22 09:59:26.446 | | cell1 | 2bf5c578-a188-4491-9a2f-619b24a44cc1 | rabbit://stackrabbit:******@10.201.4.32:5672/nova_cell1 | mysql+pymysql://root:******@127.0.0.1/nova_cell1?charset=utf8&plugin=dbcounter |  False   |
 2024-02-22 09:59:26.446 | +-------+--------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------+----------+
 2024-02-22 09:59:26.794 | tput: No value for $TERM and no -T specified
 2024-02-22 09:59:26.802 | tput: No value for $TERM and no -T specified
@@ -45643,28 +45643,28 @@
 2024-02-22 10:00:00.715 | +functions-common:is_service_enabled:2077  return 0
 2024-02-22 10:00:00.718 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.725 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.725 | +./stack.sh:main:1417                      USERRC_PARAMS='-PA --target-dir /opt/stack/devstack/accrc --os-password hpinvent'
+2024-02-22 10:00:00.725 | +./stack.sh:main:1417                      USERRC_PARAMS='-PA --target-dir /opt/stack/devstack/accrc --os-password ******'
 2024-02-22 10:00:00.728 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.735 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.735 | +./stack.sh:main:1419                      '[' -f /opt/stack/data/ca-bundle.pem ']'
 2024-02-22 10:00:00.740 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.746 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.746 | +./stack.sh:main:1423                      /opt/stack/devstack/tools/create_userrc.sh -PA --target-dir /opt/stack/devstack/accrc --os-password hpinvent
+2024-02-22 10:00:00.746 | +./stack.sh:main:1423                      /opt/stack/devstack/tools/create_userrc.sh -PA --target-dir /opt/stack/devstack/accrc --os-password ******
 2024-02-22 10:00:00.752 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.756 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.757 | +opt/stack/devstack/tools/create_userrc.sh:main:31  ACCOUNT_DIR=./accrc
 2024-02-22 10:00:00.759 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.763 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.764 | ++opt/stack/devstack/tools/create_userrc.sh:main:80  getopt -o hPAp:u:r:C: -l os-username:,os-password:,os-tenant-id:,os-tenant-name:,os-project-name:,os-project-id:,os-project-domain-id:,os-project-domain-name:,os-user-domain-id:,os-user-domain-name:,os-auth-url:,target-dir:,heat-url:,skip-project:,os-cacert:,help,debug -- -PA --target-dir /opt/stack/devstack/accrc --os-password hpinvent
+2024-02-22 10:00:00.764 | ++opt/stack/devstack/tools/create_userrc.sh:main:80  getopt -o hPAp:u:r:C: -l os-username:,os-password:,os-tenant-id:,os-tenant-name:,os-project-name:,os-project-id:,os-project-domain-id:,os-project-domain-name:,os-user-domain-id:,os-user-domain-name:,os-auth-url:,target-dir:,heat-url:,skip-project:,os-cacert:,help,debug -- -PA --target-dir /opt/stack/devstack/accrc --os-password ******
 2024-02-22 10:00:00.767 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.770 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.771 | +opt/stack/devstack/tools/create_userrc.sh:main:80  options=' -P -A --target-dir '\''/opt/stack/devstack/accrc'\'' --os-password '\''hpinvent'\'' --'
+2024-02-22 10:00:00.771 | +opt/stack/devstack/tools/create_userrc.sh:main:80  options=' -P -A --target-dir '\''/opt/stack/devstack/accrc'\'' --os-password '\''******'\'' --'
 2024-02-22 10:00:00.772 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.775 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.775 | +opt/stack/devstack/tools/create_userrc.sh:main:84  eval set -- -P -A --target-dir ''\''/opt/stack/devstack/accrc'\''' --os-password ''\''hpinvent'\''' --
+2024-02-22 10:00:00.775 | +opt/stack/devstack/tools/create_userrc.sh:main:84  eval set -- -P -A --target-dir ''\''/opt/stack/devstack/accrc'\''' --os-password ''\''******'\''' --
 2024-02-22 10:00:00.777 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.780 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.781 | ++opt/stack/devstack/tools/create_userrc.sh:main:84  set -- -P -A --target-dir /opt/stack/devstack/accrc --os-password hpinvent --
+2024-02-22 10:00:00.781 | ++opt/stack/devstack/tools/create_userrc.sh:main:84  set -- -P -A --target-dir /opt/stack/devstack/accrc --os-password ****** --
 2024-02-22 10:00:00.782 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.785 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.785 | +opt/stack/devstack/tools/create_userrc.sh:main:85  ADDPASS=
@@ -45733,10 +45733,10 @@
 2024-02-22 10:00:00.883 | +opt/stack/devstack/tools/create_userrc.sh:main:97  case "$1" in
 2024-02-22 10:00:00.884 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.889 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.889 | +opt/stack/devstack/tools/create_userrc.sh:main:100  export OS_PASSWORD=hpinvent
+2024-02-22 10:00:00.889 | +opt/stack/devstack/tools/create_userrc.sh:main:100  export OS_PASSWORD=******
 2024-02-22 10:00:00.890 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.894 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.894 | +opt/stack/devstack/tools/create_userrc.sh:main:100  OS_PASSWORD=hpinvent
+2024-02-22 10:00:00.894 | +opt/stack/devstack/tools/create_userrc.sh:main:100  OS_PASSWORD=******
 2024-02-22 10:00:00.896 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.900 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.900 | +opt/stack/devstack/tools/create_userrc.sh:main:100  shift
@@ -45757,7 +45757,7 @@
 2024-02-22 10:00:00.931 | +opt/stack/devstack/tools/create_userrc.sh:main:122  break
 2024-02-22 10:00:00.932 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.938 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:00.939 | +opt/stack/devstack/tools/create_userrc.sh:main:129  '[' -z hpinvent ']'
+2024-02-22 10:00:00.939 | +opt/stack/devstack/tools/create_userrc.sh:main:129  '[' -z ****** ']'
 2024-02-22 10:00:00.940 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.945 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:00.945 | +opt/stack/devstack/tools/create_userrc.sh:main:138  '[' -z '' -a '' ']'
@@ -45805,7 +45805,7 @@
 2024-02-22 10:00:01.056 | +opt/stack/devstack/tools/create_userrc.sh:main:165  OS_PROJECT_DOMAIN_ID=default
 2024-02-22 10:00:01.058 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:01.063 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:01.063 | +opt/stack/devstack/tools/create_userrc.sh:main:168  USER_PASS=hpinvent
+2024-02-22 10:00:01.063 | +opt/stack/devstack/tools/create_userrc.sh:main:168  USER_PASS=******
 2024-02-22 10:00:01.066 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:01.070 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:01.070 | +opt/stack/devstack/tools/create_userrc.sh:main:169  USER_NAME=admin
@@ -45852,7 +45852,7 @@
 2024-02-22 10:00:02.101 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
 2024-02-22 10:00:02.105 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:02.112 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:02.112 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:hpinvent@127.0.0.1
+2024-02-22 10:00:02.112 | +functions-common:save_stackenv:65         echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
 2024-02-22 10:00:02.116 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:02.125 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:02.125 | +functions-common:save_stackenv:64         for i in $STACK_ENV_VARS
@@ -48327,7 +48327,7 @@
 2024-02-22 10:00:25.016 | ++lib/tempest:configure_tempest:277         rm -f /opt/stack/tempest/etc/tempest.conf
 2024-02-22 10:00:25.022 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:25.029 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:25.029 | ++lib/tempest:configure_tempest:279         local password=hpinvent
+2024-02-22 10:00:25.029 | ++lib/tempest:configure_tempest:279         local password=******
 2024-02-22 10:00:25.035 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:25.042 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:25.043 | ++lib/tempest:configure_tempest:282         local admin_username=admin
@@ -48999,7 +48999,7 @@
 2024-02-22 10:00:39.528 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:39.545 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:39.549 | tput: No value for $TERM and no -T specified
-2024-02-22 10:00:39.549 | ++lib/tempest:configure_tempest:391         iniset /opt/stack/tempest/etc/tempest.conf auth admin_password hpinvent
+2024-02-22 10:00:39.549 | ++lib/tempest:configure_tempest:391         iniset /opt/stack/tempest/etc/tempest.conf auth admin_password ******
 2024-02-22 10:00:39.551 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:39.556 | tput: No value for $TERM and no -T specified
 2024-02-22 10:00:39.558 | tput: No value for $TERM and no -T specified
@@ -50859,7 +50859,7 @@ This is your host IP address: 10.201.4.32
 This is your host IPv6 address: ::1
 Keystone is serving at http://10.201.4.32/identity/
 The default users are: admin and demo
-The password: hpinvent
+The password: ******
 
 Services are running under systemd unit files.
 For more information see: 
