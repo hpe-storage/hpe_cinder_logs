@@ -1,0 +1,43 @@
+× devstack@q-ovn-metadata-agent.service - Devstack devstack@q-ovn-metadata-agent.service
+     Loaded: loaded (/etc/systemd/system/devstack@q-ovn-metadata-agent.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Wed 2024-04-17 07:39:43 UTC; 1min 23s ago
+    Process: 109552 ExecStart=/opt/stack/data/venv/bin/neutron-ovn-metadata-agent --config-file /etc/neutron/neutron_ovn_metadata_agent.ini (code=exited, status=1/FAILURE)
+   Main PID: 109552 (code=exited, status=1/FAILURE)
+        CPU: 2.211s
+
+Apr 17 07:39:43 ubuntu systemd[1]: devstack@q-ovn-metadata-agent.service: Unit process 109556 (neutron-ovn-met) remains running after unit stopped.
+Apr 17 07:39:43 ubuntu systemd[1]: devstack@q-ovn-metadata-agent.service: Consumed 2.193s CPU time.
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109556]: DEBUG oslo_concurrency.lockutils [-] Acquiring lock "singleton_lock" {{(pid=109556) lock /usr/local/lib/python3.10/dist-packages/oslo_concurrency/lockutils.py:310}}
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109556]: DEBUG oslo_concurrency.lockutils [-] Acquired lock "singleton_lock" {{(pid=109556) lock /usr/local/lib/python3.10/dist-packages/oslo_concurrency/lockutils.py:313}}
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109556]: DEBUG oslo_concurrency.lockutils [-] Releasing lock "singleton_lock" {{(pid=109556) lock /usr/local/lib/python3.10/dist-packages/oslo_concurrency/lockutils.py:331}}
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109555]: INFO oslo_service.service [-] Parent process has died unexpectedly, exiting
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109555]: INFO eventlet.wsgi.server [-] (109555) wsgi exited, is_accepting=True
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109555]: DEBUG oslo_concurrency.lockutils [-] Acquiring lock "singleton_lock" {{(pid=109555) lock /usr/local/lib/python3.10/dist-packages/oslo_concurrency/lockutils.py:310}}
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109555]: DEBUG oslo_concurrency.lockutils [-] Acquired lock "singleton_lock" {{(pid=109555) lock /usr/local/lib/python3.10/dist-packages/oslo_concurrency/lockutils.py:313}}
+Apr 17 07:39:43 ubuntu neutron-ovn-metadata-agent[109555]: DEBUG oslo_concurrency.lockutils [-] Releasing lock "singleton_lock" {{(pid=109555) lock /usr/local/lib/python3.10/dist-packages/oslo_concurrency/lockutils.py:331}}
+
+● devstack@q-svc.service - Devstack devstack@q-svc.service
+     Loaded: loaded (/etc/systemd/system/devstack@q-svc.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2024-04-17 07:39:44 UTC; 1min 21s ago
+   Main PID: 109560 (/opt/stack/data)
+      Tasks: 6 (limit: 9389)
+     Memory: 314.3M
+        CPU: 7.019s
+     CGroup: /system.slice/system-devstack.slice/devstack@q-svc.service
+             ├─109560 "/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini"
+             ├─109571 "neutron-server: api worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)"
+             ├─109572 "neutron-server: api worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)"
+             ├─109574 "neutron-server: RpcWorker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)"
+             ├─109575 "neutron-server: MaintenanceWorker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)"
+             └─109576 "neutron-server: periodic worker (/opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini)"
+
+Apr 17 07:40:33 ubuntu neutron-server[109576]: DEBUG dbcounter [-] [109576] Writer thread running {{(pid=109576) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:102}}
+Apr 17 07:40:33 ubuntu neutron-server[109576]: DEBUG neutron.db.agents_db [None req-6cf98550-dbe8-4787-8524-68975b5f5867 None None] Agent healthcheck: found 0 active agents {{(pid=109576) agent_health_check /opt/stack/neutron/neutron/db/agents_db.py:319}}
+Apr 17 07:40:43 ubuntu neutron-server[109576]: DEBUG dbcounter [-] [109576] Writing DB stats neutron:SELECT=2 {{(pid=109576) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
+Apr 17 07:40:49 ubuntu neutron-server[109571]: DEBUG futurist.periodics [-] Submitting periodic callback 'neutron.plugins.ml2.drivers.ovn.mech_driver.ovsdb.maintenance.HashRingHealthCheckPeriodics.touch_hash_ring_nodes' {{(pid=109571) _process_scheduled /usr/local/lib/python3.10/dist-packages/futurist/periodics.py:638}}
+Apr 17 07:40:54 ubuntu neutron-server[109576]: DEBUG dbcounter [-] [109576] Writing DB stats neutron:SELECT=1 {{(pid=109576) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
+Apr 17 07:40:54 ubuntu neutron-server[109576]: DEBUG dbcounter [-] [109576] Writing DB stats neutron:SELECT=7 {{(pid=109576) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
+Apr 17 07:40:59 ubuntu neutron-server[109571]: DEBUG dbcounter [-] [109571] Writing DB stats neutron:SELECT=1,neutron:UPDATE=1 {{(pid=109571) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
+Apr 17 07:40:59 ubuntu neutron-server[109571]: DEBUG dbcounter [-] [109571] Writing DB stats neutron:SELECT=2 {{(pid=109571) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
+Apr 17 07:41:06 ubuntu neutron-server[109576]: DEBUG dbcounter [-] [109576] Writing DB stats neutron:SELECT=2 {{(pid=109576) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
+Apr 17 07:41:06 ubuntu neutron-server[109576]: DEBUG dbcounter [-] [109576] Writing DB stats neutron:SELECT=4 {{(pid=109576) stat_writer /opt/stack/data/venv/lib/python3.10/site-packages/dbcounter.py:115}}
