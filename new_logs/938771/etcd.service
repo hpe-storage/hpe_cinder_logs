@@ -1,104 +1,148 @@
-Aug 07 05:24:52 ubuntu systemd[1]: Starting Devstack devstack@etcd.service...
-Aug 07 05:24:52 ubuntu etcd[59010]: WARNING: Package "github.com/golang/protobuf/protoc-gen-go/generator" is deprecated.
-Aug 07 05:24:52 ubuntu etcd[59010]:         A future release of golang/protobuf will delete this package,
-Aug 07 05:24:52 ubuntu etcd[59010]:         which has long been excluded from the compatibility promise.
-Aug 07 05:24:52 ubuntu etcd[59010]: [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
-Aug 07 05:24:52 ubuntu etcd[59010]: Running http and grpc server on single port. This is not recommended for production.
-Aug 07 05:24:52 ubuntu etcd[59010]: etcd Version: 3.4.27
-Aug 07 05:24:52 ubuntu etcd[59010]: [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
-Aug 07 05:24:52 ubuntu etcd[59010]: Git SHA: c92fb80f3
-Aug 07 05:24:52 ubuntu etcd[59010]: Go Version: go1.19.10
-Aug 07 05:24:52 ubuntu etcd[59010]: Go OS/Arch: linux/amd64
-Aug 07 05:24:52 ubuntu etcd[59010]: setting maximum number of CPUs to 4, total number of available CPUs is 4
-Aug 07 05:24:52 ubuntu etcd[59010]: Running http and grpc server on single port. This is not recommended for production.
-Aug 07 05:24:52 ubuntu etcd[59010]: name = ubuntu
-Aug 07 05:24:52 ubuntu etcd[59010]: data dir = /opt/stack/data/etcd
-Aug 07 05:24:52 ubuntu etcd[59010]: member dir = /opt/stack/data/etcd/member
-Aug 07 05:24:52 ubuntu etcd[59010]: heartbeat = 100ms
-Aug 07 05:24:52 ubuntu etcd[59010]: election = 1000ms
-Aug 07 05:24:52 ubuntu etcd[59010]: snapshot count = 100000
-Aug 07 05:24:52 ubuntu etcd[59010]: advertise client URLs = http://10.201.9.223:2379
-Aug 07 05:24:52 ubuntu etcd[59010]: check file permission: directory "/opt/stack/data/etcd" exist, but the permission is "dtrwxrwxrwx". The recommended permission is "-rwx------" to prevent possible unprivileged access to the data.
-Aug 07 05:24:52 ubuntu etcd[59010]: starting member c25b29daa831042c in cluster fee8506d9e9ce5fd
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c switched to configuration voters=()
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c became follower at term 0
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: newRaft c25b29daa831042c [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c became follower at term 1
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c switched to configuration voters=(14004833485340083244)
-Aug 07 05:24:52 ubuntu etcd[59010]: simple token is not cryptographically signed
-Aug 07 05:24:52 ubuntu etcd[59010]: starting server... [version: 3.4.27, cluster version: to_be_decided]
-Aug 07 05:24:52 ubuntu etcd[59010]: c25b29daa831042c as single-node; fast-forwarding 9 ticks (election ticks 10)
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c switched to configuration voters=(14004833485340083244)
-Aug 07 05:24:52 ubuntu etcd[59010]: added member c25b29daa831042c [http://10.201.9.223:2380] to cluster fee8506d9e9ce5fd
-Aug 07 05:24:52 ubuntu etcd[59010]: started to purge file, dir: /opt/stack/data/etcd/member/snap, suffix: snap.db, max: 5, interval: 30s
-Aug 07 05:24:52 ubuntu etcd[59010]: started to purge file, dir: /opt/stack/data/etcd/member/snap, suffix: snap, max: 5, interval: 30s
-Aug 07 05:24:52 ubuntu etcd[59010]: started to purge file, dir: /opt/stack/data/etcd/member/wal, suffix: wal, max: 5, interval: 30s
-Aug 07 05:24:52 ubuntu etcd[59010]: listening for peers on [::]:2380
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c is starting a new election at term 1
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c became candidate at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c received MsgVoteResp from c25b29daa831042c at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c became leader at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: raft.node: c25b29daa831042c elected leader c25b29daa831042c at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: setting up the initial cluster version to 3.4
-Aug 07 05:24:53 ubuntu etcd[59010]: published {Name:ubuntu ClientURLs:[http://10.201.9.223:2379]} to cluster fee8506d9e9ce5fd
-Aug 07 05:24:53 ubuntu etcd[59010]: set the initial cluster version to 3.4
-Aug 07 05:24:53 ubuntu etcd[59010]: ready to serve client requests
-Aug 07 05:24:53 ubuntu etcd[59010]: enabled capabilities for version 3.4
-Aug 07 05:24:53 ubuntu systemd[1]: Started Devstack devstack@etcd.service.
-Aug 07 05:24:53 ubuntu etcd[59010]: serving insecure client requests on 10.201.9.223:2379, this is strongly discouraged!
-Aug 07 05:28:58 ubuntu etcd[59010]: start time = 2025-08-07 05:28:58.769582807 +0000 UTC m=+246.578969963, time spent = 1.396089ms, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:28:58 ubuntu etcd[59010]: start time = 2025-08-07 05:28:58.906181836 +0000 UTC m=+246.715569009, time spent = 214.683µs, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:29:05 ubuntu etcd[59010]: start time = 2025-08-07 05:29:05.348899494 +0000 UTC m=+253.158286670, time spent = 186.561µs, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:29:07 ubuntu etcd[59010]: start time = 2025-08-07 05:29:07.310751017 +0000 UTC m=+255.120138189, time spent = 196.984µs, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:24:52 ubuntu systemd[1]: Starting Devstack devstack@etcd.service...
-Aug 07 05:24:52 ubuntu etcd[59010]: WARNING: Package "github.com/golang/protobuf/protoc-gen-go/generator" is deprecated.
-Aug 07 05:24:52 ubuntu etcd[59010]:         A future release of golang/protobuf will delete this package,
-Aug 07 05:24:52 ubuntu etcd[59010]:         which has long been excluded from the compatibility promise.
-Aug 07 05:24:52 ubuntu etcd[59010]: [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
-Aug 07 05:24:52 ubuntu etcd[59010]: Running http and grpc server on single port. This is not recommended for production.
-Aug 07 05:24:52 ubuntu etcd[59010]: etcd Version: 3.4.27
-Aug 07 05:24:52 ubuntu etcd[59010]: [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
-Aug 07 05:24:52 ubuntu etcd[59010]: Git SHA: c92fb80f3
-Aug 07 05:24:52 ubuntu etcd[59010]: Go Version: go1.19.10
-Aug 07 05:24:52 ubuntu etcd[59010]: Go OS/Arch: linux/amd64
-Aug 07 05:24:52 ubuntu etcd[59010]: setting maximum number of CPUs to 4, total number of available CPUs is 4
-Aug 07 05:24:52 ubuntu etcd[59010]: Running http and grpc server on single port. This is not recommended for production.
-Aug 07 05:24:52 ubuntu etcd[59010]: name = ubuntu
-Aug 07 05:24:52 ubuntu etcd[59010]: data dir = /opt/stack/data/etcd
-Aug 07 05:24:52 ubuntu etcd[59010]: member dir = /opt/stack/data/etcd/member
-Aug 07 05:24:52 ubuntu etcd[59010]: heartbeat = 100ms
-Aug 07 05:24:52 ubuntu etcd[59010]: election = 1000ms
-Aug 07 05:24:52 ubuntu etcd[59010]: snapshot count = 100000
-Aug 07 05:24:52 ubuntu etcd[59010]: advertise client URLs = http://10.201.9.223:2379
-Aug 07 05:24:52 ubuntu etcd[59010]: check file permission: directory "/opt/stack/data/etcd" exist, but the permission is "dtrwxrwxrwx". The recommended permission is "-rwx------" to prevent possible unprivileged access to the data.
-Aug 07 05:24:52 ubuntu etcd[59010]: starting member c25b29daa831042c in cluster fee8506d9e9ce5fd
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c switched to configuration voters=()
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c became follower at term 0
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: newRaft c25b29daa831042c [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c became follower at term 1
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c switched to configuration voters=(14004833485340083244)
-Aug 07 05:24:52 ubuntu etcd[59010]: simple token is not cryptographically signed
-Aug 07 05:24:52 ubuntu etcd[59010]: starting server... [version: 3.4.27, cluster version: to_be_decided]
-Aug 07 05:24:52 ubuntu etcd[59010]: c25b29daa831042c as single-node; fast-forwarding 9 ticks (election ticks 10)
-Aug 07 05:24:52 ubuntu etcd[59010]: raft2025/08/07 05:24:52 INFO: c25b29daa831042c switched to configuration voters=(14004833485340083244)
-Aug 07 05:24:52 ubuntu etcd[59010]: added member c25b29daa831042c [http://10.201.9.223:2380] to cluster fee8506d9e9ce5fd
-Aug 07 05:24:52 ubuntu etcd[59010]: started to purge file, dir: /opt/stack/data/etcd/member/snap, suffix: snap.db, max: 5, interval: 30s
-Aug 07 05:24:52 ubuntu etcd[59010]: started to purge file, dir: /opt/stack/data/etcd/member/snap, suffix: snap, max: 5, interval: 30s
-Aug 07 05:24:52 ubuntu etcd[59010]: started to purge file, dir: /opt/stack/data/etcd/member/wal, suffix: wal, max: 5, interval: 30s
-Aug 07 05:24:52 ubuntu etcd[59010]: listening for peers on [::]:2380
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c is starting a new election at term 1
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c became candidate at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c received MsgVoteResp from c25b29daa831042c at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: c25b29daa831042c became leader at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: raft2025/08/07 05:24:53 INFO: raft.node: c25b29daa831042c elected leader c25b29daa831042c at term 2
-Aug 07 05:24:53 ubuntu etcd[59010]: setting up the initial cluster version to 3.4
-Aug 07 05:24:53 ubuntu etcd[59010]: published {Name:ubuntu ClientURLs:[http://10.201.9.223:2379]} to cluster fee8506d9e9ce5fd
-Aug 07 05:24:53 ubuntu etcd[59010]: set the initial cluster version to 3.4
-Aug 07 05:24:53 ubuntu etcd[59010]: ready to serve client requests
-Aug 07 05:24:53 ubuntu etcd[59010]: enabled capabilities for version 3.4
-Aug 07 05:24:53 ubuntu systemd[1]: Started Devstack devstack@etcd.service.
-Aug 07 05:24:53 ubuntu etcd[59010]: serving insecure client requests on 10.201.9.223:2379, this is strongly discouraged!
-Aug 07 05:28:58 ubuntu etcd[59010]: start time = 2025-08-07 05:28:58.769582807 +0000 UTC m=+246.578969963, time spent = 1.396089ms, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:28:58 ubuntu etcd[59010]: start time = 2025-08-07 05:28:58.906181836 +0000 UTC m=+246.715569009, time spent = 214.683µs, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:29:05 ubuntu etcd[59010]: start time = 2025-08-07 05:29:05.348899494 +0000 UTC m=+253.158286670, time spent = 186.561µs, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
-Aug 07 05:29:07 ubuntu etcd[59010]: start time = 2025-08-07 05:29:07.310751017 +0000 UTC m=+255.120138189, time spent = 196.984µs, remote = 10.201.9.223:33308, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Sep 08 13:24:34 ubuntu systemd[1]: Starting Devstack devstack@etcd.service...
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"warn","ts":"2025-09-08T13:24:34.840365Z","caller":"embed/config.go:689","msg":"Running http and grpc server on single port. This is not recommended for production."}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.840472Z","caller":"etcdmain/etcd.go:73","msg":"Running: ","args":["/opt/stack/bin/etcd","--name","ubuntu","--data-dir","/opt/stack/data/etcd","--initial-cluster-state","new","--initial-cluster-token","etcd-cluster-01","--initial-cluster","ubuntu=http://10.201.9.223:2380","--initial-advertise-peer-urls","http://10.201.9.223:2380","--advertise-client-urls","http://10.201.9.223:2379","--listen-peer-urls","http://0.0.0.0:2380","--listen-client-urls","http://10.201.9.223:2379","--log-level=debug"]}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"warn","ts":"2025-09-08T13:24:34.840539Z","caller":"embed/config.go:689","msg":"Running http and grpc server on single port. This is not recommended for production."}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.840553Z","caller":"embed/etcd.go:140","msg":"configuring peer listeners","listen-peer-urls":["http://0.0.0.0:2380"]}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.840891Z","caller":"embed/etcd.go:148","msg":"configuring client listeners","listen-client-urls":["http://10.201.9.223:2379"]}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.840980Z","caller":"embed/etcd.go:323","msg":"starting an etcd server","etcd-version":"3.5.21","git-sha":"a17edfd","go-version":"go1.23.7","go-os":"linux","go-arch":"amd64","max-cpu-set":4,"max-cpu-available":4,"member-initialized":false,"name":"ubuntu","data-dir":"/opt/stack/data/etcd","wal-dir":"","wal-dir-dedicated":"","member-dir":"/opt/stack/data/etcd/member","force-new-cluster":false,"heartbeat-interval":"100ms","election-timeout":"1s","initial-election-tick-advance":true,"snapshot-count":100000,"max-wals":5,"max-snapshots":5,"snapshot-catchup-entries":5000,"initial-advertise-peer-urls":["http://10.201.9.223:2380"],"listen-peer-urls":["http://0.0.0.0:2380"],"advertise-client-urls":["http://10.201.9.223:2379"],"listen-client-urls":["http://10.201.9.223:2379"],"listen-metrics-urls":[],"cors":["*"],"host-whitelist":["*"],"initial-cluster":"ubuntu=http://10.201.9.223:2380","initial-cluster-state":"new","initial-cluster-token":"etcd-cluster-01","quota-backend-bytes":2147483648,"max-request-bytes":1572864,"max-concurrent-streams":4294967295,"pre-vote":true,"initial-corrupt-check":false,"corrupt-check-time-interval":"0s","compact-check-time-enabled":false,"compact-check-time-interval":"1m0s","auto-compaction-mode":"periodic","auto-compaction-retention":"0s","auto-compaction-interval":"0s","discovery-url":"","discovery-proxy":"","downgrade-check-interval":"5s"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"warn","ts":"2025-09-08T13:24:34.841049Z","caller":"fileutil/fileutil.go:53","msg":"check file permission","error":"directory \"/opt/stack/data/etcd\" exist, but the permission is \"dtrwxrwxrwx\". The recommended permission is \"-rwx------\" to prevent possible unprivileged access to the data"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.841400Z","caller":"etcdserver/backend.go:81","msg":"opened backend db","path":"/opt/stack/data/etcd/member/snap/db","took":"195.115µs"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.862266Z","caller":"etcdserver/raft.go:506","msg":"starting local member","local-member-id":"c25b29daa831042c","cluster-id":"fee8506d9e9ce5fd"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.862394Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c switched to configuration voters=()"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.862446Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c became follower at term 0"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.862465Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"newRaft c25b29daa831042c [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.862476Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c became follower at term 1"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.862547Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c switched to configuration voters=(14004833485340083244)"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"warn","ts":"2025-09-08T13:24:34.862748Z","caller":"auth/store.go:1241","msg":"simple token is not cryptographically signed"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.865507Z","caller":"mvcc/kvstore.go:425","msg":"kvstore restored","current-rev":1}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.865634Z","caller":"etcdserver/server.go:628","msg":"restore consistentIndex","index":0}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.866089Z","caller":"etcdserver/quota.go:94","msg":"enabled backend quota with default value","quota-name":"v3-applier","quota-size-bytes":2147483648,"quota-size":"2.1 GB"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.866434Z","caller":"etcdserver/server.go:875","msg":"starting etcd server","local-member-id":"c25b29daa831042c","local-server-version":"3.5.21","cluster-version":"to_be_decided"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.866676Z","caller":"etcdserver/server.go:759","msg":"started as single-node; fast-forwarding election ticks","local-member-id":"c25b29daa831042c","forward-ticks":9,"forward-duration":"900ms","election-ticks":10,"election-timeout":"1s"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:34.866785Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:34.866813Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":1,"term":1,"type":"EntryConfChange"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.866971Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c switched to configuration voters=(14004833485340083244)"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.867052Z","caller":"membership/cluster.go:421","msg":"added member","cluster-id":"fee8506d9e9ce5fd","local-member-id":"c25b29daa831042c","added-peer-id":"c25b29daa831042c","added-peer-peer-urls":["http://10.201.9.223:2380"],"added-peer-is-learner":false}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.867125Z","caller":"fileutil/purge.go:50","msg":"started to purge file","dir":"/opt/stack/data/etcd/member/snap","suffix":"snap.db","max":5,"interval":"30s"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.867152Z","caller":"fileutil/purge.go:50","msg":"started to purge file","dir":"/opt/stack/data/etcd/member/snap","suffix":"snap","max":5,"interval":"30s"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.867161Z","caller":"fileutil/purge.go:50","msg":"started to purge file","dir":"/opt/stack/data/etcd/member/wal","suffix":"wal","max":5,"interval":"30s"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.867368Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Server #1] Server created"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.867543Z","caller":"v3rpc/health.go:61","msg":"grpc service status changed","service":"","status":"SERVING"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.872511Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Server #1 ListenSocket #2] ListenSocket created"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.872646Z","caller":"embed/etcd.go:633","msg":"serving peer traffic","address":"[::]:2380"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.872684Z","caller":"embed/etcd.go:603","msg":"cmux::serve","address":"[::]:2380"}
+Sep 08 13:24:34 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:34.872946Z","caller":"embed/etcd.go:292","msg":"now serving peer/client/metrics","local-member-id":"c25b29daa831042c","initial-advertise-peer-urls":["http://10.201.9.223:2380"],"listen-peer-urls":["http://0.0.0.0:2380"],"advertise-client-urls":["http://10.201.9.223:2379"],"listen-client-urls":["http://10.201.9.223:2379"],"listen-metrics-urls":[]}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.863714Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c is starting a new election at term 1"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.863828Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c became pre-candidate at term 1"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.863886Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c received MsgPreVoteResp from c25b29daa831042c at term 1"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.863937Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c became candidate at term 2"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.864049Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c received MsgVoteResp from c25b29daa831042c at term 2"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.864105Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"c25b29daa831042c became leader at term 2"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.864208Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"raft.node: c25b29daa831042c elected leader c25b29daa831042c at term 2"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864507Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864550Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":2,"term":2,"type":"EntryNormal"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864591Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":1,"entry-index":2,"should-applyV3":true}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864680Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864716Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":3,"term":2,"type":"EntryNormal"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864752Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":2,"entry-index":3,"should-applyV3":true}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.864811Z","caller":"etcdserver/server.go:2310","msg":"applyEntryNormal","V2request":"ID:300783678646234626 Method:\"PUT\" Path:\"/0/members/c25b29daa831042c/attributes\" Val:\"{\\\"name\\\":\\\"ubuntu\\\",\\\"clientURLs\\\":[\\\"http://10.201.9.223:2379\\\"]}\" "}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.865646Z","caller":"etcdserver/server.go:2697","msg":"setting up initial cluster version using v2 API","cluster-version":"3.5"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.866150Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.866287Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":4,"term":2,"type":"EntryNormal"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.866335Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":3,"entry-index":4,"should-applyV3":true}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.866376Z","caller":"embed/serve.go:124","msg":"ready to serve client requests"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:24:35.866450Z","caller":"etcdserver/server.go:2310","msg":"applyEntryNormal","V2request":"ID:300783678646234628 Method:\"PUT\" Path:\"/0/version\" Val:\"3.5.0\" "}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.866619Z","caller":"membership/cluster.go:587","msg":"set initial cluster version","cluster-id":"fee8506d9e9ce5fd","local-member-id":"c25b29daa831042c","cluster-version":"3.5"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.866948Z","caller":"api/capability.go:75","msg":"enabled capabilities for version","cluster-version":"3.5"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.866638Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] Channel created"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867028Z","caller":"etcdserver/server.go:2721","msg":"cluster version is updated","cluster-version":"3.5"}
+Sep 08 13:24:35 ubuntu systemd[1]: Started Devstack devstack@etcd.service.
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.866281Z","caller":"etcdserver/server.go:2144","msg":"published local member to cluster through raft","local-member-id":"c25b29daa831042c","local-member-attributes":"{Name:ubuntu ClientURLs:[http://10.201.9.223:2379]}","request-path":"/0/members/c25b29daa831042c/attributes","cluster-id":"fee8506d9e9ce5fd","publish-timeout":"7s"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867263Z","caller":"etcdmain/main.go:44","msg":"notifying init daemon"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867603Z","caller":"etcdmain/main.go:50","msg":"successfully notified init daemon"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867680Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] original dial target is: \"10.201.9.223:2379\""}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867825Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] dial target \"10.201.9.223:2379\" parse failed: parse \"10.201.9.223:2379\": first path segment in URL cannot contain colon"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867859Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] fallback to scheme \"passthrough\""}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867917Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] parsed dial target is: {URL:{Scheme:passthrough Opaque: User: Host: Path:/10.201.9.223:2379 RawPath: OmitHost:false ForceQuery:false RawQuery: Fragment: RawFragment:}}"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.867962Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] Channel authority set to \"10.201.9.223:2379\""}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.868431Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] Resolver state updated: {\n  \"Addresses\": [\n    {\n      \"Addr\": \"10.201.9.223:2379\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Metadata\": null\n    }\n  ],\n  \"Endpoints\": [\n    {\n      \"Addresses\": [\n        {\n          \"Addr\": \"10.201.9.223:2379\",\n          \"ServerName\": \"\",\n          \"Attributes\": null,\n          \"BalancerAttributes\": null,\n          \"Metadata\": null\n        }\n      ],\n      \"Attributes\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n} (resolver returned new addresses)"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.868615Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] Channel switches to new LB policy \"pick_first\""}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.868938Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [pick-first-lb 0xc0000fe750] Received new config {\n  \"shuffleAddressList\": false\n}, resolver state {\n  \"Addresses\": [\n    {\n      \"Addr\": \"10.201.9.223:2379\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Metadata\": null\n    }\n  ],\n  \"Endpoints\": [\n    {\n      \"Addresses\": [\n        {\n          \"Addr\": \"10.201.9.223:2379\",\n          \"ServerName\": \"\",\n          \"Attributes\": null,\n          \"BalancerAttributes\": null,\n          \"Metadata\": null\n        }\n      ],\n      \"Attributes\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n}"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.869048Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3 SubChannel #4] Subchannel created"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.869183Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] Channel Connectivity change to CONNECTING"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.869919Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Server #5] Server created"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.869948Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3 SubChannel #4] Subchannel Connectivity change to CONNECTING"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.870007Z","caller":"v3rpc/health.go:61","msg":"grpc service status changed","service":"","status":"SERVING"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.870037Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3 SubChannel #4] Subchannel picks a new address \"10.201.9.223:2379\" to connect"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.870541Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [pick-first-lb 0xc0000fe750] Received SubConn state update: 0xc0000fe900, {ConnectivityState:CONNECTING ConnectionError:<nil>}"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.873202Z","caller":"embed/serve.go:210","msg":"serving client traffic insecurely; this is strongly discouraged!","traffic":"grpc+http","address":"10.201.9.223:2379"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.873848Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Server #5 ListenSocket #7] ListenSocket created"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.874678Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3 SubChannel #4] Subchannel Connectivity change to READY"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.874766Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [pick-first-lb 0xc0000fe750] Received SubConn state update: 0xc0000fe900, {ConnectivityState:READY ConnectionError:<nil>}"}
+Sep 08 13:24:35 ubuntu etcd[59383]: {"level":"info","ts":"2025-09-08T13:24:35.874883Z","caller":"zapgrpc/zapgrpc.go:174","msg":"[core] [Channel #3] Channel Connectivity change to READY"}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.610753Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.611366Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":5,"term":2,"type":"EntryNormal"}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.611479Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":4,"entry-index":5,"should-applyV3":true}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.611573Z","caller":"etcdserver/server.go:2314","msg":"applyEntryNormal","raftReq":"header:<ID:300783678646234630 > lease_grant:<TTL:30 ID:300783678646234629 > "}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.612737Z","caller":"v3rpc/interceptor.go:182","msg":"request stats","start time":"2025-09-08T13:28:44.609641Z","time spent":"3.08933ms","remote":"10.201.9.223:54510","response type":"/etcdserverpb.Lease/LeaseGrant","request count":-1,"request size":-1,"response count":-1,"response size":-1,"request content":""}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.626530Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:28:44.563411Z","now":"2025-09-08T13:28:44.626528Z"}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.692510Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.692545Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":6,"term":2,"type":"EntryNormal"}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.692557Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":5,"entry-index":6,"should-applyV3":true}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.692567Z","caller":"etcdserver/server.go:2314","msg":"applyEntryNormal","raftReq":"header:<ID:300783678646234632 > lease_grant:<TTL:30 ID:300783678646234631 > "}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.692909Z","caller":"v3rpc/interceptor.go:182","msg":"request stats","start time":"2025-09-08T13:28:44.692402Z","time spent":"503.235µs","remote":"10.201.9.223:54510","response type":"/etcdserverpb.Lease/LeaseGrant","request count":-1,"request size":-1,"response count":-1,"response size":-1,"request content":""}
+Sep 08 13:28:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:44.711753Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:28:44.663118Z","now":"2025-09-08T13:28:44.711750Z"}
+Sep 08 13:28:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:51.439469Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:28:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:51.439969Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":7,"term":2,"type":"EntryNormal"}
+Sep 08 13:28:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:51.440063Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":6,"entry-index":7,"should-applyV3":true}
+Sep 08 13:28:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:51.440126Z","caller":"etcdserver/server.go:2314","msg":"applyEntryNormal","raftReq":"header:<ID:300783678646234634 > lease_grant:<TTL:30 ID:300783678646234633 > "}
+Sep 08 13:28:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:51.440358Z","caller":"v3rpc/interceptor.go:182","msg":"request stats","start time":"2025-09-08T13:28:51.439362Z","time spent":"988.393µs","remote":"10.201.9.223:54510","response type":"/etcdserverpb.Lease/LeaseGrant","request count":-1,"request size":-1,"response count":-1,"response size":-1,"request content":""}
+Sep 08 13:28:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:51.456122Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:28:51.363533Z","now":"2025-09-08T13:28:51.456120Z"}
+Sep 08 13:28:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:53.463321Z","caller":"etcdserver/server.go:2224","msg":"Applying entries","num-entries":1}
+Sep 08 13:28:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:53.463356Z","caller":"etcdserver/server.go:2227","msg":"Applying entry","index":8,"term":2,"type":"EntryNormal"}
+Sep 08 13:28:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:53.463367Z","caller":"etcdserver/server.go:2287","msg":"apply entry normal","consistent-index":7,"entry-index":8,"should-applyV3":true}
+Sep 08 13:28:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:53.463378Z","caller":"etcdserver/server.go:2314","msg":"applyEntryNormal","raftReq":"header:<ID:300783678646234636 > lease_grant:<TTL:30 ID:300783678646234635 > "}
+Sep 08 13:28:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:53.463526Z","caller":"v3rpc/interceptor.go:182","msg":"request stats","start time":"2025-09-08T13:28:53.463214Z","time spent":"304.919µs","remote":"10.201.9.223:54510","response type":"/etcdserverpb.Lease/LeaseGrant","request count":-1,"request size":-1,"response count":-1,"response size":-1,"request content":""}
+Sep 08 13:28:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:53.478300Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:28:53.462842Z","now":"2025-09-08T13:28:53.478297Z"}
+Sep 08 13:28:59 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:59.630373Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:28:59.562684Z","now":"2025-09-08T13:28:59.630371Z"}
+Sep 08 13:28:59 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:28:59.708519Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:28:59.663221Z","now":"2025-09-08T13:28:59.708517Z"}
+Sep 08 13:29:06 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:06.454112Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:06.363682Z","now":"2025-09-08T13:29:06.454110Z"}
+Sep 08 13:29:08 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:08.482792Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:08.463376Z","now":"2025-09-08T13:29:08.482790Z"}
+Sep 08 13:29:14 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:14.633611Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:14.563782Z","now":"2025-09-08T13:29:14.633609Z"}
+Sep 08 13:29:14 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:14.709434Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:14.663668Z","now":"2025-09-08T13:29:14.709432Z"}
+Sep 08 13:29:21 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:21.457601Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:21.363626Z","now":"2025-09-08T13:29:21.457598Z"}
+Sep 08 13:29:23 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:23.484874Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:23.462949Z","now":"2025-09-08T13:29:23.484872Z"}
+Sep 08 13:29:29 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:29.636227Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:29.563208Z","now":"2025-09-08T13:29:29.636224Z"}
+Sep 08 13:29:29 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:29.712802Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:29.663631Z","now":"2025-09-08T13:29:29.712799Z"}
+Sep 08 13:29:36 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:36.460617Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:36.363577Z","now":"2025-09-08T13:29:36.460614Z"}
+Sep 08 13:29:38 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:38.492269Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:38.462769Z","now":"2025-09-08T13:29:38.492266Z"}
+Sep 08 13:29:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:44.638514Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:44.563281Z","now":"2025-09-08T13:29:44.638510Z"}
+Sep 08 13:29:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:44.714285Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:44.663107Z","now":"2025-09-08T13:29:44.714282Z"}
+Sep 08 13:29:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:51.463661Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:51.463356Z","now":"2025-09-08T13:29:51.463658Z"}
+Sep 08 13:29:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:53.494202Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:53.463137Z","now":"2025-09-08T13:29:53.494200Z"}
+Sep 08 13:29:59 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:59.640460Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:59.563401Z","now":"2025-09-08T13:29:59.640458Z"}
+Sep 08 13:29:59 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:29:59.717831Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:29:59.663753Z","now":"2025-09-08T13:29:59.717828Z"}
+Sep 08 13:30:06 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:06.541726Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:06.463071Z","now":"2025-09-08T13:30:06.541723Z"}
+Sep 08 13:30:08 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:08.496209Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:08.463023Z","now":"2025-09-08T13:30:08.496207Z"}
+Sep 08 13:30:14 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:14.646397Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:14.563417Z","now":"2025-09-08T13:30:14.646361Z"}
+Sep 08 13:30:14 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:14.721570Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:14.662910Z","now":"2025-09-08T13:30:14.721556Z"}
+Sep 08 13:30:21 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:21.510136Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:21.463377Z","now":"2025-09-08T13:30:21.510128Z"}
+Sep 08 13:30:23 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:23.499505Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:23.462860Z","now":"2025-09-08T13:30:23.499502Z"}
+Sep 08 13:30:29 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:29.650396Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:29.563475Z","now":"2025-09-08T13:30:29.650393Z"}
+Sep 08 13:30:29 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:29.724850Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:29.662695Z","now":"2025-09-08T13:30:29.724847Z"}
+Sep 08 13:30:36 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:36.515039Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:36.463044Z","now":"2025-09-08T13:30:36.515037Z"}
+Sep 08 13:30:38 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:38.507460Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:38.462848Z","now":"2025-09-08T13:30:38.507456Z"}
+Sep 08 13:30:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:44.654408Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:44.563227Z","now":"2025-09-08T13:30:44.654405Z"}
+Sep 08 13:30:44 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:44.726498Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:44.663258Z","now":"2025-09-08T13:30:44.726496Z"}
+Sep 08 13:30:51 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:51.518956Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:51.463294Z","now":"2025-09-08T13:30:51.518953Z"}
+Sep 08 13:30:53 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:53.511010Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:53.463722Z","now":"2025-09-08T13:30:53.511007Z"}
+Sep 08 13:30:59 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:59.657588Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:59.563147Z","now":"2025-09-08T13:30:59.657586Z"}
+Sep 08 13:30:59 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:30:59.730231Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:30:59.662766Z","now":"2025-09-08T13:30:59.730228Z"}
+Sep 08 13:31:06 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:06.524552Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:06.463326Z","now":"2025-09-08T13:31:06.524549Z"}
+Sep 08 13:31:08 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:08.518255Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:08.463676Z","now":"2025-09-08T13:31:08.518245Z"}
+Sep 08 13:31:14 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:14.661484Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:14.562943Z","now":"2025-09-08T13:31:14.661481Z"}
+Sep 08 13:31:14 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:14.733356Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:14.662917Z","now":"2025-09-08T13:31:14.733354Z"}
+Sep 08 13:31:21 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:21.528667Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:21.463120Z","now":"2025-09-08T13:31:21.528664Z"}
+Sep 08 13:31:23 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:23.520351Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:23.463111Z","now":"2025-09-08T13:31:23.520348Z"}
+Sep 08 13:31:29 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:29.665073Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:29.663769Z","now":"2025-09-08T13:31:29.665070Z"}
+Sep 08 13:31:29 ubuntu etcd[59383]: {"level":"debug","ts":"2025-09-08T13:31:29.736600Z","caller":"etcdserver/server.go:1230","msg":"The member is active, skip checking leadership","latestTickTs":"2025-09-08T13:31:29.663769Z","now":"2025-09-08T13:31:29.736598Z"}
