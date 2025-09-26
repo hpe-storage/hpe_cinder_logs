@@ -12,8 +12,8 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 634eba7037244ee8a29f25b76eff5b0c
-cinder_internal_tenant_project_id = d49868145dff4a69bc8ada1f2a368e27
+cinder_internal_tenant_user_id = 02d9ad41e9944400bebe3f371b0adaf3
+cinder_internal_tenant_project_id = 4160980cca8a4a7faeed2e05548cc8f5
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.201.9.223/image
 osapi_volume_workers = 2
@@ -64,6 +64,18 @@ volume_group = stack-volumes-lvmdriver-1
 volume_driver = cinder.volume.drivers.lvm.LVMVolumeDriver
 volume_backend_name = lvmdriver-1
 
+[glance]
+memcached_servers = localhost:11211
+cafile = /opt/stack/data/ca-bundle.pem
+project_domain_name = Default
+project_name = service
+user_domain_name = Default
+password = ******
+username = glance
+auth_url = http://10.201.9.223/identity
+interface = public
+auth_type = password
+
 [nova]
 region_name = RegionOne
 memcached_servers = localhost:11211
@@ -85,7 +97,6 @@ enforce_new_defaults = false
 enforce_scope = false
 
 [service_user]
-auth_strategy = keystone
 send_service_user_token = True
 memcached_servers = localhost:11211
 cafile = /opt/stack/data/ca-bundle.pem
