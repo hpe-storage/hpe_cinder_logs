@@ -2,6 +2,7 @@
 [keystone_authtoken]
 memcached_servers = localhost:11211
 cafile = /opt/stack/data/ca-bundle.pem
+www_authenticate_uri = http://10.201.9.223/identity
 project_domain_name = Default
 project_name = service
 user_domain_name = Default
@@ -12,8 +13,8 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 1e40f8d867f04f5f8710f7d5935e19e2
-cinder_internal_tenant_project_id = 0a72de5306df425d905720a9d3b614e6
+cinder_internal_tenant_user_id = 78e9a7b2e5d241b882d35df7cbe7906a
+cinder_internal_tenant_project_id = c6b5bcd09f674ded9a879fbb549b7065
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.201.9.223/image
 osapi_volume_workers = 2
@@ -67,6 +68,7 @@ volume_backend_name = lvmdriver-1
 [glance]
 memcached_servers = localhost:11211
 cafile = /opt/stack/data/ca-bundle.pem
+www_authenticate_uri = http://10.201.9.223/identity
 project_domain_name = Default
 project_name = service
 user_domain_name = Default
@@ -78,8 +80,6 @@ auth_type = password
 
 [nova]
 region_name = RegionOne
-memcached_servers = localhost:11211
-cafile = /opt/stack/data/ca-bundle.pem
 project_domain_name = Default
 project_name = service
 user_domain_name = Default
@@ -97,9 +97,6 @@ enforce_new_defaults = false
 enforce_scope = false
 
 [service_user]
-send_service_user_token = True
-memcached_servers = localhost:11211
-cafile = /opt/stack/data/ca-bundle.pem
 project_domain_name = Default
 project_name = service
 user_domain_name = Default
@@ -108,6 +105,7 @@ username = cinder
 auth_url = http://10.201.9.223/identity
 interface = public
 auth_type = password
+send_service_user_token = True
 
 [os_brick]
 lock_path = /opt/stack/data/os_brick
